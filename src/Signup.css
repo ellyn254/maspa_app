@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+   color: black; /* Text color black */
+}
+
+form {
+  background-color: pink;
+  padding: 20px;
+  border-radius: 10px;
+  
+}
+
+input[type="text"],
+input[type="phone"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+span {
+  color: red; /* Error message color */
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: purple; /* Button background color pink */
+  color: white; /* Button text color white */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff69b4; /* Button background color on hover */
+}
+
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff; /* Link color */
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
