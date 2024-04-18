@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import './Signup.css'
+import {useNavigate} from 'react-router-dom'
+import './Signup.css'
 
 
 const Contact = () => {
@@ -21,6 +22,7 @@ const Contact = () => {
       });
   }, []);
 
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setValues({
       ...values,
@@ -47,6 +49,7 @@ const Contact = () => {
         });
     } else {
       alert('Please register with us first.');
+      navigate('/register')
     }
   };
 
@@ -61,6 +64,7 @@ const Contact = () => {
               className="form-control"
               id="email"
               name="email"
+              placeholder="Enter email registered with us"
               value={values.email}
               onChange={handleChange}
               required
@@ -74,13 +78,14 @@ const Contact = () => {
               className="form-control"
               id="message"
               name="message"
+              placeholder="compose a message"
               value={values.message}
               onChange={handleChange}
               required
               autoComplete='off'
             />
           </div>
-          <button type="submit" className="btn btn-secondary w-100">Submit</button>
+          <button type="submit" className="w-100">Submit</button>
         </form>
    
   );

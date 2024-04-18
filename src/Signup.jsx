@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-// import './Signup.css'
+import './Signup.css'
 // import parsePhoneNumberFromString from 'libphonenumber-js';
 
 const Signup = () => {
@@ -128,7 +128,7 @@ const Signup = () => {
             <input
               type="password"
               name="password"
-              placeholder="******"
+              placeholder="enter password******"
               onChange={handleChange}
             />
             {errors.password && <span>{errors.password}</span>}
@@ -138,7 +138,7 @@ const Signup = () => {
             <input
               type="password"
               name="confirmPassword"
-              placeholder="Re-enter password"
+              placeholder="Re-enter password ********"
               onChange={handleChange}
             />
             {errors.confirmPassword && <span>{errors.confirmPassword}</span>}

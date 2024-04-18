@@ -21,7 +21,7 @@ const Signin = () => {
       }
     
       const navigate = useNavigate();
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault()
         const validationErrors = {}
     
@@ -40,28 +40,33 @@ const Signin = () => {
         setErrors(validationErrors)
     
         if(Object.keys(validationErrors).length === 0) {
-            alert("Form Submitted successfully")
-
+          
         }
-    
+    try{
         //here we use axios library to pass data
-      axios.post('http://localhost:5000/login', {email:formData.email, password:formData.password})
+      const res = await axios.post('http://localhost:5000/login', {email:formData.email, password:formData.password})
       
       //after which we print the result
-      
-      .then((res) => {
-        if(res.data.success) {
-        
-        }        
-
-        console.log(res.data.success);
+      if (res.data.error) {
+        `setFormData.email({})``setFormData.password({})`;
+      } else {
+        console.log(res.data.message);
+        alert('Login successfull')
         navigate("/home");
-
-      })
-      //else if an error occurs
-      .catch((err) => console.log(err, ));
       }
-
+    }catch (error) {
+      console.error(error);
+      // Handle error response from the server
+      if (error.response && error.response.status === 400) {
+        // Server returned 400 Bad Request
+        alert("All fields are required");
+      } else {
+        // Other errors
+        alert("Unauthorized user. Please create account");
+        navigate('/register');
+      }
+    }
+    }
   return (
    
     <form onSubmit={handleSubmit}>

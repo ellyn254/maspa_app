@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
-
+import './Signup.css'
 
 const Update = () => {
     const [formData, setFormData] = useState({
@@ -70,15 +70,12 @@ const Update = () => {
 }}
     
   return (
-    <div className='d-flex justify-content-center align-items-center vh-100'>
-    <div className='bg-white p-3 rounded w-25'>
-            <h2>Update</h2>
-            <form onSubmit={handleSubmit}>
-    
-            <div>
+  <form onSubmit={handleSubmit}>
+    <h2>Update</h2>
+    <div>
       <label>Name:</label>
       <input
-        type="name"
+        type="text"
         name="name"
         placeholder='name'  
         autoComplete='off'  
@@ -132,12 +129,10 @@ const Update = () => {
         {errors.confirmPassword && <span>{errors.confirmPassword}</span>}  
     </div>
         
-                <button type='submit' className='btn btn-secondary w-100 rounded-0'>Update</button>
+                <button type='submit' className='w-100 rounded-0'>Update</button>
                 Agree to terms and conditions
-                <Link to={`/login`} className='btn btn-default border w-100 bg-info rounded-0 text-decoration-none'>Login</Link>
-            </form>
-        </div>
-    </div>
+                <Link to={`/login`} className='btn border w-100 rounded-0 text-decoration-none'>Login</Link>
+     </form>
   )
 }
 

@@ -2,30 +2,30 @@
 	
 	{ 
 		"id": 1, 
-		"name": "Product 1", 
-		"description": "Description of Product 1", 
+		"name": "digital watch", 
+		"description": "Hand accessory", 
 		"price": 19.99, 
 		"image": "https://media.geeksforgeeks.org/wp-content/uploads/20230728154740/download-(2).jfif"
 	}, 
 	{ 
 		"id": 2, 
-		"name": "Product 2", 
-		"description": "Description of Product 2", 
+		"name": "makeup", 
+		"description": "Facial accessories", 
 		"price": 20, 
 		"image": "https://media.geeksforgeeks.org/wp-content/uploads/20230728154838/download-(3).jfif"
 	}, 
 	
 	{ 
 		"id": 3, 
-		"name": "Product 3", 
-		"description": "Description of Product 3", 
+		"name": "Headphones", 
+		"description": "Entertainment accessory", 
 		"price": 30, 
 		"image": "https://media.geeksforgeeks.org/wp-content/uploads/20230728155132/images-(1).jfif"
 	}, 
 	{ 
 		"id": 4, 
 		"name": "Nail Shop", 
-		"description": "sample nail shop interior design", 
+		"description": "Luxurious site", 
 		"price": 1000, 
 		"image": "https://dminteriors.lk/wp-content/uploads/2023/07/Nail-Shop-Interior-Design-Ideas.jpg"
 	} 
