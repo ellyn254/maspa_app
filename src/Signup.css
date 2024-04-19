@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -10,11 +9,10 @@ body {
 
 form {
   background-color: pink;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   
 }
-
 input[type="text"],
 input[type="phone"],
 input[type="email"],
@@ -24,6 +22,7 @@ input[type="password"] {
   margin: 5px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  
 }
 
 span {

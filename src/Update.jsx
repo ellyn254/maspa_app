@@ -70,10 +70,12 @@ const Update = () => {
 }}
     
   return (
+    <div className='d-flex vh-100 justify-content-center align-items-center'>
+    <div className='p-3 w-25 rounded bg-white'>
   <form onSubmit={handleSubmit}>
     <h2>Update</h2>
     <div>
-      <label>Name:</label>
+      <label><strong>Name:</strong></label>
       <input
         type="text"
         name="name"
@@ -84,7 +86,7 @@ const Update = () => {
         {errors.name && <span>{errors.name}</span>}  
     </div>
     <div>
-      <label>Phone:</label>
+      <label><strong>Phone:</strong></label>
       <input
         type="phone"
         name="phone"
@@ -96,7 +98,7 @@ const Update = () => {
     </div>
 
     <div>
-      <label>Email:</label>
+      <label><strong>Email:</strong></label>
       <input
         type="email"
         name="email"
@@ -108,7 +110,7 @@ const Update = () => {
     </div>
 
     <div>
-      <label>Password:</label>
+      <label><strong>Password:</strong></label>
       <input
         type="password"
         name="password"
@@ -119,7 +121,7 @@ const Update = () => {
         {errors.password && <span>{errors.password}</span>}  
     </div>
         <div>
-      <label htmlFor='confirmpassword'>Confirm Password:</label>
+      <label htmlFor='confirmpassword'><strong>Confirm Password:</strong></label>
       <input
         type="password"
         name="confirmPassword"
@@ -130,9 +132,11 @@ const Update = () => {
     </div>
         
                 <button type='submit' className='w-100 rounded-0'>Update</button>
-                Agree to terms and conditions
+                
                 <Link to={`/login`} className='btn border w-100 rounded-0 text-decoration-none'>Login</Link>
      </form>
+     </div>
+     </div>
   )
 }
 

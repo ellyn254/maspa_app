@@ -54,9 +54,10 @@ const Contact = () => {
   };
 
   return (
-   
+    <div className='d-flex vh-100 justify-content-center align-items-center'>
+    <div className='p-3 w-25 rounded bg-white'>
         <form onSubmit={handleSubmit}>
-          <h2>Contact Page</h2>
+          <h2><strong>Contact Page</strong></h2>
           <div className="mb-3">
             <label><strong>Email:</strong></label>
             <input
@@ -87,7 +88,8 @@ const Contact = () => {
           </div>
           <button type="submit" className="w-100">Submit</button>
         </form>
-   
+   </div>
+   </div>
   );
 };
 

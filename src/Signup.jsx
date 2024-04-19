@@ -88,10 +88,12 @@ const Signup = () => {
   };
 
   return (
-   
+    <div className='d-flex vh-100 justify-content-center align-items-center'>
+    <div className='p-3 w-25 rounded bg-white'>
         <form onSubmit={handleSubmit}>
+          <h2><strong>Sign Up</strong></h2>
           <div>
-            <label>Name:</label>
+            <label><strong>Name:</strong></label>
             <input
               type="text"
               name="name"
@@ -102,7 +104,7 @@ const Signup = () => {
             {errors.name && <span>{errors.name}</span>}
           </div>
           <div>
-            <label>Phone:</label>
+            <label><strong>Phone:</strong></label>
             <input
               type="phone"
               name="phone"
@@ -113,7 +115,7 @@ const Signup = () => {
             {errors.phone && <span>{errors.phone}</span>}
           </div>
           <div>
-            <label>Email:</label>
+            <label><strong>Email:</strong></label>
             <input
               type="email"
               name="email"
@@ -124,7 +126,7 @@ const Signup = () => {
             {errors.email && <span>{errors.email}</span>}
           </div>
           <div>
-            <label>Password:</label>
+            <label><strong>Password:</strong></label>
             <input
               type="password"
               name="password"
@@ -134,7 +136,7 @@ const Signup = () => {
             {errors.password && <span>{errors.password}</span>}
           </div>
           <div>
-            <label>Confirm Password:</label>
+            <label><strong>Confirm Password:</strong></label>
             <input
               type="password"
               name="confirmPassword"
@@ -146,7 +148,8 @@ const Signup = () => {
           <button type="submit" className="w-100 rounded-0">
             Register
           </button>
-          Agree to terms and conditions
+          <input type="checkbox" id="agreeCheckbox" />
+    <label for="agreeCheckbox">I agree to the terms and conditions</label>
           <Link
             to={`/login`}
             className="btn border w-100 rounded-0 text-decoration-none"
@@ -154,6 +157,8 @@ const Signup = () => {
             Login
           </Link>
         </form>
+        </div>
+        </div>
   );
 };
 

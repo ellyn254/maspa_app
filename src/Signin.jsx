@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
+import './Signup.css'
 // import parsePhoneNumberFromString from 'libphonenumber-js';
 
 const Signin = () => {
@@ -68,10 +69,12 @@ const Signin = () => {
     }
     }
   return (
-   
+    <div className='d-flex vh-100 justify-content-center align-items-center'>
+        <div className='p-3 w-25 rounded bg-white'>
     <form onSubmit={handleSubmit}>
+      <h2><strong>Sign In</strong></h2>
     <div>
-      <label>Email:</label>
+      <label><strong>Email:</strong></label>
       <input
         type="email"
         name="email"
@@ -82,7 +85,7 @@ const Signin = () => {
         {errors.email && <span>{errors.email}</span>}  
     </div>
     <div>
-      <label>Password:</label>
+      <label><strong>Password:</strong></label>
       <input
         type="password"
         name="password"
@@ -91,10 +94,13 @@ const Signin = () => {
       />
         {errors.password && <span>{errors.password}</span>}  
     </div>
-               <button type='submit' className='w-100 rounded-0'>Login</button>
-                Agree to terms and conditions
-                <Link to={`/register`} className='btn border w-100 rounded-0 text-decoration-none'>Create Account</Link>
+        <button type='submit' className='w-100 rounded-0'>Login</button>
+        <input type="checkbox" id="agreeCheckbox" />
+    <label for="agreeCheckbox">I agree to the terms and conditions</label>
+        <Link to={`/register`} className='btn border w-100 rounded-0 text-decoration-none'>Create Account</Link>
   </form>
+  </div>
+  </div>
   )
 }
 
