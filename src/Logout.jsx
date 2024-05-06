@@ -8,7 +8,7 @@ const Logout = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     // Clear any other user-specific data
-    history.push('/login');
+    history.push('/');
   };
 
   return (

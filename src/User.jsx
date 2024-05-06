@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios  from 'axios'
 import { Link } from 'react-router-dom'
+import Table from 'react-bootstrap/Table';
 
 const User = () => {
     const [user, setUser]= useState([])
 
 useEffect(() => {
-    axios.get('http://localhost:5000/')
+    axios.get('http://localhost:5000/user')
     .then(res => setUser(res.data))
     .catch(err => console.log(err))
 }, [])
@@ -26,9 +27,10 @@ useEffect(() => {
   return (
     <div className='d-flex vh-100 justify-content-center align-items-center'>
         <div className='p-3 w-75 rounded bg-white'>
+            <p>The table below is a list of all our registered users. WE appreciate your interest in registering with us and we are very delighted to have you as aour clients. </p>
             <h2>REACT CRUD APP</h2>
             <Link to={`/register`} className='btn btn-success'>ADD +</Link>
-            <table className='table table-danger table-striped'>
+            <Table response="md">
                 <thead>
                     <tr>
                        <th>Name</th>
@@ -54,7 +56,7 @@ useEffect(() => {
                         ))
                     }
                 </tbody>
-            </table>
+            </Table>
         </div>
     </div>
   )

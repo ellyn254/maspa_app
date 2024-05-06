@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input';
+import 'react-phone-number-input/style.css';
+import Flag from 'react-country-flag';
 import './Signup.css'
 
 const Update = () => {
@@ -9,7 +12,8 @@ const Update = () => {
         phone: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        countryCode: "KE" // Default to Kenya
       })
     
       const [errors, setErrors] = useState({})
@@ -20,6 +24,13 @@ const Update = () => {
             ...formData, [name] : value
         })
       }
+
+      const handlePhoneChange = (value) => {
+        setFormData({
+          ...formData,
+          phone: value,
+        });
+      };
     
       //to pass the id we use the useParams hook as below
     const {id} = useParams();
@@ -31,12 +42,10 @@ const Update = () => {
     if (!formData.name.trim()) {
       validationErrors.name = "name is required";
     }
-
     if (!formData.phone.trim()) {
-      validationErrors.phone = "phone number is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      // Validates 10-digit phone numbers
-      validationErrors.phone = "phone number should be 10 char";
+      validationErrors.phone = "Phone number is required";
+    } else if (!isValidPhoneNumber(formData.phone) && !/^\d{10}$/.test(formData.phone)) {
+      validationErrors.phone = "Phone number is not valid";
     }
 
     if (!formData.email.trim()) {
@@ -87,16 +96,20 @@ const Update = () => {
     </div>
     <div>
       <label><strong>Phone:</strong></label>
-      <input
-        type="phone"
-        name="phone"
-        placeholder='phone'  
-        autoComplete='off'  
-        onChange={handleChange}   
-      />
-        {errors.phone && <span>{errors.phone}</span>}  
-    </div>
-
+      <div className="phone-input">
+              <Flag countryCode={formData.countryCode} />
+              <PhoneInput
+                name="phone"
+                type="phone"
+                placeholder="Enter phone number"
+                autoComplete='off'
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                country="KE" // Set country to Kenya
+              />
+            </div>
+            {errors.phone && <span>{errors.phone}</span>}
+          </div>
     <div>
       <label><strong>Email:</strong></label>
       <input

@@ -10,6 +10,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "./images/lady.png";
 import User from "./User";
 import Update from "./Update";
+// import Test from './Test'
 
 function App() {
   const navRef = useRef();
@@ -22,10 +23,10 @@ function App() {
       <header>
         <img src={Image} alt="images" width={80} height={70} />
         <nav ref={navRef}>
-          <a href="/">Home</a>
-          <a href="/home">About</a>
+          <a href="/home">Home</a>
+          <a href="/user">About</a>
           <a href="/contact">Contact</a>
-          <a href="/register">Profile</a>
+          <a href="/register">Profile</a>  
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>
@@ -37,11 +38,12 @@ function App() {
 
       <div>
         <Routes>
-          <Route path="/" element={<User />}></Route>
+          {/* <Route path='/' element={<Test/>}></Route> */}
+          <Route path="/" element={<Signin />}></Route>
+          <Route path="/user" element={<User />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/register" element={<Signup />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/login" element={<Signin />}></Route>
           <Route path="/update/:id" element={<Update />}></Route>
         </Routes>
       </div>

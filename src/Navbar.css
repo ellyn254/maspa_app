@@ -9,7 +9,7 @@
 }
 
 :root {
-	--mainColor: rgba(128, 0, 128, 0.062);
+	--mainColor: black;
 	--mainColorLight: #5767aa;
 	--secondaryColor: #db2b39;
 	--textColor: #edededf3;

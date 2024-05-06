@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import './Signup.css'
-// import parsePhoneNumberFromString from 'libphonenumber-js';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input';
+import 'react-phone-number-input/style.css';
+import Flag from 'react-country-flag';
+import "./Signup.css";
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -11,9 +14,11 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    countryCode: "KE" // Default to Kenya
   });
 
   const [errors, setErrors] = useState({});
+  // const [termsChecked, setTermsChecked] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,19 +28,32 @@ const Signup = () => {
     });
   };
 
+  const handlePhoneChange = (value) => {
+    setFormData({
+      ...formData,
+      phone: value,
+    });
+  };
+  
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = {};
+
     if (!formData.name.trim()) {
       validationErrors.name = "name is required";
     }
 
+    // if (!formData.phone.trim()) {
+    //   validationErrors.phone = "phone number is required";
+    // } else if (!/^\d{10}$/.test(formData.phone)) {
+    //   // Validates 10-digit phone numbers
+    //   validationErrors.phone = "phone number should be 10 char";
+    // }
     if (!formData.phone.trim()) {
-      validationErrors.phone = "phone number is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      // Validates 10-digit phone numbers
-      validationErrors.phone = "phone number should be 10 char";
+      validationErrors.phone = "Phone number is required";
+    } else if (!isValidPhoneNumber(formData.phone) && !/^\d{10}$/.test(formData.phone)) {
+      validationErrors.phone = "Phone number is not valid";
     }
 
     if (!formData.email.trim()) {
@@ -46,13 +64,17 @@ const Signup = () => {
 
     if (!formData.password.trim()) {
       validationErrors.password = "password is required";
-    } else if (formData.password.length < 6) {
-      validationErrors.password = "password should be at least 6 char";
+    } else if (formData.password.length <6) {
+      validationErrors.password = "password should be a max of 8 char";
     }
 
     if (formData.confirmPassword !== formData.password) {
       validationErrors.confirmPassword = "password not matched";
     }
+
+    // if (!e.target.termsCheckbox.checked) {
+    //   validationErrors.terms = "Please accept our terms and conditions";
+    // }
 
     setErrors(validationErrors);
 
@@ -65,7 +87,7 @@ const Signup = () => {
         phone: formData.phone,
         email: formData.email,
         password: formData.password,
-        confirmPassword: formData.confirmPassword
+        confirmPassword: formData.confirmPassword,
       });
 
       if (res.data.error) {
@@ -84,16 +106,21 @@ const Signup = () => {
         // Other errors
         alert("An error occurred. Please try again later.");
       }
+    
     }
   };
 
   return (
-    <div className='d-flex vh-100 justify-content-center align-items-center'>
-    <div className='p-3 w-25 rounded bg-white'>
+    <div className="d-flex vh-100 justify-content-center align-items-center">
+      <div className="p-3 w-25 rounded bg-white">
         <form onSubmit={handleSubmit}>
-          <h2><strong>Sign Up</strong></h2>
+          <h2>
+            <strong>Sign Up</strong>
+          </h2>
           <div>
-            <label><strong>Name:</strong></label>
+            <label>
+              <strong>Name:</strong>
+            </label>
             <input
               type="text"
               name="name"
@@ -104,18 +131,26 @@ const Signup = () => {
             {errors.name && <span>{errors.name}</span>}
           </div>
           <div>
-            <label><strong>Phone:</strong></label>
-            <input
-              type="phone"
-              name="phone"
-              placeholder="phone"
-              autoComplete="off"
-              onChange={handleChange}
-            />
+            <label>
+              <strong>Phone:</strong>
+            </label>
+            <div className="phone-input">
+              <Flag countryCode={formData.countryCode} />
+              <PhoneInput
+                name="phone"
+                type="phone"
+                placeholder="Enter phone number"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                country="KE" // Set country to Kenya
+              />
+            </div>
             {errors.phone && <span>{errors.phone}</span>}
           </div>
           <div>
-            <label><strong>Email:</strong></label>
+            <label>
+              <strong>Email:</strong>
+            </label>
             <input
               type="email"
               name="email"
@@ -126,7 +161,9 @@ const Signup = () => {
             {errors.email && <span>{errors.email}</span>}
           </div>
           <div>
-            <label><strong>Password:</strong></label>
+            <label>
+              <strong>Password:</strong>
+            </label>
             <input
               type="password"
               name="password"
@@ -136,7 +173,9 @@ const Signup = () => {
             {errors.password && <span>{errors.password}</span>}
           </div>
           <div>
-            <label><strong>Confirm Password:</strong></label>
+            <label>
+              <strong>Confirm Password:</strong>
+            </label>
             <input
               type="password"
               name="confirmPassword"
@@ -145,20 +184,36 @@ const Signup = () => {
             />
             {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
           </div>
-          <button type="submit" className="w-100 rounded-0">
+          <div>
+            <input
+              type="checkbox"
+              id="termsCheckbox"
+              required
+            />
+            <label htmlFor="termsCheckbox">
+              I agree to the{" "}
+              <a href="terms_and_conditions.html" target="_blank">
+                terms and conditions
+              </a>
+            </label>
+            {/* {errors.terms && <span>{errors.terms}</span>} */}
+          </div>
+          <button
+            type="submit"
+            className="w-100 rounded-0"
+            // disabled={!termsChecked}
+          >
             Register
           </button>
-          <input type="checkbox" id="agreeCheckbox" />
-    <label for="agreeCheckbox">I agree to the terms and conditions</label>
           <Link
-            to={`/login`}
+            to={`/`}
             className="btn border w-100 rounded-0 text-decoration-none"
           >
             Login
           </Link>
         </form>
-        </div>
-        </div>
+      </div>
+    </div>
   );
 };
 

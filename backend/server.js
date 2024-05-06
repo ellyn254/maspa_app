@@ -17,7 +17,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "Ellyn@2024",
-  database: "spa"
+  database: "spa",
 });
 
 // Connect to MySQL
@@ -38,25 +38,29 @@ app.get("/api/products", (req, res) => {
 });
 
 // Endpoint to fetch stored email from MySQL ******PERFORM THE CONTACT API LOGIC**********
-app.get('/email', (req, res) => {
-	db.query('SELECT email FROM clients', (error, results) => {
-	  if (error) throw error;
-	  res.json(results);
-	});
+app.get("/email", (req, res) => {
+  db.query("SELECT email FROM clients", (error, results) => {
+    if (error) throw error;
+    res.json(results);
   });
-  
-  // Endpoint to submit messages to MySQL
-  app.post('/contact', (req, res) => {
-	const { email, message } = req.body;
-	// Perform validation and insertion into the database
-	db.query('INSERT INTO messages (email, message) VALUES (?, ?)', [email, message], (error, results) => {
-	  if (error) throw error;
-	  res.send('Message sent successfully');
-	});
-  });
+});
+
+// Endpoint to submit messages to MySQL
+app.post("/contact", (req, res) => {
+  const { email, message } = req.body;
+  // Perform validation and insertion into the database
+  db.query(
+    "INSERT INTO messages (email, message) VALUES (?, ?)",
+    [email, message],
+    (error, results) => {
+      if (error) throw error;
+      res.send("Message sent successfully");
+    }
+  );
+});
 
 //FETCH API
-app.get("/", (req, res) => {
+app.get("/user", (req, res) => {
   const sql = "SELECT * FROM clients";
   db.query(sql, (err, data) => {
     if (err) return res.json("Error");
@@ -72,26 +76,30 @@ app.post("/register", (req, res) => {
   if (!name || !phone || !email || !password || !confirmPassword) {
     return res.status(400).json({ error: "All fields are required" });
   }
-
+  // Check if passwords match
+  if (password !== confirmPassword) {
+    return res.status(400).json({ error: "Passwords do not match" });
+  }else if (confirmPassword !== password){
+    return res.status(400).json({error: "passwords should match" });
+  }
+    
   // Create SQL statement to insert data into the database
   const sql =
-    "INSERT INTO clients (`name`, `phone`, `email`, `password`, `confirmPassword`) VALUES (?)";
-  const values = [name, phone, email, password, confirmPassword];
+    "INSERT INTO clients (`name`, `phone`, `email`, `password`) VALUES (?)";
+  const values = [name, phone, email, password ];
 
   db.query(sql, [values], (err, result) => {
     if (err) {
       console.error("Error inserting record into the database:", err);
-      return res
-        .status(500)
-        .json({ error: "An error occurred while inserting data" });
+      return res.status(500).json({ error: "An error occurred while inserting data" });
     }
-    console.log("Record inserted successfully");
     return res.status(200).json({ message: "Record inserted successfully" });
   });
 });
 
+
 //LOGIN API
-app.post("/login", (req, res) => {
+app.post("/", (req, res) => {
   const { email, password } = req.body;
   // Check if any of the required fields are empty
   if (!email || !password) {
@@ -100,9 +108,9 @@ app.post("/login", (req, res) => {
   const sql = "SELECT * FROM clients WHERE `email` = ? AND `password` = ?";
   db.query(sql, [req.body.email, req.body.password], (err, data) => {
     if (data.length > 0) {
-      res.json({ success: true, message: "Login successful" });
+       return res.json({ success: true, message: "Login successful" });
     } else {
-      res.status(401).json({ success: false, message: "Invalid credentials" });
+      return res.status(401).json({ success: false, message: "Invalid credentials" });
     }
   });
 });
@@ -121,10 +129,12 @@ app.put("/update/:id", (req, res) => {
   if (password !== confirmPassword) {
     return res.status(400).json({ error: "Passwords do not match" });
   }
-
+// Check if passwords match
+  else if (confirmPassword !== password) {
+  return res.status(400).json({ error: "Passwords should match" });
+}
   // Update user in the database
-  const query =
-    "UPDATE clients SET name=?, phone=?, email=?, password=? WHERE id=?";
+  const query ="UPDATE clients SET name=?, phone=?, email=?, password=? WHERE id=?";
   db.query(query, [name, phone, email, password, id], (err, result) => {
     if (err) {
       console.error(err);
