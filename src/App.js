@@ -22,11 +22,14 @@ function App() {
     <BrowserRouter>
       <header>
         <img src={Image} alt="images" width={80} height={70} />
+        ELLYNBEAUTYSPA
         <nav ref={navRef}>
           <a href="/home">Home</a>
-          <a href="/user">About</a>
+          <a href="/about">About</a>
           <a href="/contact">Contact</a>
-          <a href="/register">Profile</a>  
+          <a href="/user">View</a>
+          <a href="/register">Profile</a>
+
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>

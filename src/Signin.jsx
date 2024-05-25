@@ -48,13 +48,13 @@ const Signin = () => {
         password: formData.password,
       });
       if (res.data.error === 401) {
-        // console.log(res.data.error);
-        toast.error(res.data.message || "Invalid credentials");
+        console.log(res.data.error);
+        alert(res.data.message || "Invalid credentials");
 
       } else {
-        // console.log(res.data.message);
-        toast.success(res.data.message || "Login successful");
-      navigate("/home");
+        console.log(res.data.message);
+        alert(res.data.message || "Login successful");
+         navigate("/home");
       }
 
     } catch (error) {

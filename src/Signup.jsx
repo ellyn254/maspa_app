@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input/input';
-import 'react-phone-number-input/style.css';
-import Flag from 'react-country-flag';
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input/input";
+import "react-phone-number-input/style.css";
+import Flag from "react-country-flag";
 import "./Signup.css";
-
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +13,7 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    countryCode: "KE" // Default to Kenya
+    countryCode: "KE", // Default to Kenya
   });
 
   const [errors, setErrors] = useState({});
@@ -34,7 +33,7 @@ const Signup = () => {
       phone: value,
     });
   };
-  
+
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +51,10 @@ const Signup = () => {
     // }
     if (!formData.phone.trim()) {
       validationErrors.phone = "Phone number is required";
-    } else if (!isValidPhoneNumber(formData.phone) && !/^\d{10}$/.test(formData.phone)) {
+    } else if (
+      !isValidPhoneNumber(formData.phone) &&
+      !/^\d{10}$/.test(formData.phone)
+    ) {
       validationErrors.phone = "Phone number is not valid";
     }
 
@@ -64,7 +66,7 @@ const Signup = () => {
 
     if (!formData.password.trim()) {
       validationErrors.password = "password is required";
-    } else if (formData.password.length <6) {
+    } else if (formData.password.length < 6) {
       validationErrors.password = "password should be a max of 8 char";
     }
 
@@ -91,10 +93,14 @@ const Signup = () => {
       });
 
       if (res.data.error) {
-        `setFormData.name({})``setFormData.phone({})``setFormData.email({})``setFormData.password({})``setFormData.confirmPassword({})`;
+        setFormData.name('')
+        setFormData.phone('')
+        setFormData.email('')
+        setFormData.password('')
+        setFormData.confirmPassword('')
       } else {
         console.log(res.data.message);
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -106,7 +112,6 @@ const Signup = () => {
         // Other errors
         alert("An error occurred. Please try again later.");
       }
-    
     }
   };
 
@@ -185,11 +190,7 @@ const Signup = () => {
             {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
           </div>
           <div>
-            <input
-              type="checkbox"
-              id="termsCheckbox"
-              required
-            />
+            <input type="checkbox" id="termsCheckbox" required />
             <label htmlFor="termsCheckbox">
               I agree to the{" "}
               <a href="terms_and_conditions.html" target="_blank">
