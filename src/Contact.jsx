@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
-import './Signup.css'
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./contact.css";
+import { SocialIcon } from "react-social-icons";
 
 const Contact = () => {
   const [values, setValues] = useState({
-    email: '',
-    message: ''
+    email: "",
+    message: "",
   });
   const [storedEmails, setStoredEmails] = useState([]);
 
   useEffect(() => {
     // Fetch stored emails from the backend
-    axios.get('http://localhost:5000/email')
-      .then(response => {
-        setStoredEmails(response.data.map(item => item.email));
+    axios
+      .get("http://localhost:5000/email")
+      .then((response) => {
+        setStoredEmails(response.data.map((item) => item.email));
       })
-      .catch(error => {
-        console.error('Error fetching emails:', error);
+      .catch((error) => {
+        console.error("Error fetching emails:", error);
       });
   }, []);
 
@@ -26,7 +27,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setValues({
       ...values,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -35,61 +36,121 @@ const Contact = () => {
     // Check if the entered email is valid
     if (storedEmails.includes(values.email)) {
       // Send message to the backend
-      axios.post('http://localhost:5000/contact', values)
-        .then(response => {
-          console.log('Message sent successfully:', response.data);
+      axios
+        .post("http://localhost:5000/contact", values)
+        .then((response) => {
+          console.log(response.data);
+          alert("Message sent successfully");
           // Clear form fields
           setValues({
-            email: '',
-            message: ''
+            email: "",
+            message: "",
           });
         })
-        .catch(error => {
-          console.error('Error sending message:', error);
+        .catch((error) => {
+          console.error("Email duplicate entry", error);
+          alert("Error sending the mmessage duplicate entry for email");
+          //clear the for fields
+          setValues({
+            email: "",
+          });
         });
     } else {
-      alert('Please register with us first.');
-      navigate('/register')
+      alert("Please register with us first.");
+      navigate("/register");
     }
   };
 
   return (
-    <div className='d-flex vh-100 justify-content-center align-items-center'>
-    <div className='p-3 w-25 rounded bg-white'>
-        <form onSubmit={handleSubmit}>
-          <h2><strong>Contact Page</strong></h2>
-          <div className="mb-3">
-            <label><strong>Email:</strong></label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              name="email"
-              placeholder="Enter email registered with us"
-              value={values.email}
-              onChange={handleChange}
-              required
-              autoComplete='off'
-            />
-          </div>
+    <>
+      <div className="container">
+        <div className="form-container">
+          <form onSubmit={handleSubmit}>
+            <h2>
+              <strong>Contact Page</strong>
+            </h2>
+            <div className="mb-3">
+              <label>
+                <strong>Email:</strong>
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter email registered with us"
+                value={values.email}
+                onChange={handleChange}
+                required
+                autoComplete="off"
+              />
+            </div>
 
-          <div className="mb-3">
-            <label><strong>Message:</strong></label>
-            <textarea
-              className="form-control"
-              id="message"
-              name="message"
-              placeholder="compose a message"
-              value={values.message}
-              onChange={handleChange}
-              required
-              autoComplete='off'
-            />
+            <div className="mb-3">
+              <label>
+                <strong>Message:</strong>
+              </label>
+              <textarea
+                className="form-control"
+                id="message"
+                name="message"
+                placeholder="Compose a message"
+                value={values.message}
+                onChange={handleChange}
+                required
+                autoComplete="off"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary w-100">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section about">
+            <h3>About Us</h3>
+            <p>
+              We are a company dedicated to providing the best services and
+              products.
+            </p>
           </div>
-          <button type="submit" className="w-100">Submit</button>
-        </form>
-   </div>
-   </div>
+          <div className="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/services">Services</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+              <li>
+                <a href="/privacy">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-section social">
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+              <SocialIcon icon="facebook" url="https://facebook.com" />
+
+              <SocialIcon url="https://twitter.com" icon="twitter" />
+
+              <SocialIcon icon="instagram" url="https://instagram.com" />
+
+              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+            </div>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
+        </div>
+      </footer>
+    </>
   );
 };
 

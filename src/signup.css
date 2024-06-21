@@ -1,0 +1,187 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.p-3 {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div {
+  margin-bottom: 1rem;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form .phone-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+form span {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+}
+
+.phone-input .PhoneInputInput {
+  flex: 1;
+}
+
+form button {
+  padding: 0.75rem;
+  border: none;
+  background-color: #331029de;
+  color: #fff;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #331029de;
+}
+
+form .btn {
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0.75rem;
+  border: 1px solid #331029de;
+  background-color: #fff;
+  color: #331029de;
+  cursor: pointer;
+}
+
+form .btn:hover {
+  background-color: #e7f1ff;
+}
+
+@media (max-width: 768px) {
+  .w-25 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .w-25 {
+    width: 75%;
+  }
+
+  .phone-input {
+    flex-direction: column;
+  }
+
+  .phone-input .PhoneInputInput {
+    width: 100%;
+  }
+}
+/* Footer.css */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section a:hover {
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+}

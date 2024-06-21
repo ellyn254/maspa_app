@@ -1,12 +1,133 @@
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  margin-bottom: auto;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+.products-card {
+  padding: 2rem;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 100%;
+  max-width: 1500px;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
 .products {
   display: flex;
-  flex-direction: row;
-  margin-top: 20vh;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.products > div {
+  flex: 1 1 150px;
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #352c2c;
+  border-radius: 8px;
   text-align: center;
+  background-color: #f9f9f9;
 }
 
 .img {
-  height: 200px;
-  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.btn-cart {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #331029de;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-cart:hover {
+  background-color: #e7ecf1;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-top: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+
+  .products {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .products > div {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
 }

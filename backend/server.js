@@ -1,11 +1,11 @@
 //index.js
 
-const express = require("express");
-const cors = require("cors");
-const mysql = require("mysql");
-const data = require("./products.json");
+const express = require("express"); //the server
+const cors = require("cors"); //the use of 'app.methods' middleware
+const mysql = require("mysql"); //the db
+const data = require("./products.json"); //json file or data
 
-const app = express();
+const app = express(); //this is the locally hosting server for this application
 app.use(express.json()); //used to pass data to payload
 app.use(cors());
 
@@ -63,7 +63,7 @@ app.post("/contact", (req, res) => {
 app.get("/user", (req, res) => {
   const sql = "SELECT * FROM clients";
   db.query(sql, (err, data) => {
-    if (err) return res.json("Error");
+    if (err) return res.json("Error has occured");
     return res.json(data);
   });
 });
@@ -79,24 +79,25 @@ app.post("/register", (req, res) => {
   // Check if passwords match
   if (password !== confirmPassword) {
     return res.status(400).json({ error: "Passwords do not match" });
-  }else if (confirmPassword !== password){
-    return res.status(400).json({error: "passwords should match" });
+  } else if (confirmPassword !== password) {
+    return res.status(400).json({ error: "passwords should match" });
   }
-    
+
   // Create SQL statement to insert data into the database
   const sql =
     "INSERT INTO clients (`name`, `phone`, `email`, `password`) VALUES (?)";
-  const values = [name, phone, email, password ];
+  const values = [name, phone, email, password];
 
   db.query(sql, [values], (err, result) => {
     if (err) {
       console.error("Error inserting record into the database:", err);
-      return res.status(500).json({ error: "An error occurred while inserting data" });
+      return res
+        .status(500)
+        .json({ error: "An error occurred while inserting data" });
     }
     return res.status(200).json({ message: "Record inserted successfully" });
   });
 });
-
 
 //LOGIN API
 app.post("/", (req, res) => {
@@ -108,9 +109,11 @@ app.post("/", (req, res) => {
   const sql = "SELECT * FROM clients WHERE `email` = ? AND `password` = ?";
   db.query(sql, [req.body.email, req.body.password], (err, data) => {
     if (data.length > 0) {
-       return res.json({ success: true, message: "Login successful" });
+      return res.json({ success: true, message: "Login successful" });
     } else {
-      return res.status(401).json({ success: false, message: "Invalid credentials" });
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid credentials" });
     }
   });
 });
@@ -129,12 +132,13 @@ app.put("/update/:id", (req, res) => {
   if (password !== confirmPassword) {
     return res.status(400).json({ error: "Passwords do not match" });
   }
-// Check if passwords match
+  // Check if passwords match
   else if (confirmPassword !== password) {
-  return res.status(400).json({ error: "Passwords should match" });
-}
+    return res.status(400).json({ error: "Passwords should match" });
+  }
   // Update user in the database
-  const query ="UPDATE clients SET name=?, phone=?, email=?, password=? WHERE id=?";
+  const query =
+    "UPDATE clients SET name=?, phone=?, email=?, password=? WHERE id=?";
   db.query(query, [name, phone, email, password, id], (err, result) => {
     if (err) {
       console.error(err);
