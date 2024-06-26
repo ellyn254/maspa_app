@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./contact.css";
 import { SocialIcon } from "react-social-icons";
 
@@ -105,6 +105,17 @@ const Contact = () => {
               Submit
             </button>
           </form>
+        </div>
+      </div>
+      <div className="lowerdiv">
+        <p className="text">
+          These are our feedbacks from esteemed customers. <br />
+          Allan Kheyt, customer
+        </p>
+        <div className="div">
+          <Link to={`/contact`} className="button">
+            TALK TO US
+          </Link>
         </div>
       </div>
       <footer className="footer">

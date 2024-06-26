@@ -71,7 +71,7 @@ const Update = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Form Submitted successfully");
+      alert("Form updated successfully");
 
       axios
         .put(`http://localhost:5000/update/${id}`, formData)
@@ -172,6 +172,17 @@ const Update = () => {
               Login
             </Link>
           </form>
+        </div>
+      </div>
+      <div className="lowerdiv">
+        <p className="text">
+          These are our feedbacks from esteemed customers. <br />
+          Allan Kheyt, customer
+        </p>
+        <div className="div">
+          <Link to={`/contact`} className="button">
+            TALK TO US
+          </Link>
         </div>
       </div>
       <footer className="footer">

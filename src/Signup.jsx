@@ -18,7 +18,7 @@ const Signup = () => {
   });
 
   const [errors, setErrors] = useState({});
-  // const [termsChecked, setTermsChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,13 +35,12 @@ const Signup = () => {
     });
   };
 
-  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = {};
 
     if (!formData.name.trim()) {
-      validationErrors.name = "name is required";
+      validationErrors.name = "Name is required";
     }
 
     if (!formData.phone.trim()) {
@@ -54,80 +53,78 @@ const Signup = () => {
     }
 
     if (!formData.email.trim()) {
-      validationErrors.email = "email is required";
+      validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      validationErrors.email = "email is not valid";
+      validationErrors.email = "Email is not valid";
     }
 
     if (!formData.password.trim()) {
-      validationErrors.password = "password is required";
+      validationErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      validationErrors.password = "password should be a max of 8 char";
+      validationErrors.password = "Password should be at least 6 characters";
     }
 
     if (formData.confirmPassword !== formData.password) {
-      validationErrors.confirmPassword = "password not matched";
+      validationErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Form Submitted successfully");
-    }
-    try {
-      const res = await axios.post("http://localhost:5000/register", {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        password: formData.password,
-        confirmPassword: formData.confirmPassword,
-      });
-
-      if (res.data.error) {
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
+      try {
+        const res = await axios.post("http://localhost:5000/register", {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword,
         });
-      } else {
-        console.log(res.data.message);
-        navigate("/");
-      }
-    } catch (error) {
-      console.error(error);
-      if (error.response && error.response.status === 400) {
-        alert("All fields are required");
-      } else {
-        alert("An error occurred. Please try again later.");
+
+        if (res.data.error) {
+          alert(res.data.message);
+        } else {
+          console.log(res.data.message);
+          navigate("/");
+        }
+      } catch (error) {
+        console.error(error);
+        if (error.response && error.response.status === 400) {
+          alert("All fields are required");
+        } else {
+          alert("An error occurred. Please try again later.");
+        }
       }
     }
   };
 
   return (
     <>
-      <div className="d-flex vh-100 justify-content-center align-items-center">
-        <div className="p-3 w-25 rounded bg-white">
+      <div className="signup-container d-flex vh-100 justify-content-center align-items-center">
+        <div className="form-container p-4 rounded bg-white shadow">
           <form onSubmit={handleSubmit}>
-            <h2>
+            <h2 className="text-center mb-4">
               <strong>Sign Up</strong>
             </h2>
-            <div>
-              <label>Name:</label>
+            <div className="form-group mb-3">
+              <label>
+                <strong>Name:</strong>
+              </label>
               <input
                 type="text"
                 name="name"
-                placeholder="name"
+                placeholder="Name"
                 autoComplete="off"
+                className="form-control"
                 onChange={handleChange}
               />
-              {errors.name && <span>{errors.name}</span>}
+              {errors.name && <span className="error">{errors.name}</span>}
             </div>
-            <div>
-              <label>Phone:</label>
-              <div className="phone-input">
-                <Flag countryCode={formData.countryCode} />
+            <div className="form-group mb-3">
+              <label>
+                <strong>Phone:</strong>
+              </label>
+              <div className="phone-input d-flex align-items-center">
+                <Flag countryCode={formData.countryCode} className="me-2" />
                 <PhoneInput
                   name="phone"
                   type="phone"
@@ -135,65 +132,95 @@ const Signup = () => {
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   country="KE"
+                  className="form-control"
                 />
               </div>
-              {errors.phone && <span>{errors.phone}</span>}
+              {errors.phone && <span className="error">{errors.phone}</span>}
             </div>
-            <div>
-              <label>Email:</label>
+            <div className="form-group mb-3">
+              <label>
+                <strong>Email:</strong>
+              </label>
               <input
                 type="email"
                 name="email"
                 placeholder="example@gmail.com"
                 autoComplete="off"
+                className="form-control"
                 onChange={handleChange}
               />
-              {errors.email && <span>{errors.email}</span>}
+              {errors.email && <span className="error">{errors.email}</span>}
             </div>
-            <div>
-              <label>Password:</label>
+            <div className="form-group mb-3">
+              <label>
+                <strong>Password:</strong>
+              </label>
               <input
                 type="password"
                 name="password"
-                placeholder="enter password******"
+                placeholder="Enter password"
+                className="form-control"
                 onChange={handleChange}
               />
-              {errors.password && <span>{errors.password}</span>}
+              {errors.password && (
+                <span className="error">{errors.password}</span>
+              )}
             </div>
-            <div>
-              <label>Confirm Password:</label>
+            <div className="form-group mb-3">
+              <label>
+                <strong>Confirm Password:</strong>
+              </label>
               <input
                 type="password"
                 name="confirmPassword"
-                placeholder="Re-enter password ********"
+                placeholder="Re-enter password"
+                className="form-control"
                 onChange={handleChange}
               />
-              {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+              {errors.confirmPassword && (
+                <span className="error">{errors.confirmPassword}</span>
+              )}
             </div>
-            <div>
-              <input type="checkbox" id="termsCheckbox" required />
-              <label htmlFor="termsCheckbox">
-                I agree to the
-                <a href="terms_and_conditions.html" target="_blank">
+            <div className="form-group form-check mb-3">
+              <input
+                type="checkbox"
+                id="termsCheckbox"
+                className="form-check-input"
+                required
+              />
+              <label htmlFor="termsCheckbox" className="form-check-label">
+                I agree to the{" "}
+                <a
+                  href="terms_and_conditions.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   terms and conditions
                 </a>
               </label>
             </div>
-            <button type="submit" className="w-100 rounded-0">
+            <button type="submit" className="btn btn-primary w-100 mb-3">
               Register
             </button>
-            <Link
-              to={`/`}
-              className="btn border w-100 rounded-0 text-decoration-none"
-            >
+            <Link to={`/`} className="btn btn-secondary w-100">
               Login
             </Link>
           </form>
         </div>
       </div>
-
-      <footer className="footer">
-        <div className="footer-content">
+      <div className="lowerdiv">
+        <p className="text">
+          These are our feedbacks from esteemed customers. <br />
+          Allan Kheyt, customer
+        </p>
+        <div className="div">
+          <Link to={`/contact`} className="button">
+            TALK TO US
+          </Link>
+        </div>
+      </div>
+      <footer className="footer mt-5">
+        <div className="footer-content d-flex justify-content-around">
           <div className="footer-section about">
             <h3>About Us</h3>
             <p>
@@ -203,7 +230,7 @@ const Signup = () => {
           </div>
           <div className="footer-section links">
             <h3>Quick Links</h3>
-            <ul>
+            <ul className="list-unstyled">
               <li>
                 <a href="/about">About</a>
               </li>
@@ -221,17 +248,14 @@ const Signup = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" />
-
-              <SocialIcon url="https://twitter.com" icon="twitter" />
-
-              <SocialIcon icon="instagram" url="https://instagram.com" />
-
-              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+              <SocialIcon url="https://facebook.com" className="me-2" />
+              <SocialIcon url="https://twitter.com" className="me-2" />
+              <SocialIcon url="https://instagram.com" className="me-2" />
+              <SocialIcon url="https://linkedin.com" />
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className="footer-bottom text-center py-3">
           &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
         </div>
       </footer>

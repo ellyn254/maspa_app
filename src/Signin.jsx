@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-// import { ToastContainer, toast, Zoom } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-import "./signin.css";
 import { SocialIcon } from "react-social-icons";
+import "./signin.css";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -70,12 +68,12 @@ const Signin = () => {
   return (
     <>
       <div className="signin-container d-flex vh-100 justify-content-center align-items-center">
-        <div className="form-container p-3 rounded bg-white">
+        <div className="form-container p-4 rounded bg-white shadow">
           <form onSubmit={handleSubmit}>
-            <h2>
+            <h2 className="text-center mb-4">
               <strong>Sign In</strong>
             </h2>
-            <div className="form-group">
+            <div className="form-group mb-3">
               <label>
                 <strong>Email:</strong>
               </label>
@@ -84,12 +82,12 @@ const Signin = () => {
                 name="email"
                 placeholder="example@gmail.com"
                 autoComplete="off"
+                className="form-control"
                 onChange={handleChange}
               />
-              {/* the coden below used to restrict input to have some data */}
               {errors.email && <span className="error">{errors.email}</span>}
             </div>
-            <div className="form-group">
+            <div className="form-group mb-3">
               <label>
                 <strong>Password:</strong>
               </label>
@@ -97,16 +95,22 @@ const Signin = () => {
                 type="password"
                 name="password"
                 placeholder="******"
+                className="form-control"
                 onChange={handleChange}
               />
               {errors.password && (
                 <span className="error">{errors.password}</span>
               )}
             </div>
-            <div className="form-group">
-              <input type="checkbox" id="termsCheckbox" required />
-              <label htmlFor="termsCheckbox">
-                I agree to the
+            <div className="form-group form-check mb-3">
+              <input
+                type="checkbox"
+                id="termsCheckbox"
+                className="form-check-input"
+                required
+              />
+              <label htmlFor="termsCheckbox" className="form-check-label">
+                I agree to the{" "}
                 <a
                   href="terms_and_conditions.html"
                   target="_blank"
@@ -116,20 +120,28 @@ const Signin = () => {
                 </a>
               </label>
             </div>
-            <button type="submit" className="btn-submit w-100 rounded-0">
+            <button type="submit" className="btn btn-primary w-100 mb-3">
               Login
             </button>
-            <Link
-              to="/register"
-              className="btn-create-account w-100 rounded-0 text-decoration-none"
-            >
+            <Link to="/register" className="btn btn-secondary w-100">
               Create Account
             </Link>
           </form>
         </div>
       </div>
-      <footer className="footer">
-        <div className="footer-content">
+      <div className="lowerdiv">
+        <p className="text">
+          These are our feedbacks from esteemed customers. <br />
+          Allan Kheyt, customer
+        </p>
+        <div className="div">
+          <Link to={`/contact`} className="button">
+            TALK TO US
+          </Link>
+        </div>
+      </div>
+      <footer className="footer mt-5">
+        <div className="footer-content d-flex justify-content-around">
           <div className="footer-section about">
             <h3>About Us</h3>
             <p>
@@ -139,7 +151,7 @@ const Signin = () => {
           </div>
           <div className="footer-section links">
             <h3>Quick Links</h3>
-            <ul>
+            <ul className="list-unstyled">
               <li>
                 <a href="/about">About</a>
               </li>
@@ -157,14 +169,14 @@ const Signin = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" />
-              <SocialIcon url="https://twitter.com" icon="twitter" />
-              <SocialIcon icon="instagram" url="https://instagram.com" />
-              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+              <SocialIcon url="https://facebook.com" className="me-2" />
+              <SocialIcon url="https://twitter.com" className="me-2" />
+              <SocialIcon url="https://instagram.com" className="me-2" />
+              <SocialIcon url="https://linkedin.com" />
             </div>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className="footer-bottom text-center py-3">
           &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
         </div>
       </footer>

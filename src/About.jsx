@@ -3,14 +3,13 @@ import bgimage from "./images/bg.jpg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
-
 import React from "react";
 
 const About = () => {
   return (
     <>
       <div className="container">
-        <img src={bgimage} alt="" className="image" />
+        <img src={bgimage} alt="Background" className="image" />
         <div className="information">
           <h1>About Us</h1>
           <p>
@@ -65,12 +64,11 @@ const About = () => {
           Allan Kheyt, customer
         </p>
         <div className="div">
-          <Link to={`/contact`} className="button">
+          <Link to="/contact" className="button">
             TALK TO US
           </Link>
         </div>
       </div>
-      {/* *************************************************************************************** */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section about">
@@ -101,18 +99,14 @@ const About = () => {
             <h3>Follow Us</h3>
             <div className="social-icons">
               <SocialIcon icon="facebook" url="https://facebook.com" />
-
               <SocialIcon url="https://twitter.com" icon="twitter" />
-
               <SocialIcon icon="instagram" url="https://instagram.com" />
-
               <SocialIcon url="https://linkedin.com" icon="linkedin" />
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; {new Date().getFullYear()} Ellyn Beauty SPA. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
         </div>
       </footer>
     </>

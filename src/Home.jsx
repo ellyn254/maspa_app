@@ -15,7 +15,7 @@ const Home = ({ data, addToCart }) => {
               <h1>{product.name}</h1>
               <p>{product.description}</p>
               <p>{product.rate}</p>
-              <p>{product.price}</p>
+              <p>${product.price}</p>
               <button onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
           ))}
