@@ -12,6 +12,7 @@ app.use(express.json()); //used to pass data to payload
 app.use(cookieParser());
 app.use(
   cors({
+    // origin: 'https://maspa-react.web.app'
     origin: ["http://localhost:3000"], //make sure it is localhost to be able to display cookies.
     methods: ["POST, GET, PUT, DELETE"],
     credentials: true,
