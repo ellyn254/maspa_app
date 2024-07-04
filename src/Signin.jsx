@@ -20,7 +20,7 @@ const Signin = () => {
       [name]: value,
     });
   };
-
+  axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = {};
@@ -28,7 +28,6 @@ const Signin = () => {
     if (!formData.email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      validationErrors.email = "Email is not valid";
     }
 
     if (!formData.password.trim()) {
@@ -41,24 +40,25 @@ const Signin = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const res = await axios.post("http://localhost:5000/", {
+        const res = await axios.post("http://localhost:5000", {
           email: formData.email,
           password: formData.password,
         });
 
-        if (res.data.error === 401) {
-          console.log(res.data.error);
-          alert("Invalid credentials");
-        } else {
-          console.log(res.data.message);
+        if (res.data.Status) {
+          console.log(res.data.Status);
           alert("Login successful");
           navigate("/home");
+        } else {
+          console.log(res.data.error);
+          alert(res.data.error || "Password do not match!");
+          setFormData({ ...formData, password: "" }); // Clear the password field
         }
       } catch (error) {
-        if (error.response && error.response.status === 400) {
-          alert("All fields are required");
+        if (error.response && error.response.status === 500) {
+          alert("Email does not exist");
         } else {
-          alert("Unauthorized user. Please create an account");
+          alert("User not found please register");
           navigate("/register");
         }
       }

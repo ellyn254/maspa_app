@@ -80,16 +80,19 @@ const Signup = () => {
           confirmPassword: formData.confirmPassword,
         });
 
-        if (res.data.error) {
+        if (res.data.message && res.status === 200) {
           alert(res.data.message);
-        } else {
-          console.log(res.data.message);
+          console.log(res.data.Status);
           navigate("/");
+        } else {
+          alert("error");
         }
       } catch (error) {
         console.error(error);
         if (error.response && error.response.status === 400) {
-          alert("All fields are required");
+          alert("All fields are required. Passwords do not match");
+        } else if (error.response && error.response.status === 500) {
+          alert("Server error. Please try again later.");
         } else {
           alert("An error occurred. Please try again later.");
         }

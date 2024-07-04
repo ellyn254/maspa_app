@@ -56,6 +56,9 @@
 .user-card .btn-primary {
   margin-right: 0.5rem;
 }
+.user-card .btn-danger {
+  margin-left: 0.5rem;
+}
 
 /* Responsive Styles */
 @media (max-width: 576px) {

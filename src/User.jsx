@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import { SocialIcon } from "react-social-icons";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './user.css';  // Custom CSS file for additional styling
 
 const User = () => {
   const [user, setUser] = useState([]);
@@ -17,9 +19,7 @@ const User = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete("http://localhost:5000/user/" + id);
-      //after successful deletion
       window.location.reload();
-      //else catch the error
     } catch (err) {
       console.log(err);
     }
@@ -27,18 +27,18 @@ const User = () => {
 
   return (
     <>
-      <div className="d-flex vh-100 justify-content-center align-items-center">
-        <div className="p-3 w-75 rounded bg-white">
+      <div className="container mt-4">
+        <div className="user-card p-4 rounded shadow">
           <p>
-            The table below is a list of all our registered users. WE appreciate
+            The table below is a list of all our registered users. We appreciate
             your interest in registering with us and we are very delighted to
-            have you as aour clients.{" "}
+            have you as our clients.
           </p>
-          <h2>REACT CRUD APP</h2>
-          <Link to={`/register`} className="btn btn-success">
+          <h2 className="my-4">REACT CRUD APP</h2>
+          <Link to={`/register`} className="btn btn-success mb-3">
             ADD +
           </Link>
-          <Table response="md">
+          <Table striped bordered hover responsive="md">
             <thead>
               <tr>
                 <th>Name</th>
@@ -58,14 +58,13 @@ const User = () => {
                   <td>
                     <Link
                       to={`update/${data.id}`}
-                      className="btn btn-primary"
-                      style={{ marginRight: 20 }}
+                      className="btn btn-primary me-2"
                     >
                       Update
                     </Link>
                     <button
                       className="btn btn-danger"
-                      onClick={(e) => handleDelete(data.id)}
+                      onClick={() => handleDelete(data.id)}
                     >
                       Delete
                     </button>
@@ -76,18 +75,17 @@ const User = () => {
           </Table>
         </div>
       </div>
-      <div className="lowerdiv">
+     <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />
           Allan Kheyt, customer
         </p>
         <div className="div">
-          <Link to={`/contact`} className="button">
+          <Link to="/contact" className="button">
             TALK TO US
           </Link>
         </div>
       </div>
-      {/* *************************************************************************************** */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section about">
@@ -118,18 +116,14 @@ const User = () => {
             <h3>Follow Us</h3>
             <div className="social-icons">
               <SocialIcon icon="facebook" url="https://facebook.com" />
-
               <SocialIcon url="https://twitter.com" icon="twitter" />
-
               <SocialIcon icon="instagram" url="https://instagram.com" />
-
               <SocialIcon url="https://linkedin.com" icon="linkedin" />
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; {new Date().getFullYear()} Ellyn Beauty SPA. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
         </div>
       </footer>
     </>

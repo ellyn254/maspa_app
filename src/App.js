@@ -15,6 +15,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Cart from "./Cart";
 import axios from "axios";
 import Service from "./Service";
+import Logout from "./Logout";
 
 function App() {
   const navRef = useRef();
@@ -72,6 +73,13 @@ function App() {
     },
     // Add more products as needed
   ];
+
+  // function to perform logout action
+  const handleLogout = () => {
+    // Logic to end the session
+    console.log("Session ended");
+    sessionStorage.clear(); // Clear session storage
+  };
 
   return (
     <BrowserRouter>
@@ -133,6 +141,7 @@ function App() {
             }
           />
           <Route path="/services" element={<Service />} />
+          <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
         </Routes>
       </div>
     </BrowserRouter>

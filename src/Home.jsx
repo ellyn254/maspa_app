@@ -5,6 +5,8 @@ import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 
 const Home = ({ data, addToCart }) => {
+  
+
   return (
     <>
       <div className="App">
@@ -70,8 +72,7 @@ const Home = ({ data, addToCart }) => {
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; {new Date().getFullYear()} Ellyn Beauty SPA. All rights
-          reserved.
+          &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
         </div>
       </footer>
     </>
