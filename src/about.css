@@ -23,6 +23,8 @@ body {
 }
 
 .information {
+  height: auto;
+  margin-bottom: 16px;
   width: 100%;
   text-align: justify;
   justify-content: space-evenly;
@@ -190,6 +192,7 @@ body {
 
 .footer-section h3 {
   margin-bottom: 10px;
+  color: #ccc;
 }
 
 .footer-section p,

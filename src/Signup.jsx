@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input/input";
 import "react-phone-number-input/style.css";
+// import { useMediaQuery } from "react-responsive";
 import Flag from "react-country-flag";
 import "./signup.css";
 import { SocialIcon } from "react-social-icons";
@@ -192,7 +193,7 @@ const Signup = () => {
                 required
               />
               <label htmlFor="termsCheckbox" className="form-check-label">
-                I agree to the{" "}
+                I agree to the
                 <a
                   href="terms_and_conditions.html"
                   target="_blank"
@@ -201,6 +202,9 @@ const Signup = () => {
                   terms and conditions
                 </a>
               </label>
+              <Link to={`/forgotpassword`} className="forgot">
+                forgot-password
+              </Link>
             </div>
             <button type="submit" className="btn btn-primary w-100 mb-3">
               Register
@@ -251,10 +255,10 @@ const Signup = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon url="https://facebook.com" className="me-2" />
-              <SocialIcon url="https://twitter.com" className="me-2" />
-              <SocialIcon url="https://instagram.com" className="me-2" />
-              <SocialIcon url="https://linkedin.com" />
+              <SocialIcon icon="facebook" url="https://facebook.com" />
+              <SocialIcon url="https://twitter.com" icon="twitter" />
+              <SocialIcon icon="instagram" url="https://instagram.com" />
+              <SocialIcon url="https://linkedin.com" icon="linkedin" />
             </div>
           </div>
         </div>

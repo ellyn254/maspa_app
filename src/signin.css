@@ -88,6 +88,10 @@ input[type="checkbox"] {
 .btn-create-account:hover {
   background-color: #8a8080;
 }
+/* forgot-password */
+.forgot {
+  margin-left: 200px;
+}
 
 /* Footer styling */
 .footer {

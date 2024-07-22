@@ -148,6 +148,10 @@ button:focus {
   font-size: 0.875em;
   margin-top: 5px;
 }
+/* forgot-password */
+.forgot {
+  margin-left: 180px;
+}
 
 /* Lower div */
 .lowerdiv {

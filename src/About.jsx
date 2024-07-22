@@ -10,6 +10,7 @@ const About = () => {
     <>
       <div className="container">
         <img src={bgimage} alt="Background" className="image" />
+       
         <div className="information">
           <h1>About Us</h1>
           <p>
@@ -21,17 +22,6 @@ const About = () => {
             through innovation. We offer some of the best of the class designs
             and layouts for interior designing projects Our creations are often
             unique just for the client’s taste.
-          </p>
-          <p>
-            We understand that every client has a unique requirement in
-            constructing their interior spaces. That it can have personalized
-            choices which not everyone satisfies altogether. That is why we have
-            our services range from interior design only service, interior
-            construction only and the entire interior designing and construction
-            projects as well. This gives us the opportunity to be able to offer
-            flexibility to our clients based on the conveniences of their
-            requirement. Whatever we do, we believe in three fundamental values
-            that we will never compromise no matter what service we provide.
           </p>
           <ul>
             <li>Design blended with architecture.</li>

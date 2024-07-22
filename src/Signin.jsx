@@ -120,6 +120,9 @@ const Signin = () => {
                 </a>
               </label>
             </div>
+            <Link to={`/forgotpassword`} className="forgot">
+              forgot-password
+            </Link>
             <button type="submit" className="btn btn-primary w-100 mb-3">
               Login
             </button>
@@ -169,10 +172,10 @@ const Signin = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon url="https://facebook.com" className="me-2" />
-              <SocialIcon url="https://twitter.com" className="me-2" />
-              <SocialIcon url="https://instagram.com" className="me-2" />
-              <SocialIcon url="https://linkedin.com" />
+              <SocialIcon icon="facebook" url="https://facebook.com" />
+              <SocialIcon url="https://twitter.com" icon="twitter" />
+              <SocialIcon icon="instagram" url="https://instagram.com" />
+              <SocialIcon url="https://linkedin.com" icon="linkedin" />
             </div>
           </div>
         </div>

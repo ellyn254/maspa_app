@@ -63,7 +63,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container d-flex vh-100 justify-content-center align-items-center">
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2>
