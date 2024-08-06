@@ -28,7 +28,9 @@ const Signin = () => {
     if (!formData.email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      validationErrors.email = "Email is not valid";
     }
+    
 
     if (!formData.password.trim()) {
       validationErrors.password = "Password is required";
@@ -67,8 +69,8 @@ const Signin = () => {
 
   return (
     <>
-      <div className="signin-container d-flex vh-100 justify-content-center align-items-center">
-        <div className="form-container p-4 rounded bg-white shadow">
+      <div className="signin-container">
+        <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2 className="text-center mb-4">
               <strong>Sign In</strong>

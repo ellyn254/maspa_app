@@ -63,7 +63,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container d-flex vh-100 justify-content-center align-items-center">
+      {/* <div className="container"> */}
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2>
@@ -106,7 +106,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-      </div>
+      {/* </div> */}
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />

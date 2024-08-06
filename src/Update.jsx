@@ -85,7 +85,7 @@ const Update = () => {
 
   return (
     <>
-      <div className="container">
+      {/* <div className="container"> */}
         <div className="form-wrapper">
           <form onSubmit={handleSubmit}>
             <h2>Update</h2>
@@ -168,12 +168,12 @@ const Update = () => {
               Update
             </button>
 
-            <Link to={`/`} className="login-link">
+            <Link to={`/`} className="btn login w-100">
               Login
             </Link>
           </form>
         </div>
-      </div>
+      {/* </div> */}
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />

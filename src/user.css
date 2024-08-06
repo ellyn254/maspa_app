@@ -1,167 +1,205 @@
+/* user.css */
+
 .user-card {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
+	padding: 20px;
+	margin: 20px auto;
+	max-width: 1200px;
+	background-color: #f8f9fa;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 2.5rem;
 }
 
-/* Table styling */
-.table {
-  margin-bottom: 20px;
-}
-
-.table thead th {
-  /* background-color: #676768; */
-  color: #333;
-  font-size: bold;
-}
-
-.table tbody tr:hover {
-  background-color: #f1f1f1;
+.btn .btn-success {
+	font-size: 1.25rem;
+	padding: 10px 20px;
 }
 
 .table-responsive {
-  margin-bottom: 20px;
+	overflow-x: auto;
 }
 
-/* Button styling */
+table {
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529;
+}
+
+th,
+td {
+	padding: 1.5rem;
+	vertical-align: middle;
+	border-top: 1px solid #dee2e6;
+}
+
+th {
+	background-color: #e9ecef;
+	font-weight: bold;
+}
+/* user.css */
+
+/* Styling for table cells with buttons */
+.buttons {
+	display: flex;
+	gap: 10px; /* Space between buttons */
+	justify-content: center; /* Center align buttons horizontally */
+}
+
+/* General button styling */
 .btn {
-  font-size: 14px;
+	padding: 10px 15px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+	/* width: 50%; */
 }
 
-.btn-success,
-.me-2 {
-  margin-bottom: 10px;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-right: 8px;
+/* Primary button styling */
+.btn-primary {
+	background-color: #007bff;
+	width: 50%;
 }
 
-.btn-danger,
-.me-2 {
-  margin-bottom: 10px;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-right: 8px;
+/* Danger button styling */
+.btn-danger {
+	background-color: #dc3545;
+	width: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.buttons {
+		flex-direction: column; /* Stack buttons vertically on smaller screens */
+		gap: 10px; /* Space between stacked buttons */
+	}
+
+	.btn {
+		font-size: 0.875rem; /* Slightly smaller font size on smaller screens */
+		padding: 8px 12px; /* Reduced padding on smaller screens */
+	}
+	.btn-primary {
+		width: max-content;
+	}
+  .btn-danger{
+    width: max-content;
+  }
 }
 
 .lowerdiv {
-  padding: 20px;
-  color: white;
-  background-color: black;
-  text-align: center;
-  margin-top: 20px;
+	padding: 20px;
+	text-align: center;
+	background-color: #f1f1f1;
 }
 
-.text {
-  font-size: 16px;
-  margin-bottom: 20px;
+.lowerdiv .text {
+	font-size: 1.2rem;
+	margin-bottom: 20px;
 }
 
-.button {
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: underline;
-}
-
-.button:hover {
-  background-color: #0b1622;
+.lowerdiv .button {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 1.25rem;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
 }
 
 .footer {
-  background-color: black;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 40px;
+	background-color: #343a40;
+	color: #fff;
+	padding: 20px 0;
 }
 
 .footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 20px;
+	max-width: 1200px;
+	margin: auto;
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px;
+	margin: 10px 0;
+	flex: 1;
 }
 
 .footer-section h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
+	font-size: 1.5rem;
+	margin-bottom: 10px;
 }
 
 .footer-section p,
-.footer-section ul {
-  font-size: 14px;
-  line-height: 1.6;
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+	color: #fff;
+	font-size: 1rem;
 }
 
 .footer-section ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-  color: #ccc;
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.footer-section ul li a:hover {
-  color: white;
-}
-
-.social-icons .social-icon {
-  margin-right: 10px;
+.social-icons {
+	display: flex;
+	gap: 10px;
 }
 
 .footer-bottom {
-  margin-top: 20px;
-  font-size: 14px;
-  border-top: 1px solid #444;
-  padding-top: 10px;
+	text-align: center;
+	padding: 10px 0;
+	border-top: 1px solid #494e53;
+	margin-top: 20px;
 }
 
 @media (max-width: 768px) {
-  .user-card {
-    padding: 10px;
-  }
+	.footer-content {
+		flex-direction: column;
+		text-align: center;
+	}
 
-  .header {
-    font-size: 24px;
-  }
+	.footer-section {
+		margin-bottom: 20px;
+	}
 
-  .btn {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
+	.user-card {
+		padding: 10px;
+	}
 
-  .footer-content {
-    flex-direction: column;
-    text-align: left;
-  }
+	.btn .btn-success {
+		font-size: 1rem;
+		padding: 8px 15px;
+	}
 
-  .footer-section {
-    margin: 10px 0;
-  }
+	th,
+	td {
+		padding: 1rem;
+	}
+
+	.lowerdiv .button {
+		padding: 10px 20px;
+		font-size: 1rem;
+	}
 }

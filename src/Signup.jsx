@@ -103,8 +103,8 @@ const Signup = () => {
 
   return (
     <>
-      <div className="signup-container d-flex vh-100 justify-content-center align-items-center">
-        <div className="form-container p-4 rounded bg-white shadow">
+      <div className="signup-container">
+        <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2 className="text-center mb-4">
               <strong>Sign Up</strong>
@@ -127,7 +127,7 @@ const Signup = () => {
               <label>
                 <strong>Phone:</strong>
               </label>
-              <div className="phone-input d-flex align-items-center">
+              <div className="phone-input">
                 <Flag countryCode={formData.countryCode} className="me-2" />
                 <PhoneInput
                   name="phone"

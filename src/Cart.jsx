@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
+ 
 import React from "react";
-import "./cart.css"; // Import the CSS file for styles
+import "./cart.css"; 
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 

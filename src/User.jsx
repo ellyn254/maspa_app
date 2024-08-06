@@ -53,7 +53,7 @@ const User = () => {
                 <td>{data.phone}</td>
                 <td>{data.email}</td>
                 
-                <td>
+                <td className="buttons">
                   <Link
                     to={`update/${data.id}`}
                     className="btn btn-primary me-2"
