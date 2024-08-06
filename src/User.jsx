@@ -43,7 +43,6 @@ const User = () => {
               <th>Name</th>
               <th>Phone</th>
               <th>Email</th>
-              <th>Password</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -53,7 +52,7 @@ const User = () => {
                 <td>{data.name}</td>
                 <td>{data.phone}</td>
                 <td>{data.email}</td>
-                <td>{data.password}</td>
+                
                 <td>
                   <Link
                     to={`update/${data.id}`}

@@ -8,7 +8,7 @@ import React from "react";
 const About = () => {
   return (
     <>
-      <div className="container">
+      {/* <div className="container"> */}
         <img src={bgimage} alt="Background" className="image" />
        
         <div className="information">
@@ -47,7 +47,7 @@ const About = () => {
             completely.
           </p>
         </div>
-      </div>
+      {/* </div> */}
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />
