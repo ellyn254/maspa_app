@@ -25,6 +25,17 @@ body {
 .shop:hover {
 	color: #7e3268de;
 }
+.quantity-control{
+  padding: 20px;
+}
+.decrease-button{
+  color: #331029de;
+  background-color: #fff;
+}
+.increase-button{
+  color: #331029de;
+  background-color: #fff;
+}
 
 h2 {
 	text-align: center;

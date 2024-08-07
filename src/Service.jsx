@@ -11,15 +11,18 @@ import {
 import "./service.css";
 import manimage from './assets/manicure.jpg';
 import pedimage from './assets/pedicure.jpg';
+import massimage from './assets/massage.jpg';
+import facialimage from './assets/facial.jpg';
+import salonimage from './assets/salon.jpg';
 import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 
 const services = [
-  { id: 1, name: "Massage", icon: <img src={manimage} alt="Background" className="image"/> },
+  { id: 1, name: "Massage", icon: <img src={massimage} alt="Background" className="image"/> },
   { id: 2, name: "Pedicure", icon: <img src={pedimage} alt="Background" className="image"/> },
-  { id: 3, name: "Manicure", icon: <img src={pedimage} alt="Background" className="image"/> },
-  { id: 4, name: "Facial", icon: <img src={pedimage} alt="Background" className="image"/> },
-  { id: 5, name: "Salon", icon: <img src={pedimage} alt="Background" className="image"/>},
+  { id: 3, name: "Manicure", icon: <img src={manimage} alt="Background" className="image"/> },
+  { id: 4, name: "Facial", icon: <img src={facialimage} alt="Background" className="image"/> },
+  { id: 5, name: "Salon", icon: <img src={salonimage} alt="Background" className="image"/>},
   { id: 6, name: "Yoga", icon: <img src={pedimage} alt="Background" className="image"/> },
 ];
 
@@ -62,7 +65,7 @@ const Service = () => {
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{service.icon}</div>
                   <Card.Title>{service.name}</Card.Title>
-                  <Button variant="primary" className="bookbutton" onClick={() => handleBook(service)}>
+                  <Button variant="primary" className="booking" onClick={() => handleBook(service)}>
                     Book Now
                   </Button>
                 </Card.Body>

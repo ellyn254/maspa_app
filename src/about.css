@@ -9,7 +9,8 @@ body {
 	align-items: center;
 } */
 
-.image {
+.spaimage {
+	justify-content: center;
 	width: 50%;
 	margin-top: 50px;
 	height: auto;
@@ -33,7 +34,7 @@ body {
 		width: auto;
 	} */
 
-	.image {
+	.spaimage {
 		width: 50%;
 		height: auto;
 		margin-bottom: 50px;

@@ -62,7 +62,7 @@ function App() {
   }, [cart]);
 
   const addToCart = (product) => {
-    const newCart = [...cart, product];
+    const newCart = [...cart, { ...product, quantity: 1 }];
     setCart(newCart);
   };
 
@@ -70,6 +70,20 @@ function App() {
     const newCart = cart.filter((_, i) => i !== index);
     setCart(newCart);
     alert("Item deleted successfully");
+  };
+
+  const handleIncreaseQuantity = (index) => {
+    const newCart = cart.map((item, i) =>
+      i === index ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCart(newCart);
+  };
+
+  const handleDecreaseQuantity = (index) => {
+    const newCart = cart.map((item, i) =>
+      i === index && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    );
+    setCart(newCart);
   };
 
   const pay = () => {
@@ -152,7 +166,13 @@ function App() {
           <Route
             path="/cart"
             element={
-              <Cart cart={cart} removeFromCart={removeFromCart} pay={pay} />
+              <Cart
+                cart={cart}
+                removeFromCart={removeFromCart}
+                pay={pay}
+                handleIncreaseQuantity={handleIncreaseQuantity}
+                handleDecreaseQuantity={handleDecreaseQuantity}
+              />
             }
           />
           <Route path="/services" element={<Service />} />

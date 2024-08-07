@@ -10,7 +10,7 @@
 	width: auto;
 	border: none;
 }
-.bookbutton {
+.booking {
 	width: 100%;
 	background-color: #331029de;
 	color: white;
@@ -40,7 +40,7 @@ body {
 }
 
 
-.bookbutton:hover {
+.booking:hover {
 	background-color: #773965de;
 }
 

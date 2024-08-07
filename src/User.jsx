@@ -28,12 +28,13 @@ const User = () => {
   return (
     <>
       <div className="user-card">
+      <h2 className="header">ELLYN BEAUTY & SPA</h2>
         <p>
           The table below is a list of all our registered users. We appreciate
           your interest in registering with us and we are very delighted to have
           you as our clients.
         </p>
-        <h2 className="header">ELLYN BEAUTY & SPA</h2>
+       
         <Link to={`/register`} className="btn btn-success mb-3">
           ADD +
         </Link>

@@ -1,34 +1,11 @@
 /* eslint-disable react/prop-types */
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./cart.css"; 
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 
-const Cart = ({ removeFromCart, pay }) => {
-  const [cart, setCart] = useState([]);
-
-  // Function to update the cart and store it in localStorage
-  const updateCart = (newCart) => {
-    setCart(newCart);
-    localStorage.setItem("cart", JSON.stringify(newCart));
-  };
-
-  // Remove item from cart
-  const handleRemoveFromCart = (index) => {
-    const newCart = cart.filter((_, i) => i !== index);
-    updateCart(newCart);
-    removeFromCart(index);
-  };
-
-  // Load cart from localStorage when component mounts
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart"));
-    if (savedCart) {
-      setCart(savedCart);
-    }
-  }, []);
-
+const Cart = ({ cart, removeFromCart, pay, handleIncreaseQuantity, handleDecreaseQuantity }) => {
   return (
     <>
       <div className="cart">
@@ -49,9 +26,25 @@ const Cart = ({ removeFromCart, pay }) => {
                     <p className="cart-item-name">{item.name}</p>
                     <p className="cart-item-description">{item.description}</p>
                     <p className="cart-item-price">${item.price}</p>
+                    <div className="quantity-control">
+                      <button 
+                        className="decrease-button" 
+                        onClick={() => handleDecreaseQuantity(index)}
+                        disabled={item.quantity <= 1}
+                      >
+                        -
+                      </button>
+                      <span className="quantity">{item.quantity}</span>
+                      <button 
+                        className="increase-button" 
+                        onClick={() => handleIncreaseQuantity(index)}
+                      >
+                        +
+                      </button>
+                    </div>
                     <button
                       className="remove-button"
-                      onClick={() => handleRemoveFromCart(index)}
+                      onClick={() => removeFromCart(index)}
                     >
                       Remove
                     </button>
