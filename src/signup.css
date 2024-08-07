@@ -91,7 +91,7 @@ h2 {
 }
 /* Buttons */
 button {
-	background-color: #007bff;
+	background-color: #331029de;
 	color: #ffffff;
 	border: none;
 	padding: 10px;
@@ -103,7 +103,7 @@ button {
 }
 
 button:hover {
-	background-color: #0056b3;
+	background-color: #6d355dde;
 }
 
 button:focus {
@@ -112,7 +112,7 @@ button:focus {
 }
 
 .btn-secondary {
-	background-color: #6c757d;
+	background-color: #331029de;
 	border: none;
 	color: #ffffff;
 	padding: 10px;
@@ -123,11 +123,11 @@ button:focus {
 }
 
 .btn-secondary:hover {
-	background-color: #5a6268;
+	background-color: #7c3668de;
 }
 
 .btn-info {
-	background-color: #17a2b8;
+	background-color: #331029de;
 	border: none;
 	color: #ffffff;
 	padding: 10px;
@@ -137,7 +137,7 @@ button:focus {
 }
 
 .btn-info:hover {
-	background-color: #138496;
+	background-color: #a34187de;
 }
 
 /* Error message */

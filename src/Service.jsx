@@ -8,17 +8,19 @@ import {
   Modal,
   Form,
 } from "react-bootstrap";
-import { FaSpa, FaCut } from "react-icons/fa";
+import "./service.css";
+import manimage from './assets/manicure.jpg';
+import pedimage from './assets/pedicure.jpg';
 import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 
 const services = [
-  { id: 1, name: "Massage", icon: <FaSpa /> },
-  { id: 2, name: "Pedicure", icon: <FaCut /> },
-  { id: 3, name: "Manicure", icon: <FaCut /> },
-  { id: 4, name: "Facial", icon: <FaSpa /> },
-  { id: 5, name: "Salon", icon: <FaCut /> },
-  { id: 6, name: "Yoga", icon: <FaSpa /> },
+  { id: 1, name: "Massage", icon: <img src={manimage} alt="Background" className="image"/> },
+  { id: 2, name: "Pedicure", icon: <img src={pedimage} alt="Background" className="image"/> },
+  { id: 3, name: "Manicure", icon: <img src={pedimage} alt="Background" className="image"/> },
+  { id: 4, name: "Facial", icon: <img src={pedimage} alt="Background" className="image"/> },
+  { id: 5, name: "Salon", icon: <img src={pedimage} alt="Background" className="image"/>},
+  { id: 6, name: "Yoga", icon: <img src={pedimage} alt="Background" className="image"/> },
 ];
 
 const Service = () => {
@@ -60,7 +62,7 @@ const Service = () => {
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{service.icon}</div>
                   <Card.Title>{service.name}</Card.Title>
-                  <Button variant="primary" onClick={() => handleBook(service)}>
+                  <Button variant="primary" className="bookbutton" onClick={() => handleBook(service)}>
                     Book Now
                   </Button>
                 </Card.Body>

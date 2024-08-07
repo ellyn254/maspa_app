@@ -1,0 +1,115 @@
+.image {
+	width: 100%;
+	margin-top: 50px;
+	height: auto;
+	margin-bottom: 16px;
+	display: flex;
+	padding: 0px;
+}
+.body {
+	width: auto;
+	border: none;
+}
+.bookbutton {
+	width: 100%;
+	background-color: #331029de;
+	color: white;
+}
+/* General Styles */
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* Card Styles */
+.card {
+	transition: transform 0.3s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.image {
+	width: 100%;
+	height: auto;
+}
+
+/* Modal Styles */
+.modal-content {
+	padding: 2rem;
+}
+
+
+.bookbutton:hover {
+	background-color: #773965de;
+}
+
+/* Lower Div Styles */
+.lowerdiv {
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.lowerdiv .text {
+	font-size: 1.2rem;
+}
+
+.lowerdiv .div {
+	margin-top: 1rem;
+}
+
+.lowerdiv .button {
+	background-color: #007bff;
+	color: white;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.lowerdiv .button:hover {
+	background-color: #0056b3;
+}
+
+/* Footer Styles */
+.footer {
+	background-color: #080707;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.footer-section {
+	margin: 1rem;
+	flex: 1;
+	min-width: 200px;
+}
+
+.footer-bottom {
+	margin-top: 1rem;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+/* Social Icons */
+.social-icons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+	.card {
+		margin-bottom: 1rem;
+	}
+
+	.footer-content {
+		flex-direction: column;
+		text-align: left;
+	}
+}

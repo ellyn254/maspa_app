@@ -1,3 +1,4 @@
+import React, { useRef, useState, useEffect } from "react";
 import "./App.css";
 import "./Navbar.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -5,7 +6,6 @@ import Signup from "./Signup";
 import Home from "./Home";
 import Signin from "./Signin";
 import Contact from "./Contact";
-import { useRef, useState, useEffect } from "react";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import Image from "./images/logo.jpg";
 import User from "./User";
@@ -21,6 +21,7 @@ function App() {
   const navRef = useRef();
   const [data, setData] = useState([]);
   const [cart, setCart] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const [viewDropdownOpen, setViewDropdownOpen] = useState(false);
 
@@ -45,17 +46,30 @@ function App() {
       .catch((error) => {
         console.error(error);
       });
+
+    // Load cart from localStorage when the component mounts
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    if (savedCart) {
+      setCart(savedCart);
+      setCartCount(savedCart.length);
+    }
   }, []);
 
+  useEffect(() => {
+    // Update localStorage whenever the cart changes
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCartCount(cart.length);
+  }, [cart]);
+
   const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-  const removeFromCart = (index) => {
-    const newCart = [...cart];
-    newCart.splice(index, 1);
-    alert("You sure you want to delete the item");
+    const newCart = [...cart, product];
     setCart(newCart);
-    alert("item deleted succesfully");
+  };
+
+  const removeFromCart = (index) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+    alert("Item deleted successfully");
   };
 
   const pay = () => {
@@ -74,7 +88,7 @@ function App() {
     // Add more products as needed
   ];
 
-  // function to perform logout action
+  // Function to perform logout action
   const handleLogout = () => {
     // Logic to end the session
     console.log("Session ended");
@@ -112,6 +126,7 @@ function App() {
           </div>
           <Link to="/cart" className="cart-icon">
             <FaShoppingCart />
+            <span className="cart-count">{cartCount}</span>
           </Link>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />

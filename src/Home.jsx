@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // Home.js
 import React from "react";
 import "./home.css";
@@ -5,7 +6,11 @@ import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 
 const Home = ({ data, addToCart }) => {
-  
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    
+  };
 
   return (
     <>
@@ -18,7 +23,7 @@ const Home = ({ data, addToCart }) => {
               <p>{product.description}</p>
               <p>{product.rate}</p>
               <p>${product.price}</p>
-              <button onClick={() => addToCart(product)}>Add to Cart</button>
+              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           ))}
         </div>

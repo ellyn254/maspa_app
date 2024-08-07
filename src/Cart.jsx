@@ -1,16 +1,39 @@
 /* eslint-disable react/prop-types */
- 
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import "./cart.css"; 
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 
-const Cart = ({ cart, removeFromCart, pay }) => {
+const Cart = ({ removeFromCart, pay }) => {
+  const [cart, setCart] = useState([]);
+
+  // Function to update the cart and store it in localStorage
+  const updateCart = (newCart) => {
+    setCart(newCart);
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  };
+
+  // Remove item from cart
+  const handleRemoveFromCart = (index) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    updateCart(newCart);
+    removeFromCart(index);
+  };
+
+  // Load cart from localStorage when component mounts
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    if (savedCart) {
+      setCart(savedCart);
+    }
+  }, []);
+
   return (
     <>
       <div className="cart">
         <h2>Shopping Cart</h2>
-        {cart?.length === 0 ? (
+        {cart.length === 0 ? (
           <p className="empty-cart">Your cart is empty</p>
         ) : (
           <>
@@ -28,7 +51,7 @@ const Cart = ({ cart, removeFromCart, pay }) => {
                     <p className="cart-item-price">${item.price}</p>
                     <button
                       className="remove-button"
-                      onClick={() => removeFromCart(index)}
+                      onClick={() => handleRemoveFromCart(index)}
                     >
                       Remove
                     </button>
@@ -41,6 +64,7 @@ const Cart = ({ cart, removeFromCart, pay }) => {
             </button>
           </>
         )}
+        <Link to="/home" className="shop mb-3">Shop Now</Link>
       </div>
       <div className="lowerdiv">
         <p className="text">
