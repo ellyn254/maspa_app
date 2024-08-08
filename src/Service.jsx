@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {
-  Container,
   Row,
   Col,
   Card,
-  Button,
   Modal,
   Form,
 } from "react-bootstrap";
@@ -14,6 +12,7 @@ import pedimage from './assets/pedicure.jpg';
 import massimage from './assets/massage.jpg';
 import facialimage from './assets/facial.jpg';
 import salonimage from './assets/salon.jpg';
+import yogaimage from './assets/yoga.jpg';
 import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 
@@ -23,23 +22,23 @@ const services = [
   { id: 3, name: "Manicure", icon: <img src={manimage} alt="Background" className="image"/> },
   { id: 4, name: "Facial", icon: <img src={facialimage} alt="Background" className="image"/> },
   { id: 5, name: "Salon", icon: <img src={salonimage} alt="Background" className="image"/>},
-  { id: 6, name: "Yoga", icon: <img src={pedimage} alt="Background" className="image"/> },
+  { id: 6, name: "Yoga", icon: <img src={yogaimage} alt="Background" className="image"/> },
 ];
 
 const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [bookingDetails, setBookingDetails] = useState({
-    name: "",
+    email: "",
     date: "",
-    payment: "",
+    payment: ""
   });
 
   const handleBook = (service) => {
     setSelectedService(service);
     setShowModal(true);
   };
-
+// closes the modal window
   const handleClose = () => setShowModal(false);
 
   const handleChange = (e) => {
@@ -54,20 +53,19 @@ const Service = () => {
     );
     setShowModal(false);
   };
-
   return (
     <>
-      <Container>
-        <Row className="mt-4">
+      {/* <Container> */}
+        <Row className="service-container">
           {services.map((service) => (
             <Col key={service.id} sm={6} md={4} className="mb-4">
               <Card>
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{service.icon}</div>
                   <Card.Title>{service.name}</Card.Title>
-                  <Button variant="primary" className="booking" onClick={() => handleBook(service)}>
+                  <button className="booking" onClick={() => handleBook(service)}>
                     Book Now
-                  </Button>
+                  </button>
                 </Card.Body>
               </Card>
             </Col>
@@ -76,17 +74,17 @@ const Service = () => {
 
         <Modal show={showModal} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Book {selectedService?.name}</Modal.Title>
+            <Modal.Title className="heading">Book {selectedService?.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formName">
-                <Form.Label>Name</Form.Label>
+              <Form.Group controlId="formEmail">
+                <Form.Label>Email</Form.Label>
                 <Form.Control
-                  type="text"
-                  placeholder="Enter your name"
-                  name="name"
-                  value={bookingDetails.name}
+                  type="email"
+                  placeholder="Enter your email"
+                  name="email"
+                  value={bookingDetails.email}
                   onChange={handleChange}
                   required
                 />
@@ -112,13 +110,13 @@ const Service = () => {
                   required
                 />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <button className="confirm-booking" type="submit">
                 Confirm Booking
-              </Button>
+              </button>
             </Form>
           </Modal.Body>
         </Modal>
-      </Container>
+      {/* </Container> */}
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />

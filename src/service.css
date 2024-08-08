@@ -1,19 +1,36 @@
 .image {
-	width: 100%;
-	margin-top: 50px;
+	width: 75%;
+	margin: 50px auto;
 	height: auto;
-	margin-bottom: 16px;
 	display: flex;
-	padding: 0px;
+	margin-left: 50px;
 }
-.body {
-	width: auto;
+.heading {
+	color: #331029de;
+	font-style: italic;
+}
+.service-container {
+	width: 100%;
+	padding-left: 100px;
+	margin: 50px auto;
+}
+.text-center {
+	/* width: 10px; */
 	border: none;
+	margin: 0 auto;
 }
 .booking {
 	width: 100%;
 	background-color: #331029de;
 	color: white;
+}
+
+.booking:hover {
+	background-color: #773965de;
+}
+.confirm-booking {
+	color: white;
+	background-color: #331029de;
 }
 /* General Styles */
 body {
@@ -29,19 +46,9 @@ body {
 	transform: scale(1.05);
 }
 
-.image {
-	width: 100%;
-	height: auto;
-}
-
 /* Modal Styles */
 .modal-content {
 	padding: 2rem;
-}
-
-
-.booking:hover {
-	background-color: #773965de;
 }
 
 /* Lower Div Styles */
@@ -59,7 +66,7 @@ body {
 }
 
 .lowerdiv .button {
-	background-color: #007bff;
+	background-color: #331029de;
 	color: white;
 	padding: 0.5rem 1rem;
 	text-decoration: none;
@@ -67,7 +74,7 @@ body {
 }
 
 .lowerdiv .button:hover {
-	background-color: #0056b3;
+	background-color: #7c2f66de;
 }
 
 /* Footer Styles */

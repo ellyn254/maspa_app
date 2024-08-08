@@ -4,21 +4,12 @@ body {
 	font-family: Arial, sans-serif;
 }
 
-/* .container {
-	display: flex;
-	align-items: center;
-} */
-
 .spaimage {
-	justify-content: center;
 	width: 50%;
-	margin-top: 50px;
+	margin: 50px auto;
 	height: auto;
-	margin-bottom: 16px;
 	display: flex;
-	padding-left: 50px;
 }
-
 .information {
 	height: auto;
 	margin-bottom: 16px;
@@ -27,21 +18,11 @@ body {
 	justify-content: space-evenly;
 }
 @media (min-width: 768px) {
-	/* .container {
-		flex-direction: row;
-		justify-content: space-evenly;
-		margin-bottom: auto;
-		width: auto;
-	} */
-
 	.spaimage {
 		width: 50%;
 		height: auto;
 		margin-bottom: 50px;
-		margin-top: 50px;
-		margin-right: 10px;
 		display: flex;
-		padding-left: 50px;
 	}
 
 	.information {
@@ -51,10 +32,6 @@ body {
 }
 
 @media (min-width: 992px) {
-	/* .container {
-		padding: 32px;
-	} */
-
 	.information {
 		padding-left: 16px;
 	}

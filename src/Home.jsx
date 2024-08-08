@@ -22,7 +22,7 @@ const Home = ({ data, addToCart }) => {
               <h1>{product.name}</h1>
               <p>{product.description}</p>
               <p>{product.rate}</p>
-              <p>${product.price}</p>
+              <p><b>Ksh {product.price}</b></p>
               <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           ))}
