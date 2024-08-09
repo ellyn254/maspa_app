@@ -8,6 +8,7 @@ import Signin from "./Signin";
 import Contact from "./Contact";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import Image from "./images/logo.jpg";
+// import bgimage from "./images/bgbeauty.jpg"
 import User from "./User";
 import Update from "./Update";
 import About from "./About";
@@ -112,19 +113,21 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <img src={Image} alt="images" width={200} height={150} />
+        <img src={Image} alt="images" width={150} height={100} />
         ELLYNBEAUTYSPA
         <nav ref={navRef}>
           <Link to="/home">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <div className="view-dropdown">
-            <span onClick={toggleViewDropdown}>View</span>
+            <span onClick={toggleViewDropdown}>Services</span>
             {viewDropdownOpen && (
               <div className="dropdown-menu">
-                <Link to="/user">User</Link>
-                <Link to="/user/update/:id">Update User</Link>
-                <Link to="/messages">Messages</Link>
+                <Link to="/manicure">Manicure</Link>
+                <Link to="/pedicure">Pedicure</Link>
+                <Link to="/massage">Massage</Link>
+                <Link to="/salon">Salon</Link>
+                <Link to="/yoga">Yoga</Link>
               </div>
             )}
           </div>
@@ -134,6 +137,9 @@ function App() {
               <div className="dropdown-menu">
                 <Link to="/register">Register</Link>
                 <Link to="/">Login</Link>
+                <Link to="/user/update/:id">Update User</Link>
+                <Link to="/user"> View Users</Link>
+                <Link to="/messages">Messages</Link>
                 <Link to="/logout">Logout</Link>
               </div>
             )}

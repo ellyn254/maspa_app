@@ -1,19 +1,13 @@
 /* signin.css */
 
-/* Container styling for the signin form */
-.signin-container {
-	background-color: #f5f5f5;
-	display: flex;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-}
-
 /* Form container styling */
 .form-container {
-	width: 100%;
-	max-width: 400px;
-	box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+	background: #746d6d0c;
+	padding: 50px;
+	border-radius: 75px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	max-width: 600px;
+	margin: 250px auto;
 }
 
 /* Form styling */
@@ -119,7 +113,6 @@ input[type='checkbox'] {
 .lowerdiv .button:hover {
 	background-color: #331029de;
 }
-
 
 /* Footer styling */
 .footer {

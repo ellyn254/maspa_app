@@ -1,4 +1,6 @@
 body {
   margin: 0 auto;
+  background-image: url("./images/bmg.jpeg");
+  background-size: cover;
+  /* background-color: #7070df99; */
 }
-/*App.css*/

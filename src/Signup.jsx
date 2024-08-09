@@ -103,7 +103,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="signup-container">
+      {/* <div className="signup-container"> */}
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2 className="text-center mb-4">
@@ -214,7 +214,7 @@ const Signup = () => {
             </Link>
           </form>
         </div>
-      </div>
+      {/* </div> */}
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />
@@ -255,10 +255,11 @@ const Signup = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" />
-              <SocialIcon url="https://twitter.com" icon="twitter" />
-              <SocialIcon icon="instagram" url="https://instagram.com" />
-              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+            <SocialIcon icon="facebook" url="https://facebook.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://twitter.com" icon="twitter" style={{ height: 25, width: 25 }}/>
+              <SocialIcon icon="instagram" url="https://instagram.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://linkedin.com" icon="linkedin" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://email.com" icon="email" style={{ height: 25, width: 25 }}/>
             </div>
           </div>
         </div>

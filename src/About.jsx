@@ -4,11 +4,36 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { SocialIcon } from "react-social-icons";
 import { Link } from "react-router-dom";
 import React from "react";
+import {
+  Row,
+  Col,
+  Card,
+} from "react-bootstrap";
+import manimage from './assets/manicure.jpg';
+import pedimage from './assets/pedicure.jpg';
+import massimage from './assets/massage.jpg';
+import facialimage from './assets/facial.jpg';
+import salonimage from './assets/salon.jpg';
+import yogaimage from './assets/yoga.jpg';
 
 const About = () => {
+
+  const services = [
+    { id: 1, name: "Massage", icon: <img src={massimage} alt="Background" className="image"/> },
+    { id: 2, name: "Pedicure", icon: <img src={pedimage} alt="Background" className="image"/> },
+    { id: 3, name: "Manicure", icon: <img src={manimage} alt="Background" className="image"/> },
+    { id: 4, name: "Facial", icon: <img src={facialimage} alt="Background" className="image"/> },
+    { id: 5, name: "Salon", icon: <img src={salonimage} alt="Background" className="image"/>},
+    { id: 6, name: "Yoga", icon: <img src={yogaimage} alt="Background" className="image"/> },
+  ];
+  
   return (
     <>
-      {/* <div className="container"> */}
+    <div className="route">
+    <Link to="/home" className="route" >Home</Link> /
+    <Link to="/about" className="route" >About US</Link>
+    </div>
+     
         <img src={bgimage} alt="Background" className="spaimage" />
        
         <div className="information">
@@ -47,7 +72,7 @@ const About = () => {
             completely.
           </p>
         </div>
-      {/* </div> */}
+      
       <div className="lowerdiv">
         <p className="text">
           These are our feedbacks from esteemed customers. <br />
@@ -58,6 +83,24 @@ const About = () => {
             TALK TO US
           </Link>
         </div>
+      </div>
+      <div>
+        <h2>Our Services</h2>
+        <Row className="service-container">
+          {services.map((service) => (
+            <Col key={service.id} sm={6} md={4} className="mb-4">
+              <Card>
+                <Card.Body className="text-center">
+                  <div style={{ fontSize: "2rem" }}>{service.icon}</div>
+                  <Card.Title>{service.name}</Card.Title>
+                  <Link to="/services" className="booking" >
+                    Read more
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
       <footer className="footer">
         <div className="footer-content">
@@ -88,10 +131,11 @@ const About = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" />
-              <SocialIcon url="https://twitter.com" icon="twitter" />
-              <SocialIcon icon="instagram" url="https://instagram.com" />
-              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+            <SocialIcon icon="facebook" url="https://facebook.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://twitter.com" icon="twitter" style={{ height: 25, width: 25 }}/>
+              <SocialIcon icon="instagram" url="https://instagram.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://linkedin.com" icon="linkedin" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://email.com" icon="email" style={{ height: 25, width: 25 }}/>
             </div>
           </div>
         </div>

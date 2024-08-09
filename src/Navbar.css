@@ -17,12 +17,14 @@ header {
 header img {
 	max-width: 100%;
 	height: auto;
+	border-radius: 50px;
 }
 
 nav {
 	display: flex;
 	align-items: center;
 	gap: 15px;
+	color:#691111;
 }
 
 nav a,

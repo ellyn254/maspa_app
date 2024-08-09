@@ -55,7 +55,10 @@ const Service = () => {
   };
   return (
     <>
-      {/* <Container> */}
+       <div className="route">
+    <Link to="/home" className="route" >Home</Link> /
+    <Link to="/services" className="route" >Our Services</Link>
+    </div>
         <Row className="service-container">
           {services.map((service) => (
             <Col key={service.id} sm={6} md={4} className="mb-4">
@@ -157,10 +160,11 @@ const Service = () => {
           <div className="footer-section social">
             <h3>Follow Us</h3>
             <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" />
-              <SocialIcon url="https://twitter.com" icon="twitter" />
-              <SocialIcon icon="instagram" url="https://instagram.com" />
-              <SocialIcon url="https://linkedin.com" icon="linkedin" />
+            <SocialIcon icon="facebook" url="https://facebook.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://twitter.com" icon="twitter" style={{ height: 25, width: 25 }}/>
+              <SocialIcon icon="instagram" url="https://instagram.com" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://linkedin.com" icon="linkedin" style={{ height: 25, width: 25 }} />
+              <SocialIcon url="https://email.com" icon="email" style={{ height: 25, width: 25 }}/>
             </div>
           </div>
         </div>
