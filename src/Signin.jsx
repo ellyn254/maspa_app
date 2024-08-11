@@ -103,6 +103,14 @@ const Signin = () => {
                 <span className="error">{errors.password}</span>
               )}
             </div>
+          
+            <button type="submit" className="btn-signin">
+              Login
+            </button>
+            <div>Creating an account?
+            <Link to="/register" className="account">
+              Click Here
+            </Link></div>
             <div className="form-group form-check mb-3">
               <input
                 type="checkbox"
@@ -122,13 +130,7 @@ const Signin = () => {
               </label>
             </div>
             <Link to={`/forgotpassword`} className="forgot">
-              forgot-password
-            </Link>
-            <button type="submit" className="btn btn-primary w-100 mb-3">
-              Login
-            </button>
-            <Link to="/register" className="btn btn-secondary w-100">
-              Create Account
+              forgot-password?
             </Link>
           </form>
         </div>

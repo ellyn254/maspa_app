@@ -2,5 +2,6 @@ body {
   margin: 0 auto;
   background-image: url("./images/bmg.jpeg");
   background-size: cover;
+  backdrop-filter: blur(8px);
   /* background-color: #7070df99; */
 }

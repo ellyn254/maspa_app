@@ -56,11 +56,11 @@ input[type='checkbox'] {
 }
 
 /* Button styling */
-.btn-submit {
+.btn-signin {
 	display: block;
 	width: 100%;
 	padding: 0.75rem;
-	background-color: #2e1c11;
+	background-color: #331029de;
 	color: white;
 	text-align: center;
 	border: none;
@@ -69,26 +69,31 @@ input[type='checkbox'] {
 	text-decoration: none;
 	cursor: pointer;
 }
-.btn-create-account {
+.account {
 	margin-top: 0.5rem;
 	text-align: center;
 	padding: 0.75rem;
-	border: 1px solid #331029de;
-	background-color: #fff;
-	color: #331029de;
+	/* border: 1px solid #331029de; */
+	/* background-color: #807e7e; */
+	color: #195cd8de;
 	cursor: pointer;
 	text-decoration: none;
+	font-style: italic;
 }
 
-.btn-submit:hover {
-	background-color: #362b2b;
+.btn-signin:hover {
+	background-color: #8b8a8a;
 }
-.btn-create-account:hover {
-	background-color: #8a8080;
+.account:hover {
+	color: #195cd8de;
 }
 /* forgot-password */
 .forgot {
-	margin-left: 200px;
+	text-decoration: none;
+	font-style: italic;
+	color: #195cd8de;
+	font-size: 16px;
+
 }
 
 .lowerdiv {

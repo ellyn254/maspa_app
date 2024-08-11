@@ -167,10 +167,6 @@ const Update = () => {
             <button type="submit" className="submit-btn">
               Update
             </button>
-
-            <Link to={`/`} className="btn login w-100">
-              Login
-            </Link>
           </form>
         </div>
     

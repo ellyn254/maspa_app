@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const express = require("express"); //the server
 const cors = require("cors"); //the use of 'app.methods' middleware
 const mysql = require("mysql"); //the db

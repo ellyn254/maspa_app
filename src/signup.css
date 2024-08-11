@@ -81,7 +81,7 @@ h2 {
 	text-decoration: underline;
 }
 /* Buttons */
-button {
+.register {
 	background-color: #331029de;
 	color: #ffffff;
 	border: none;
@@ -93,31 +93,30 @@ button {
 	margin-bottom: 10px;
 }
 
-button:hover {
+.register:hover {
 	background-color: #6d355dde;
 }
 
-button:focus {
+.register:focus {
 	outline: none;
 	box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-.btn-secondary {
-	background-color: #331029de;
-	border: none;
-	color: #ffffff;
+.secondary {
+    font-style: italic;
+	color: #1569e7;
 	padding: 10px;
-	border-radius: 5px;
 	cursor: pointer;
 	width: 100%;
-	font-size: 16px;
+	font-size: 18px;
+	text-decoration: none;
 }
 
-.btn-secondary:hover {
-	background-color: #7c3668de;
+.secondary:hover {
+scroll-padding: 2px;
 }
 
-.btn-info {
+/* .btn-info {
 	background-color: #331029de;
 	border: none;
 	color: #ffffff;
@@ -125,11 +124,11 @@ button:focus {
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: 16px;
-}
+} */
 
-.btn-info:hover {
+/* .btn-info:hover {
 	background-color: #a34187de;
-}
+} */
 
 /* Error message */
 .error {

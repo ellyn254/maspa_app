@@ -185,6 +185,14 @@ const Signup = () => {
                 <span className="error">{errors.confirmPassword}</span>
               )}
             </div>
+            <button type="submit" className="register">
+              Register
+            </button>
+            <div>
+            Already have an account? 
+            <span><Link to={`/`} className="secondary">
+              Login
+            </Link></span></div>
             <div className="form-group form-check mb-3">
               <input
                 type="checkbox"
@@ -202,16 +210,10 @@ const Signup = () => {
                   terms and conditions
                 </a>
               </label>
-              <Link to={`/forgotpassword`} className="forgot">
-                forgot-password
-              </Link>
             </div>
-            <button type="submit" className="btn btn-primary w-100 mb-3">
-              Register
-            </button>
-            <Link to={`/`} className="btn btn-secondary w-100">
-              Login
-            </Link>
+            <Link to={`/forgotpassword`} className="forgot">
+                forgot-password?
+              </Link>
           </form>
         </div>
       {/* </div> */}
