@@ -61,72 +61,9 @@ body {
 	padding: 2rem;
 }
 
-/* Lower Div Styles */
-.lowerdiv {
-	text-align: center;
-	margin: 2rem 0;
-}
-
-.lowerdiv .text {
-	font-size: 1.2rem;
-}
-
-.lowerdiv .div {
-	margin-top: 1rem;
-}
-
-.lowerdiv .button {
-	background-color: #331029de;
-	color: white;
-	padding: 0.5rem 1rem;
-	text-decoration: none;
-	border-radius: 5px;
-}
-
-.lowerdiv .button:hover {
-	background-color: #7c2f66de;
-}
-
-/* Footer Styles */
-.footer {
-	background-color: #080707;
-	padding: 2rem 0;
-	text-align: center;
-}
-
-.footer-content {
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-
-.footer-section {
-	margin: 1rem;
-	flex: 1;
-	min-width: 200px;
-}
-
-.footer-bottom {
-	margin-top: 1rem;
-	font-size: 0.9rem;
-	color: #666;
-}
-
-/* Social Icons */
-.social-icons {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-}
-
 /* Responsive Styles */
 @media (max-width: 767px) {
 	.card {
 		margin-bottom: 1rem;
-	}
-
-	.footer-content {
-		flex-direction: column;
-		text-align: left;
 	}
 }

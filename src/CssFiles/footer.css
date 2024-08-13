@@ -1,0 +1,39 @@
+.aboutus {
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+.quick h3 {
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+.quick ul {
+	list-style-type: none;
+	margin-left: 170px;
+	padding: 0px;
+	text-align: center;
+	text-decoration: none;
+}
+.quick li {
+	font-size: 1em;
+	margin-right: 180px;
+	margin-bottom: 10px;
+}
+.admin h3 {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+.admin ul {
+	list-style-type: none;
+	margin-left: 170px;
+	padding: 0px;
+	text-decoration: none;
+}
+.admin li {
+	font-size: 1em;
+	margin-right: 180px;
+	margin-bottom: 10px;
+}

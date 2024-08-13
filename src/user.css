@@ -14,7 +14,7 @@
 	margin-bottom: 20px;
 	font-size: 2.5rem;
 }
-.header:hover{
+.header:hover {
 	color: #331029de;
 }
 
@@ -92,101 +92,12 @@ th {
 	.btn-primary {
 		width: max-content;
 	}
-  .btn-danger{
-    width: max-content;
-  }
-}
-
-.lowerdiv {
-	padding: 20px;
-	text-align: center;
-	background-color: #f1f1f1;
-}
-
-.lowerdiv .text {
-	font-size: 1.2rem;
-	margin-bottom: 20px;
-}
-
-.lowerdiv .button {
-	display: inline-block;
-	padding: 15px 25px;
-	font-size: 1.25rem;
-	color: #fff;
-	background-color: #007bff;
-	border: none;
-	border-radius: 5px;
-	text-decoration: none;
-}
-
-.footer {
-	background-color: #343a40;
-	color: #fff;
-	padding: 20px 0;
-}
-
-.footer-content {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding: 0 20px;
-	max-width: 1200px;
-	margin: auto;
-}
-
-.footer-section {
-	margin: 10px 0;
-	flex: 1;
-}
-
-.footer-section h3 {
-	font-size: 1.5rem;
-	margin-bottom: 10px;
-}
-
-.footer-section p,
-.footer-section ul,
-.footer-section li,
-.footer-section a {
-	color: #fff;
-	font-size: 1rem;
-}
-
-.footer-section ul {
-	list-style: none;
-	padding: 0;
-}
-
-.footer-section ul li {
-	margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-	text-decoration: none;
-}
-
-.social-icons {
-	display: flex;
-	gap: 10px;
-}
-
-.footer-bottom {
-	text-align: center;
-	padding: 10px 0;
-	border-top: 1px solid #494e53;
-	margin-top: 20px;
+	.btn-danger {
+		width: max-content;
+	}
 }
 
 @media (max-width: 768px) {
-	.footer-content {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.footer-section {
-		margin-bottom: 20px;
-	}
-
 	.user-card {
 		padding: 10px;
 	}
@@ -199,10 +110,5 @@ th {
 	th,
 	td {
 		padding: 1rem;
-	}
-
-	.lowerdiv .button {
-		padding: 10px 20px;
-		font-size: 1rem;
 	}
 }

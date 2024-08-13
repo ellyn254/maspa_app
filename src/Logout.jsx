@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./logout.css";
 import { useState } from "react";
-import { SocialIcon } from 'react-social-icons';
 
 
 const Logout = ({ onLogout }) => {
@@ -66,47 +65,6 @@ const Logout = ({ onLogout }) => {
           </div>
         )}
       </div>
-      <footer className="footer mt-5">
-        <div className="footer-content d-flex justify-content-around">
-          <div className="footer-section about">
-            <h3>About Us</h3>
-            <p>
-              We are a company dedicated to providing the best services and
-              products.
-            </p>
-          </div>
-          <div className="footer-section links">
-            <h3>Quick Links</h3>
-            <ul className="list-unstyled">
-              <li>
-                <a href="/about">About</a>
-              </li>
-              <li>
-                <a href="/services">Services</a>
-              </li>
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-              <li>
-                <a href="/privacy">Privacy Policy</a>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-section social">
-            <h3>Follow Us</h3>
-            <div className="social-icons">
-              <SocialIcon icon="facebook" url="https://facebook.com" style={{ height: 25, width: 25 }} />
-              <SocialIcon url="https://twitter.com" icon="twitter" style={{ height: 25, width: 25 }}/>
-              <SocialIcon icon="instagram" url="https://instagram.com" style={{ height: 25, width: 25 }} />
-              <SocialIcon url="https://linkedin.com" icon="linkedin" style={{ height: 25, width: 25 }} />
-              <SocialIcon url="https://email.com" icon="email" style={{ height: 25, width: 25 }}/>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom text-center py-3">
-          &copy; {new Date().getFullYear()} Ellyn Beauty SPA.
-        </div>
-      </footer>
     </>
   );
 };

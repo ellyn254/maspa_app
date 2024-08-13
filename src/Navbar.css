@@ -24,7 +24,7 @@ nav {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	color:#691111;
+	color: #050505;
 }
 
 nav a,
@@ -88,36 +88,15 @@ nav a:hover,
 	position: relative;
 	font-size: 24px;
 	cursor: pointer;
+	color: black;
 }
 
-.cart-count {
-	position: absolute;
-	top: -10px;
-	right: -10px;
-	background-color: red;
-	color: white;
-	border-radius: 50%;
-	padding: 2px 6px;
-	font-size: 12px;
-}
 .dropdown-menu a:hover {
 	background-color: #685e5e;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-	nav {
-		position: fixed;
-		top: 0;
-		left: 100%;
-		width: 100%;
-		height: 100%;
-		flex-direction: column;
-		background-color: #f5f3f3;
-		transition: left 0.3s ease;
-		padding-top: 60px;
-	}
-
 	.responsive_nav {
 		left: 0;
 	}

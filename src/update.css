@@ -76,84 +76,8 @@ button,
 	border: none;
 	cursor: pointer;
 }
-.login:hover{
+.login:hover {
 	background-color: #b477a3de;
-}
-
-.lowerdiv {
-	text-align: center;
-	margin-top: 20px;
-	padding: 20px;
-	background-color: #f1f1f1;
-}
-
-.lowerdiv .text {
-	margin-bottom: 15px;
-}
-
-.lowerdiv .div .button {
-	background-color: #331029de;
-	color: white;
-	padding: 10px 20px;
-	text-decoration: none;
-	border-radius: 5px;
-}
-
-.lowerdiv .div .button:hover {
-	background-color: #331029de;
-}
-
-.footer {
-	background: #333;
-	color: #fff;
-	padding: 20px 0;
-}
-
-.footer .footer-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-.footer .footer-section {
-	flex: 1;
-	margin: 10px;
-	min-width: 200px;
-}
-
-.footer .footer-section h3 {
-	margin-bottom: 10px;
-}
-
-.footer .footer-section ul {
-	list-style: none;
-	padding: 0;
-}
-
-.footer .footer-section ul li {
-	margin-bottom: 10px;
-}
-
-.footer .footer-section ul li a {
-	color: #fff;
-	text-decoration: none;
-}
-
-.footer .footer-section ul li a:hover {
-	text-decoration: underline;
-}
-
-.footer .footer-section .social-icons {
-	display: flex;
-}
-
-.footer .footer-section .social-icons .social-icon {
-	margin-right: 10px;
-}
-
-.footer .footer-bottom {
-	text-align: center;
-	margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -174,16 +98,5 @@ button,
 
 	.phone-input input {
 		margin-top: 10px;
-	}
-}
-
-@media (max-width: 480px) {
-	.footer .footer-content {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.footer .footer-section {
-		margin: 15px 0;
 	}
 }
