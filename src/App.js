@@ -6,8 +6,6 @@ import Signup from "./Signup";
 import Home from "./Home";
 import Signin from "./Signin";
 import Contact from "./Contact";
-
-// import bgimage from "./images/bgbeauty.jpg"
 import User from "./User";
 import Update from "./Update";
 import About from "./About";

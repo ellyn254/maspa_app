@@ -1,4 +1,4 @@
-/* App.css */
+/* Navbar.css */
 
 body {
 	margin: 0;
@@ -12,6 +12,9 @@ header {
 	padding: 10px 20px;
 	background-color: #f8f6f6;
 	color: rgb(7, 7, 7);
+	box-sizing: border-box;
+	position: relative;
+	z-index: 1000; /* Ensure header is on top */
 }
 
 header img {
@@ -20,16 +23,15 @@ header img {
 	border-radius: 50px;
 }
 
-nav {
+header nav {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	color: #050505;
 }
 
-nav a,
-.profile-dropdown span,
-.view-dropdown span {
+header nav a,
+header .profile-dropdown span,
+header .view-dropdown span {
 	color: rgb(2, 2, 2);
 	text-decoration: none;
 	padding: 8px 12px;
@@ -37,9 +39,9 @@ nav a,
 	cursor: pointer;
 }
 
-nav a:hover,
-.profile-dropdown span:hover,
-.view-dropdown span:hover {
+header nav a:hover,
+header .profile-dropdown span:hover,
+header .view-dropdown span:hover {
 	background-color: #fdfafa;
 }
 
@@ -69,19 +71,22 @@ nav a:hover,
 	overflow: hidden;
 	flex-direction: column;
 	z-index: 1000; /* Ensure it is on top */
+	width: max-content; /* Adjust to content width */
 }
 
-.profile-dropdown:hover .dropdown-menu,
-.profile-dropdown span:focus + .dropdown-menu,
-.view-dropdown:hover .dropdown-menu,
-.view-dropdown span:focus + .dropdown-menu {
-	display: flex; /* Show the dropdown on hover */
+.profile-dropdown.open .dropdown-menu,
+.view-dropdown.open .dropdown-menu {
+	display: flex; /* Show the dropdown when open */
 }
 
 .dropdown-menu a {
 	padding: 10px 15px;
 	color: #333;
 	text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+	background-color: #685e5e;
 }
 
 .cart-icon {
@@ -91,18 +96,36 @@ nav a:hover,
 	color: black;
 }
 
-.dropdown-menu a:hover {
-	background-color: #685e5e;
-}
-
 /* Responsive styles */
 @media (max-width: 768px) {
-	.responsive_nav {
-		left: 0;
+	header {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	.nav-btn {
 		display: block;
+	}
+
+	nav {
+		flex-direction: column;
+		width: 100%;
+		display: none; /* Initially hidden */
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: #f8f6f6;
+		z-index: 999;
+		padding: 20px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	nav a {
+		padding: 10px 0;
+	}
+
+	nav.responsive_nav {
+		display: flex; /* Show navigation when toggled */
 	}
 
 	.nav-close-btn {
@@ -113,12 +136,14 @@ nav a:hover,
 }
 
 @media (max-width: 480px) {
-	header {
-		flex-direction: column;
+	header img {
+		width: 120px;
+		height: auto;
 	}
 
-	header img {
-		width: 150px;
-		height: auto;
+	header nav a,
+	header .profile-dropdown span,
+	header .view-dropdown span {
+		padding: 10px 20px;
 	}
 }

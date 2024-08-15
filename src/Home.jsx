@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./about.css";
+import "./CssFiles/about.css";
 import bgimage from "./images/bg.jpg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
@@ -19,9 +19,46 @@ import yogaimage from './assets/yoga.jpg';
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./contact.css";
+import "./CssFiles/contact.css";
+import './CssFiles/home.css';
+
+
+// Dummy data for products (you can replace this with actual API data)
+const productsData = [
+  {
+    id: 1,
+    name: 'manicure',
+    description: 'Description for manicure',
+    price: 29.99,
+    imageUrl: 'https://www.raycochrane.co.uk/wp-content/uploads/2019/08/frenchmanicure-1-1024x576.png',
+    
+  },
+  {
+    id: 2,
+    name: 'Pedicure',
+    description: 'Description for pedicure',
+    price: 49.99,
+   imageUrl: 'https://aesthetebeauty.co.uk/files/2023/11/pink-pedicure-toenails-dundee-1920.jpg'
+  },
+  {
+    id: 3,
+    name: 'massage',
+    description: 'Description for massage',
+    price: 19.99,
+    imageUrl: 'https://organicthaispa.ca/wp-content/uploads/2022/07/COUPLES-MASSAGE-1-2048x1365-optimized.jpg'
+  }
+  // Add more products as needed
+];
 
 const Home = () => {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    // Fetch products data from an API
+    // For this example, we are using dummy data
+    setProducts(productsData);
+  }, []);
 
   const services = [
     { id: 1, name: "Massage", icon: <img src={massimage} alt="Background" className="image"/> },
@@ -91,9 +128,20 @@ const Home = () => {
   return (
     <>
                                                              {/* HOME PAGE */}
-      <div className="App">
-       WELCOME TO ELLYNBEAUTYSPA WE VALUE ELEGANCY AND CLASSY.
+      <div className="home-container">
+      <h1>Welcome to Our E-commerce Store</h1>
+      <h2>CLASSY DE ELEGANCE</h2>
+      <div className="products-grid">
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={product.imageUrl} alt={product.name} />
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <p>${product.price.toFixed(2)}</p>
+          </div>
+        ))}
       </div>
+    </div>
 
                                                          {/* ABOUT PAGE */}
       <div className="route">

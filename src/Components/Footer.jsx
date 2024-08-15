@@ -1,6 +1,8 @@
 import React from 'react';
-import { SocialIcon } from 'react-social-icons';
 import '../CssFiles/footer.css';
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { RiMailFill } from "react-icons/ri";
 
 const Footer = () => {
 	return (
@@ -8,7 +10,7 @@ const Footer = () => {
 			<footer className="footer">
 				<div className="footer-content">
 					<div className="footer-section about">
-						<h3 className="aboutus">About Us</h3>
+						<h3>About Us</h3>
 						<p>
 							We are a company dedicated to providing the best services and
 							products.
@@ -45,39 +47,26 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
-					<div className="footer-section social">
-						<h3 className="text-white ">Follow Us</h3>
+					<div className="footer-section">
+						<h3 className="text-white">Kenya</h3>
 						<div className="social-icons">
-							<SocialIcon
-								icon="facebook"
-								url="https://facebook.com"
-								style={{ height: 25, width: 25 }}
-							/>
-							<SocialIcon
-								url="https://twitter.com"
-								icon="twitter"
-								style={{ height: 25, width: 25 }}
-							/>
-							<SocialIcon
-								icon="instagram"
-								url="https://instagram.com"
-								style={{ height: 25, width: 25 }}
-							/>
-							<SocialIcon
-								url="https://linkedin.com"
-								icon="linkedin"
-								style={{ height: 25, width: 25 }}
-							/>
-							<SocialIcon
-								url="https://email.com"
-								icon="email"
-								style={{ height: 25, width: 25 }}
-							/>
+						<ul>
+						<li>
+						<RiMailFill /> info@maspaenterprise.com
+						</li>
+						<li>
+						<FaPhoneAlt /> +254 790 834127
+						</li>
+						<li>
+						<FaMapMarkerAlt /> Office 1402, Three Sails Tower
+						</li>
+						</ul>
 						</div>
 					</div>
 				</div>
 				<div className="footer-bottom">
-					&copy; {new Date().getFullYear()} Ellyn Beauty SPA.
+					&copy; Ellyn Beauty SPA. All rights reserved
+					{/* {new Date().getFullYear()} */}
 				</div>
 			</footer>
 		</>

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./user.css"; // Custom CSS file for additional styling
+import "./CssFiles/user.css"; // Custom CSS file for additional styling
 
 const User = () => {
   const [user, setUser] = useState([]);

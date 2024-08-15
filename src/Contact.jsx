@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./contact.css";
+import "./CssFiles/contact.css";
 
 const Contact = () => {
   const [values, setValues] = useState({

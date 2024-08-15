@@ -1,12 +1,26 @@
 /* user.css */
 
+
 .user-card {
-	padding: 20px;
-	margin: 50px auto; /*increase the top and bottom space */
-	max-width: 1200px;
+	/* width: 100%; */
 	background-color: #f8f9fa;
+	max-width: 1200px;
+	margin: 100px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
 	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out; /* Smooth scaling */
+}
+
+/* Enlarge the form container on hover */
+.user-card:hover {
+	transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Enlarge the form container on mouse scroll */
+.user-card:active {
+	transform: scale(1.05); /* Slightly increase size on scroll */
 }
 
 .header {

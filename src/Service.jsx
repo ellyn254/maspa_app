@@ -6,7 +6,7 @@ import {
   Modal,
   Form,
 } from "react-bootstrap";
-import "./service.css";
+import "./CssFiles/service.css";
 import manimage from './assets/manicure.jpg';
 import pedimage from './assets/pedicure.jpg';
 import massimage from './assets/massage.jpg';

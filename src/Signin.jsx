@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-import "./signin.css";
+import "./CssFiles/signin.css";
 
 const Signin = () => {
   const [formData, setFormData] = useState({
@@ -106,7 +106,7 @@ const Signin = () => {
             <button type="submit" className="btn-signin">
               Login
             </button>
-            <div>Creating an account?
+            <div>You dont have account?
             <Link to="/register" className="account">
               Click Here
             </Link></div>

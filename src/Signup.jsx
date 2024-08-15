@@ -5,7 +5,7 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input/input";
 import "react-phone-number-input/style.css";
 // import { useMediaQuery } from "react-responsive";
 import Flag from "react-country-flag";
-import "./signup.css";
+import "./CssFiles/signup.css";
 
 const Signup = () => {
   const [formData, setFormData] = useState({

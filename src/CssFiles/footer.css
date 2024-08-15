@@ -1,39 +1,99 @@
-.aboutus {
+.footer a {
 	color: white;
-	text-align: center;
-	cursor: pointer;
+	text-decoration: none; /* Optional: to remove the underline from links */
 }
-.quick h3 {
+
+.footer a:hover {
+	color: #f0f0f0; /* Optional: change color on hover for a better UX */
+}
+
+.footer-section h3,
+.about h3,
+.quick h3,
+.admin h3,
+.text-white h3 {
 	color: white;
-	text-align: center;
-	cursor: pointer;
+	font-size: 1.5rem; /* Adjust the size as needed */
+	margin-bottom: 10px; /* Space below the heading */
+	font-weight: bold; /* Make the heading bold */
 }
-.quick ul {
-	list-style-type: none;
-	margin-left: 170px;
-	padding: 0px;
-	text-align: center;
-	text-decoration: none;
+
+.footer-section h3 {
+	text-transform: capitalize; /* Make the text uppercase */
+	font-style: italic;
 }
-.quick li {
-	font-size: 1em;
-	margin-right: 180px;
-	margin-bottom: 10px;
-}
+.footer-section,
+.about h3,
+.quick h3,
 .admin h3 {
+	text-transform: capitalize; /* Capitalize each word */
+	margin-top: 5px;
+	font-style: italic;
+}
+
+.text-white h3 {
+	text-transform: capitalize; /* Keep the text as it is */
+	margin-top: 5px;
+	font-style: italic;
+}
+
+/* Optional: Add hover effect to h3 elements */
+.footer-section h3:hover,
+.about h3:hover,
+.quick h3:hover,
+.admin h3:hover,
+.text-white h3:hover {
+	color: #f0f0f0; /* Slightly lighter color on hover */
+}
+.footer ul {
+	list-style-type: none; /* Remove bullet points */
+	padding-right: 100px; /* Remove default padding */
+	margin: 10px; /* Remove default margin */
+	/* padding: 5px; */
+}
+.footer p {
 	color: white;
-	text-align: center;
-	text-decoration: none;
+	font-style: normal;
+}
+
+.footer ul li {
+	margin-bottom: 8px; /* Space between each list item */
+}
+
+.footer ul li a {
+	color: white; /* Ensure the link text is white */
+	text-decoration: none; /* Remove underline from links */
+	font-size: 1rem; /* Adjust the size of the link text */
+}
+
+.footer ul li a:hover {
+	color: #f0f0f0; /* Slightly lighter color on hover */
+	text-decoration: underline; /* Optional: add underline on hover */
+}
+
+/* Optional: Add padding to the list items */
+.footer ul li {
+	padding-left: 10px; /* Add space on the left */
+}
+.footer .social-icons ul li{
+	display: flex; /* Arrange icons in a row */
+	align-items: center; /* Align icons vertically */
+	margin-top: 5px; /* Space above the icons */
+	padding-left: 30px;
+	list-style-type: none; /* Remove bullet points */
+	margin: 5px;
+	gap: 15px;
 	cursor: pointer;
+	
 }
-.admin ul {
-	list-style-type: none;
-	margin-left: 170px;
-	padding: 0px;
-	text-decoration: none;
+
+.footer .social-icons ul li{
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease; /* Smooth transition for hover effects */
 }
-.admin li {
-	font-size: 1em;
-	margin-right: 180px;
-	margin-bottom: 10px;
+
+.footer .social-icons:hover {
+	transform: scale(1.2); /* Slightly enlarge the icon on hover */
+	opacity: 0.8; /* Reduce opacity on hover */
 }

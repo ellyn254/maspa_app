@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./logout.css";
+import "./CssFiles/logout.css";
 import { useState } from "react";
 
 
@@ -47,7 +47,7 @@ const Logout = ({ onLogout }) => {
 
   return (
     <>
-      <div className="container mt-4">
+      <div className="container">
         {auth ? (
           <div>
             <h3>You are Authorized --- {name}</h3>

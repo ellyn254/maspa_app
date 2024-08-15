@@ -1,4 +1,4 @@
-import "./about.css";
+import "./CssFiles/about.css";
 import bgimage from "./images/bg.jpg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";

@@ -4,7 +4,7 @@ import axios from "axios";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input/input";
 import "react-phone-number-input/style.css";
 import Flag from "react-country-flag";
-import "./update.css";
+import "./CssFiles/update.css";
 
 const Update = () => {
   const [formData, setFormData] = useState({
@@ -85,7 +85,7 @@ const Update = () => {
   return (
     <>
       
-        <div className="form-wrapper">
+        <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2>Update</h2>
             <div>
