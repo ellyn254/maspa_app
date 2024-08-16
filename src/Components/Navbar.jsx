@@ -49,8 +49,8 @@ const Navbar = () => {
           <div className={`profile-dropdown ${profileDropdownOpen ? 'open' : ''}`}>
             <span onClick={toggleProfileDropdown}><FaUser /></span>
             <div className="dropdown-menu">
-              <Link to="/register">Register</Link>
-              <Link to="/">Login</Link>
+              <Link to="/register">Create Account</Link>
+              <Link to="/">Signin</Link>
               <Link to="/logout">Logout</Link>
             </div>
           </div>

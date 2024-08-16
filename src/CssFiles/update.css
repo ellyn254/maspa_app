@@ -44,8 +44,7 @@ label {
 
 input,
 .phone-input input,
-button,
-.link {
+button {
 	width: 100%;
 	padding: 10px;
 	margin-top: 5px;

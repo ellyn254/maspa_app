@@ -75,7 +75,7 @@
 .footer ul li {
 	padding-left: 10px; /* Add space on the left */
 }
-.footer .social-icons ul li{
+.footer .social-icons ul li {
 	display: flex; /* Arrange icons in a row */
 	align-items: center; /* Align icons vertically */
 	margin-top: 5px; /* Space above the icons */
@@ -84,16 +84,15 @@
 	margin: 5px;
 	gap: 15px;
 	cursor: pointer;
-	
 }
 
-.footer .social-icons ul li{
+.footer .social-icons ul li {
 	transition:
 		transform 0.3s ease,
 		opacity 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.footer .social-icons:hover {
-	transform: scale(1.2); /* Slightly enlarge the icon on hover */
-	opacity: 0.8; /* Reduce opacity on hover */
-}
+/* .footer .social-icons:hover {
+	/* transform: scale(1.2); /* Slightly enlarge the icon on hover */
+/* opacity: 0.8; Reduce opacity on hover */
+/* }  */

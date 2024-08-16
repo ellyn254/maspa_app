@@ -16,7 +16,7 @@ const Product = ({product}) => {
       <p className="card-text">{product.description}</p>
       <h5 className="card-title">{product.rate}</h5>
       <h5 className="card-title fw-bolder">Ksh. {product.price}</h5>
-      <button className="btn btn-primary w-100" onClick={() => dispatch({type: "Add", product: product})}>Add To Cart</button>
+      <button className="btn btn-cart w-100" style={{backgroundColor: "#331029de", color: "white"}} onClick={() => dispatch({type: "Add", product: product})}>Add To Cart</button>
     </div>
   </div>
   </div>

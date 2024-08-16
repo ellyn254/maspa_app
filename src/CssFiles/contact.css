@@ -4,6 +4,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
+.contactpage {
+	/* background-color: #d6c3aa; */
+	backdrop-filter: blur(8px);
+}
 .route {
 	color: #583b47de;
 	padding: 10px;
@@ -72,9 +76,8 @@ body {
 }
 
 .form-container .btn:hover {
-	background-color:#331029de;
+	background-color: #331029de;
 	color: white;
-
 }
 /* Responsive styles */
 @media (max-width: 768px) {

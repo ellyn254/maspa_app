@@ -3,6 +3,10 @@ body {
 	margin: 0;
 	font-family: Arial, sans-serif;
 }
+.aboutpage {
+	/* background-color: #b49f81; */
+	backdrop-filter: blur(8px);
+}
 .route {
 	color: #8d6d7ade;
 	padding: 10px;

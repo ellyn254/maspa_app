@@ -127,10 +127,9 @@ const Home = () => {
 
   return (
     <>
-                                                             {/* HOME PAGE */}
+  {/*/////////////////////////////////////////////////// HOME PAGE //////////////////////////////////////////////*/}
       <div className="home-container">
-      <h1>Welcome to Our E-commerce Store</h1>
-      <h2>CLASSY DE ELEGANCE</h2>
+      <h1 className="header"><b>CLASSY DE ELEGANCE</b></h1>
       <div className="products-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -143,14 +142,15 @@ const Home = () => {
       </div>
     </div>
 
-                                                         {/* ABOUT PAGE */}
-      <div className="route">
+{/*//////////////////////////////////////// ABOUT PAGE //////////////////////////////////////////////////*/}
+                                                         
+  <div className="aboutpage">
+   <div className="route">
     <Link to="/home" className="route" >Home</Link> /
     <Link to="/about" className="route" >About US</Link>
     </div>
      
         <img src={bgimage} alt="Background" className="spaimage" />
-       
         <div className="information">
           <h1>About Us</h1>
           <p>
@@ -187,7 +187,6 @@ const Home = () => {
             completely.
           </p>
         </div>
-  
       <div>
         <h2>Our Services</h2>
         <Row className="service-container">
@@ -206,9 +205,11 @@ const Home = () => {
           ))}
         </Row>
       </div>   
+      </div>
 
-                                                           {/* CONTACT PAGE */}
-                                                           <div className="route">
+  {/* ///////////////////////////////////////CONTACT PAGE ////////////////////////////////////////////*/}
+   <div className="contactpage">
+   <div className="route">
     <Link to="/home" className="route" >Home</Link> /
     <Link to="/contact" className="route" >Contact US</Link>
     </div>
@@ -255,7 +256,7 @@ const Home = () => {
             </button>
           </form>
       </div>
-
+      </div>
       </>
   );
 };
