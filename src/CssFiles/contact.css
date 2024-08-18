@@ -4,28 +4,32 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.contactpage {
-	/* background-color: #d6c3aa; */
-	backdrop-filter: blur(8px);
+.contact {
+	/* backdrop-filter: blur(8px); */
+	background-color: #290a20de;
+	padding: 50px;
+	color: white;
 }
 .route {
-	color: #583b47de;
+	color: white;
 	padding: 10px;
-	margin-top: 50px;
 	font-size: 20px;
 	font-style: italic;
-	/* font-weight: bold; */
 }
-.route:hover {
-	color: black;
+.phase1 {
+	margin: 250px auto;
+	/* display: flex; */
+	padding: 30px;
 }
-/* contact.css */
-
+.picus {
+	width: 25%;
+	height: 25%;
+}
 /* Initial style for the form container */
 .form-container {
-	width: 100%;
+	width: 100px;
 	max-width: 500px;
-	margin: 250px auto;
+	margin: 150px auto;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
@@ -50,6 +54,7 @@ body {
 
 .form-container .mb-3 {
 	margin-bottom: 15px;
+	margin-top: 15px;
 }
 
 .form-container label {
@@ -59,7 +64,7 @@ body {
 
 .form-container .form-control {
 	width: 100%;
-	padding: 10px;
+	padding: 20px;
 	margin-top: 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -70,6 +75,7 @@ body {
 	color: white;
 	/* border: 1px solid #331029de;; */
 	padding: 10px;
+	margin-top: 20px;
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 8px;
@@ -79,6 +85,7 @@ body {
 	background-color: #331029de;
 	color: white;
 }
+
 /* Responsive styles */
 @media (max-width: 768px) {
 	.form-container {

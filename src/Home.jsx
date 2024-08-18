@@ -17,10 +17,14 @@ import salonimage from './assets/salon.jpg';
 import yogaimage from './assets/yoga.jpg';
 //CONTACT PAGE IMPORTS
 import { useState, useEffect } from "react";
+import picimage from './images/nailshop.jpg'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./CssFiles/contact.css";
 import './CssFiles/home.css';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { RiMailFill } from 'react-icons/ri';
 
 
 // Dummy data for products (you can replace this with actual API data)
@@ -145,12 +149,10 @@ const Home = () => {
 {/*//////////////////////////////////////// ABOUT PAGE //////////////////////////////////////////////////*/}
                                                          
   <div className="aboutpage">
-   <div className="route">
     <Link to="/home" className="route" >Home</Link> /
     <Link to="/about" className="route" >About US</Link>
     </div>
      
-        <img src={bgimage} alt="Background" className="spaimage" />
         <div className="information">
           <h1>About Us</h1>
           <p>
@@ -187,6 +189,10 @@ const Home = () => {
             completely.
           </p>
         </div>
+        <div>
+          <h3 className="">OUR BEAUTYSPA</h3>
+        <img src={bgimage} alt="Background" className="spaimage" />
+        </div>
       <div>
         <h2>Our Services</h2>
         <Row className="service-container">
@@ -205,15 +211,30 @@ const Home = () => {
           ))}
         </Row>
       </div>   
-      </div>
-
-  {/* ///////////////////////////////////////CONTACT PAGE ////////////////////////////////////////////*/}
-   <div className="contactpage">
-   <div className="route">
+  {/* ///////////////////////////////////////////////////////////CONTACT PAGE ////////////////////////////////////////////*/}
+  
+    <div className="contact">
     <Link to="/home" className="route" >Home</Link> /
     <Link to="/contact" className="route" >Contact US</Link>
     </div>
-     
+  
+  <div className="phase1">
+      <h1>Visit Us to Experience Beauty</h1>
+    <img src={picimage} alt="" className="picus" />	
+						<div className="social-icons">
+						<ul>
+						<p>
+						<RiMailFill /> info@maspaenterprise.com
+						</p>
+						<p>
+						<FaPhoneAlt /> +254 790 834127
+						</p>
+						<p>
+						<FaMapMarkerAlt /> Office 1402, Three Sails Tower
+						</p>
+						</ul>
+						</div>
+            </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2>
@@ -255,7 +276,6 @@ const Home = () => {
               Submit
             </button>
           </form>
-      </div>
       </div>
       </>
   );

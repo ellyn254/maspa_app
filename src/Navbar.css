@@ -44,7 +44,7 @@ header .profile-dropdown span:hover,
 header .view-dropdown span:hover {
 	background-color: #fdfafa;
 }
-
+/* 
 .nav-btn {
 	display: none;
 	font-size: 1.5rem;
@@ -52,7 +52,7 @@ header .view-dropdown span:hover {
 	border: none;
 	color: rgb(3, 3, 3);
 	cursor: pointer;
-}
+} */
 
 .profile-dropdown,
 .view-dropdown {
@@ -102,10 +102,10 @@ header .view-dropdown span:hover {
 		flex-direction: column;
 		align-items: flex-start;
 	}
-
+	/* 
 	.nav-btn {
-		display: block;
-	}
+		display: flex;
+	} */
 
 	nav {
 		flex-direction: column;
@@ -145,5 +145,51 @@ header .view-dropdown span:hover {
 	header .profile-dropdown span,
 	header .view-dropdown span {
 		padding: 10px 20px;
+	}
+}
+
+/* Default styling for nav-btn */
+.nav-btn {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.8rem; /* Adjust the size as needed */
+	cursor: pointer;
+	display: none; /* Hidden by default, shown on smaller screens */
+	padding: 10px;
+	margin-left: 10px;
+	transition: transform 0.3s ease;
+}
+
+/* Show the button on smaller screens */
+@media (max-width: 768px) {
+	.nav-btn {
+		display: block;
+	}
+}
+
+/* Styling when the menu is open */
+.nav-btn.open {
+	transform: rotate(90deg); /* Optional: rotates the button when active */
+}
+
+/* Optional: hover effect for better UX */
+.nav-btn:hover {
+	transform: scale(1.1);
+	color: #33163f; /* Change color on hover */
+}
+
+/* Optional: focus effect for accessibility */
+.nav-btn:focus {
+	outline: none;
+	color: #33163f;
+}
+
+/* Adjust size and positioning of the nav button */
+@media (max-width: 480px) {
+	.nav-btn {
+		font-size: 1.5rem;
+		padding: 8px;
+		margin-left: 5px;
 	}
 }

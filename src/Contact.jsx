@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./CssFiles/contact.css";
+import { RiMailFill } from 'react-icons/ri';
+import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import picimage from './images/nailshop.jpg';
 
 const Contact = () => {
   const [values, setValues] = useState({
@@ -62,11 +65,29 @@ const Contact = () => {
 
   return (
     <>
-     <div className="route">
-    <Link to="/home" className="route" >Home</Link> /
+     <div className="contact">
+    <Link to="/home" className="text-white" >Home</Link> /
     <Link to="/contact" className="route" >Contact US</Link>
     </div>
-     
+  
+  <div className="phase1">
+    {/* <div className="reachus"> */}
+      <h1>Visit Us to Experience Beauty</h1>
+    <img src={picimage} alt="" className="picus" />	
+						<div className="social-icons">
+						<ul>
+						<p>
+						<RiMailFill /> info@maspaenterprise.com
+						</p>
+						<p>
+						<FaPhoneAlt /> +254 790 834127
+						</p>
+						<p>
+						<FaMapMarkerAlt /> Office 1402, Three Sails Tower
+						</p>
+						</ul>
+						</div>
+            </div>
         <div className="form-container">
           <form onSubmit={handleSubmit}>
             <h2>

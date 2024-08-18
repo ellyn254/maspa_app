@@ -28,13 +28,10 @@ const About = () => {
   
   return (
     <>
-    <div className="route">
+    <div className="aboutpage">
     <Link to="/home" className="route" >Home</Link> /
     <Link to="/about" className="route" >About US</Link>
     </div>
-     
-        <img src={bgimage} alt="Background" className="spaimage" />
-       
         <div className="information">
           <h1>About Us</h1>
           <p>
@@ -70,8 +67,11 @@ const About = () => {
             client doesn’t have to redo/renovate the interior partly or
             completely.
           </p>
+        </div>       
+        <div>
+          <h3 className="">OUR BEAUTYSPA</h3>
+        <img src={bgimage} alt="Background" className="spaimage" />
         </div>
-  
       <div>
         <h2>Our Services</h2>
         <Row className="service-container">
