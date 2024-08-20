@@ -13,7 +13,7 @@ import massimage from './assets/massage.jpg';
 import facialimage from './assets/facial.jpg';
 import salonimage from './assets/salon.jpg';
 import yogaimage from './assets/yoga.jpg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const services = [
   { id: 1, name: "Massage", icon: <img src={massimage} alt="Background" className="image"/> },
@@ -32,6 +32,20 @@ const Service = () => {
     date: "",
     payment: ""
   });
+  const navigate = useNavigate();
+
+  const handleService = (service) => {
+    try {
+      if (!service || !service.name) {
+        throw new Error("Invalid service data");
+      }
+      navigate(`/services/${service.name.toLowerCase()}`);
+    } catch (error) {
+      console.error("Navigation error:", error.message);
+      alert("Failed to navigate to the service. Please try again.");
+    }
+  };
+  
 
   const handleBook = (service) => {
     setSelectedService(service);
@@ -54,20 +68,18 @@ const Service = () => {
   };
   return (
     <>
-       <div className="route">
-    <Link to="/home" className="route" >Home</Link> /
+    <div className="navbar">
+    <Link to="/home" className="route" >Home</Link> 
     <Link to="/services" className="route" >Our Services</Link>
     </div>
         <Row className="service-container">
           {services.map((service) => (
             <Col key={service.id} sm={6} md={4} className="mb-4">
-              <Card>
+              <Card onClick={() => handleService(service)}>
                 <Card.Body className="text-center">
                   <div style={{ fontSize: "2rem" }}>{service.icon}</div>
                   <Card.Title>{service.name}</Card.Title>
-                  <button className="booking" onClick={() => handleBook(service)}>
-                    Book Now
-                  </button>
+                 <button className="booking" onClick={() => handleBook(service)}>View</button>
                 </Card.Body>
               </Card>
             </Col>

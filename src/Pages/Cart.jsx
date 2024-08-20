@@ -40,7 +40,7 @@ const Cart = () => {
               <div className="bg-secondary p-3 text-white">
                 <h5>Total Items: {totalItem(cart)}</h5>
                 <h5>Total Price: Ksh.{totalPrice(cart)}</h5>
-                <Link to='/checkout' className="btn btn-warning w-100" style={{backgroundColor: "#331029de", color: "white"}}>Checkout Ksh.{totalPrice(cart)}</Link>
+                <Link to='/payment' className="btn btn-warning w-100" style={{backgroundColor: "#331029de", color: "white"}}>Checkout Ksh.{totalPrice(cart)}</Link>
               </div>
             </div>
           </div>

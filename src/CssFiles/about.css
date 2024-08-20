@@ -3,21 +3,21 @@ body {
 	margin: 0;
 	font-family: Arial, sans-serif;
 }
-.aboutpage {
+.navbar {
 	background-color: #331029de;
-	backdrop-filter: blur(8px);
-	padding: 50px;
 	color: white;
+	padding: 50px;
 }
 .route {
-	color: #ffffff;
-	padding: 10px;
-	margin-top: 50px;
+	color: white;
+	padding: 0px;
+	margin: 0 auto;
 	font-size: 19px;
 	font-style: italic;
+	text-decoration: none;
 }
 .route:hover {
-	color: #ffffff;
+	color: black;
 }
 .name {
 	padding: 10px;

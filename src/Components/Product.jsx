@@ -1,26 +1,30 @@
 /* eslint-disable react/prop-types */
-
-import React, {useContext} from 'react'
+import React, { useContext } from 'react';
 import { CartContext } from '../ReduxFeatures/ContextProvider';
+import styles from '../product.module.css';
 
-const Product = ({product}) => {
+const Product = ({ product }) => {
+  const { dispatch } = useContext(CartContext);
 
-  //we use the cartcontext by usecontext hook with dispatch constant 
-  const {dispatch} = useContext(CartContext);
   return (
-    <div className="col">
-    <div className="card h-100 w-100">
-    <img src={product.image} className="card-img-top h-75" alt="..." />
-    <div className="card-body">
-      <h5 className="card-title">{product.title}</h5>
-      <p className="card-text">{product.description}</p>
-      <h5 className="card-title">{product.rate}</h5>
-      <h5 className="card-title fw-bolder">Ksh. {product.price}</h5>
-      <button className="btn btn-cart w-100" style={{backgroundColor: "#331029de", color: "white"}} onClick={() => dispatch({type: "Add", product: product})}>Add To Cart</button>
-    </div>
-  </div>
-  </div>
-  )
-}
+      <div className={styles.card}>
+        <img src={product.image} className={styles['card-img']} alt={product.title} />
+        <div className={styles['card-body']}>
+          <h5 className={styles['card-title']}>{product.title}</h5>
+          <p className={styles['card-text']}>{product.description}</p>
+          <h5 className={styles['card-title']}>{product.rate}</h5>
+          <h5 className={`${styles['card-title']} ${styles['fw-bolder']}`}>
+            Ksh. {product.price}
+          </h5>
+          <button
+            className={styles['btn-cart']}
+            onClick={() => dispatch({ type: 'Add', product })}
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+  );
+};
 
-export default Product
+export default Product;

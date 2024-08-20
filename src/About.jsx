@@ -28,9 +28,9 @@ const About = () => {
   
   return (
     <>
-    <div className="aboutpage">
-    <Link to="/home" className="route" >Home</Link> /
-    <Link to="/about" className="route" >About US</Link>
+    <div className="navbar">
+    <Link to="/home" className="route">Home</Link> 
+    <Link to="/about" className="route">About US</Link>
     </div>
         <div className="information">
           <h1>About Us</h1>

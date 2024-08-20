@@ -4,22 +4,30 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.contact {
+.navbar {
 	/* backdrop-filter: blur(8px); */
 	background-color: #290a20de;
 	padding: 50px;
 	color: white;
 }
 .route {
-	color: white;
 	padding: 10px;
 	font-size: 20px;
 	font-style: italic;
 }
+.route:hover {
+	color: black;
+}
 .phase1 {
+	background-color: #290a20de;
 	margin: 250px auto;
-	/* display: flex; */
-	padding: 30px;
+	padding: 50px;
+	display: flex;
+	color: white;
+}
+.phase1 p {
+	font-size: 16px;
+	margin: 40px;
 }
 .picus {
 	width: 25%;
@@ -27,9 +35,8 @@ body {
 }
 /* Initial style for the form container */
 .form-container {
-	width: 100px;
 	max-width: 500px;
-	margin: 150px auto;
+	margin: 250px auto;
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
