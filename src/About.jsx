@@ -89,7 +89,8 @@ const About = () => {
             </Col>
           ))}
         </Row>
-      </div>         
+      </div>   
+        
     </>
   );
 };

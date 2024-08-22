@@ -45,7 +45,6 @@ const Service = () => {
       alert("Failed to navigate to the service. Please try again.");
     }
   };
-  
 
   const handleBook = (service) => {
     setSelectedService(service);

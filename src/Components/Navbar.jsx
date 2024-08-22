@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import Image from "../images/logo.jpg";
 import '../Navbar.css';
 import { CartContext } from '../ReduxFeatures/ContextProvider';
@@ -11,7 +11,7 @@ const Navbar = () => {
   const navRef = useRef();
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [viewDropdownOpen, setViewDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State to track menu open/close
+  // const [menuOpen, setMenuOpen] = useState(false); // State to track menu open/close
 
   
   const toggleUserDropdown = () => {
@@ -26,12 +26,7 @@ const Navbar = () => {
     setUserDropdownOpen(false);
     setViewDropdownOpen(false);
   };
-
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle menu open/close state
-    navRef.current.classList.toggle("responsive_nav"); // Toggle responsive class on nav
-  };
+  
 
   return (
     <>
@@ -63,9 +58,6 @@ const Navbar = () => {
             <FaShoppingCart />{cart.length}
           </Link>
           </nav>
-          <button className="nav-btn" onClick={toggleMenu}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
       </header>
     </>
   );

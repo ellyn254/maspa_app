@@ -1,6 +1,6 @@
 /* Default styles for the product card */
 .container {
-	width: 1000px;
+	max-width: 1000px;
 	margin: 50px auto;
 	height: 100%;
 }
@@ -12,8 +12,14 @@
 }
 .card {
 	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 	padding: 30px;
+	transition: transform 0.3s ease;
 }
+.card:hover {
+	transform: translateY(-10px);
+  }
 .card-body {
 	padding: 1rem;
 	flex-direction: column;
@@ -39,7 +45,7 @@
 	color: white;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 	.card {
 		margin-bottom: 1.5rem;
 	}
@@ -71,4 +77,4 @@
 		padding: 0.5rem;
 		font-size: 0.75rem;
 	}
-} */
+}

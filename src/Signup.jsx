@@ -211,7 +211,7 @@ const Signup = () => {
               </label>
             </div>
             <Link to={`/forgotpassword`} className="forgot">
-                forgot-password?
+                Forgot-password?
               </Link>
           </form>
         </div>

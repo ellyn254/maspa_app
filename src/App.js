@@ -19,6 +19,8 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Massage from './Services/Massage';
 import Payment from './Payment';
+import ForgotPassword from './Components/ForgotPassword';
+import Pedicure from './Services/Pedicure';
 
 function App() {
   // const [cartCount, setCartCount] = useState(0);
@@ -71,7 +73,9 @@ function App() {
           <Route path="/services" element={<Service />} />
           <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
           <Route path="/massage" element={<Massage />} />
+          <Route path="/pedicure" element={<Pedicure/>}/>
           <Route path="/payment" element={<Payment />} />
+          <Route path="/forgotpassword" element={<ForgotPassword/>}/>
         </Routes>
       </div>
       <Footer/>
