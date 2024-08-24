@@ -1,138 +1,182 @@
-/* General styles */
+/* about.css */
+
+/* General Styles */
 body {
-	margin: 0;
 	font-family: Arial, sans-serif;
+	line-height: 1.6;
 }
-.navbar {
-	background-color: #331029de;
-	color: white;
-	padding: 50px;
-}
-.route {
-	color: white;
-	padding: 0px;
+
+.about-navbar {
+	background-color: #f8f9fa;
+	text-align: center;
+	padding: 150px;
 	margin: 0 auto;
-	font-size: 19px;
-	font-style: italic;
-	text-decoration: none;
+	background-image: url('../images/beuty.webp');
+	border-bottom: 2px solid #ddd;
+	max-width: 100%;
+	background-size: cover;
 }
-.route:hover {
+
+.about-navbar a {
+	text-decoration: none;
+	color: white;
+	font-size: 70px;
+	font-weight: bold;
+	
+}
+
+.about-navbar a:hover {
 	color: black;
 }
-.name {
-	padding: 10px;
-}
-.spaimage {
-	width: 50%;
-	margin: 50px auto;
-	height: auto;
-	display: flex;
-}
+
 .information {
-	padding: 20px;
+	padding: 30px;
 	max-width: 1200px;
-	margin: auto;
+	margin: 40px auto;
 	text-align: justify;
 }
 
 .information h1 {
+	font-size: 2rem;
+	margin-top: 20px;
 	text-align: center;
-}
-.booking {
-	width: 100%;
-	background-color: #331029de;
-	color: white;
-	text-decoration: none;
-}
-
-.booking:hover {
-	background-color: #773965de;
-}
-@media (min-width: 768px) {
-	.spaimage {
-		width: 50%;
-		height: auto;
-		margin-bottom: 50px;
-		display: flex;
-	}
-
-	.information {
-		width: 50%;
-		margin-bottom: 16px;
-	}
-}
-
-@media (min-width: 992px) {
-	.information {
-		padding: 0px;
-	}
-}
-.information h1 {
-	font-size: 2em;
-	margin-bottom: 10px;
 }
 
 .information p {
-	font-size: 1em;
-	line-height: 1.6;
-	margin-bottom: 15px;
+	margin-bottom: 1.5rem;
+	font-size: 1rem;
 }
 
-.information ul {
-	list-style-type: circle;
-	margin-left: 170px;
-	padding: 0px;
+.service-container {
+	max-width: 1400px;
+	margin: 40px auto;
+	justify-content: center;
 }
 
-.information ul li {
-	font-size: 1em;
-	margin-right: 180px;
+.card-container {
+	border: none;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
+}
+
+.card-container:hover {
+	transform: translateY(-5px);
+}
+
+.card-container .image {
+	max-width: fit-content;
+	height: auto;
+	border-radius: 8px;
+	margin: 10px auto;
+}
+
+.card-title {
+	font-size: 1.25rem;
 	margin-bottom: 10px;
+	font-weight: bold;
 }
 
-@media (max-width: 480px) {
-	/* .container {
-		padding: 10px;
-	} */
-
-	.information h1 {
-		padding: 10px;
-	}
-
-	.information p,
-	.information ul li {
-		font-size: 0.8em;
-	}
-
-	.text {
-		font-size: 0.9em;
-	}
-
-	.button {
-		font-size: 0.8em;
-		padding: 8px 16px;
-	}
+.card-container .text-center {
+	text-align: center;
+	padding: 15px;
 }
-/* Responsive styles */
-@media (max-width: 768px) {
+
+.readme {
+	margin-top: 35px;
+	text-align: justify;
+	text-decoration: none;
+}
+.readme a {
+	color: black;
+	text-decoration: none;
+}
+
+.readme a:hover {
+	color: #331029de;
+}
+
+.lowerdiv {
+	background-color: #331029de;
+	text-align: center;
+	max-width: 100%;
+	color: white;
+	padding: 70px;
+}
+.lowerdiv a {
+	background-color: #ddd;
+	padding: 10px 30px;
+	font-size: 16px;
+	color: black;
+	border: none;
+	border-radius: 5px;
+	text-decoration: none;
+	max-width: fit-content;
+	cursor: pointer;
+}
+
+.talk:hover {
+	color: #331029de;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+	.about-navbar a {
+		font-size: 1rem;
+	}
+
 	.information {
 		padding: 15px;
 	}
 
+	.service-container {
+		padding: 15px;
+	}
+
+	.card-container {
+		margin-bottom: 20px;
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+	}
+
+	.booking {
+		font-size: 0.9rem;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
 	.information h1 {
-		font-size: 1.5em;
+		font-size: 1.75rem;
 	}
 
-	.information p,
-	.information ul li {
-		font-size: 0.9em;
+	.card-container {
+		margin-bottom: 30px;
 	}
 
-	.text {
-		font-size: 1em;
+	.card-title {
+		font-size: 1.2rem;
 	}
 
-	.button {
-		font-size: 0.9em;
+	.booking {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.information h1 {
+		font-size: 2rem;
+	}
+
+	.card-container {
+		margin-bottom: 40px;
+	}
+
+	.card-title {
+		font-size: 1.25rem;
+	}
+
+	.booking {
+		font-size: 1rem;
 	}
 }

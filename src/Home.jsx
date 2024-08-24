@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./CssFiles/about.css";
-import bgimage from "./images/bg.jpg";
+// import bgimage from "./images/bg.jpg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link } from "react-router-dom";
 import {
@@ -48,49 +48,56 @@ const productsData = [
     id: 3,
     name: 'massage',
     description: 'Description for massage',
-    price: 19.99,
+    price: 50.99,
     imageUrl: 'https://organicthaispa.ca/wp-content/uploads/2022/07/COUPLES-MASSAGE-1-2048x1365-optimized.jpg'
   },
   {
     id: 4,
     name: 'yoga',
     description: 'Description for yoga',
-    price: 19.99,
+    price: 13.99,
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSjklsoxVK0JHuq1DNS7aH4R_hGkT07hkasQ&s'
   },
   {
     id: 5,
     name: 'salon',
     description: 'Description of salon',
-    price: 19.99,
+    price: 39.99,
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4jCu5aCPbsBkeHc7482oHgLzxwByiKIm3J0PIKjsZX00Brs0KDgIw17k2iGCR73N1Rw0&usqp=CAU'
   },
   {
     id: 6,
     name: 'Facial',
     description: 'Description for facial',
-    price: 19.99,
+    price: 456.99,
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToBWL5X92Ad60hV2tSDEq66Ln_ExYVH99J5g&s'
   },
   {
     id: 7,
     name: 'makeup',
     description: 'Description for makeup',
-    price: 19.99,
+    price: 1999.99,
     imageUrl: 'https://w7.pngwing.com/pngs/730/227/png-transparent-cosmetics-make-up-face-powder-makeup-set-face-fashion-makeup-brush.png'
   },
   {
     id: 8,
     name: 'tatooing',
     description: 'Description for tatooing',
-    price: 19.99,
+    price: 209.99,
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbNHxwMvZvtFJv_BD7M_Gm74D2hay1MsfafA&s'
   },
   {
     id: 9,
     name: 'beauty',
     description: 'Description for beauty',
-    price: 19.99,
+    price: 39.99,
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3Tv61JYkFDnf7MYjqOszMBeTSBB7Vz04n7iKsj0z0LpuZSO1YBQWwDZQH5GTmmnq-7E&usqp=CAU'
+  },
+  {
+    id: 10                                  ,
+    name: 'beauty',
+    description: 'Description for beauty',
+    price: 29.99,
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA3Tv61JYkFDnf7MYjqOszMBeTSBB7Vz04n7iKsj0z0LpuZSO1YBQWwDZQH5GTmmnq-7E&usqp=CAU'
   }
   // Add more products as needed
@@ -196,18 +203,12 @@ const Home = () => {
 
 			{/*//////////////////////////////////////// ABOUT PAGE //////////////////////////////////////////////////*/}
 
-			<div className="navbar">
-				<Link to="/home" className="route">
-					Home
-				</Link>
-				
-				<Link to="/about" className="route ">
+			<div className="about-navbar">
+				<Link to="/about" className="route">
 					About US
 				</Link>
 			</div>
-
 			<div className="information">
-				<h1>About Us</h1>
 				<p>
 					DM Interior Studio was established with the purpose of delivering of
 					Total interior design services in Sri Lanka.Our portfolio ranges from
@@ -242,10 +243,7 @@ const Home = () => {
 					completely.
 				</p>
 			</div>
-			<div>
-				<h3 className="">OUR BEAUTYSPA</h3>
-				<img src={bgimage} alt="Background" className="spaimage" />
-			</div>
+		
 			<div>
 				<h2>Our Services</h2>
 				<Row className="service-container">
@@ -264,6 +262,7 @@ const Home = () => {
 					))}
 				</Row>
 			</div>
+			
 			{/* ///////////////////////////////////////////////////////////CONTACT PAGE ////////////////////////////////////////////*/}
 
 			<div className="navbar">

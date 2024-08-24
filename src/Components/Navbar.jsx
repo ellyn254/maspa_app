@@ -1,66 +1,70 @@
-import React, { useState, useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { FaShoppingCart } from "react-icons/fa";
-import Image from "../images/logo.jpg";
-import '../Navbar.css';
+import React, { useState, useContext } from 'react';
 import { CartContext } from '../ReduxFeatures/ContextProvider';
-import { FaUser } from "react-icons/fa";
+import styles from '../Navbar.module.css';
+import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Image from '../images/logo.jpg';
 
 const Navbar = () => {
-  const { cart } = useContext(CartContext);
-  const navRef = useRef();
-  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
-  const [viewDropdownOpen, setViewDropdownOpen] = useState(false);
-  // const [menuOpen, setMenuOpen] = useState(false); // State to track menu open/close
+	const { cart } = useContext(CartContext);
+	const [isMobile, setIsMobile] = useState(false);
 
-  
-  const toggleUserDropdown = () => {
-    setUserDropdownOpen(!userDropdownOpen);
-  };
-
-  const toggleViewDropdown = () => {
-    setViewDropdownOpen(!viewDropdownOpen);
-  };
-
-  const closeDropdowns = () => {
-    setUserDropdownOpen(false);
-    setViewDropdownOpen(false);
-  };
-  
-
-  return (
-    <>
-      <header>
-        <img src={Image} alt="images" width={150} height={100} />
-        <span>ELLYNBEAUTYSPA</span>
-        <nav ref={navRef}>
-          <Link to="/home" onClick={closeDropdowns}>Home</Link>
-          <Link to="/products" onClick={closeDropdowns}>Products</Link>
-          <div className={`view-dropdown ${viewDropdownOpen ? 'open' : ''}`}>
-            <span onClick={toggleViewDropdown}>Services</span>
-            <div className="dropdown-menu">
-              <Link to="/manicure" onClick={closeDropdowns}>Manicure</Link>
-              <Link to="/pedicure" onClick={closeDropdowns}>Pedicure</Link>
-              <Link to="/massage" onClick={closeDropdowns}>Massage</Link>
-              <Link to="/salon" onClick={closeDropdowns}>Salon</Link>
-              <Link to="/yoga" onClick={closeDropdowns}>Yoga</Link>
-            </div>
-          </div>
-          <div className={`profile-dropdown ${userDropdownOpen ? 'open' : ''}`}>
-            <span onClick={toggleUserDropdown}><FaUser /></span>
-            <div className="dropdown-menu">
-              <Link to="/register" onClick={closeDropdowns}>Create Account</Link>
-              <Link to="/" onClick={closeDropdowns}>Signin</Link>
-              <Link to="/logout" onClick={closeDropdowns}>Logout</Link>
-            </div>
-          </div>
-          <Link to="/cart" className="cart-icon" onClick={closeDropdowns}>
-            <FaShoppingCart />{cart.length}
-          </Link>
-          </nav>
-      </header>
-    </>
-  );
-}
+	return (
+		<nav className={styles.nav}>
+			<Link to="/" className={styles.logo}>
+				<img src={Image} alt="images" width={150} height={100} />
+			</Link>
+			<div className={styles.hamburger} onClick={() => setIsMobile(!isMobile)}>
+				{isMobile ? <FaTimes /> : <FaBars />}
+			</div>
+			<div className={isMobile ? styles.menuMobile : styles.menu}>
+				<div className={styles.menuItem}>
+					<Link to="/home" className={styles.menuLink}>
+						Home
+					</Link>
+				</div>
+				<div className={styles.menuItem}>
+					<Link to="/products" className={styles.menuLink}>
+						Products
+					</Link>
+					<div className={styles.dropdown}>
+						<Link to="/products/men">Men</Link>
+						<Link to="/products/women">Women</Link>
+						<Link to="/products/kids">Kids</Link>
+					</div>
+				</div>
+				<div className={styles.menuItem}>
+					<Link to="/services" className={styles.menuLink}>
+						Services
+					</Link>
+					<div className={styles.dropdown}>
+						<Link to="/manicure">Manicure</Link>
+						<Link to="/pedicure">Pedicure</Link>
+						<Link to="/massage">Massage</Link>
+						<Link to="/salon">Salon</Link>
+						<Link to="/yoga">Yoga</Link>
+						<Link to="/facial">Facial</Link>
+					</div>
+				</div>
+				<div className={styles.menuItem}>
+					<Link to="/about" className={styles.menuLink}>
+						About Us
+					</Link>
+				</div>
+				<div className={styles.menuItem}>
+					<Link to="/contact" className={styles.menuLink}>
+						Contact
+					</Link>
+				</div>
+				<div className={styles.menuItem}>
+					<Link to="/cart" className={styles.menuLink}>
+						<FaShoppingCart />
+						{cart.length}
+					</Link>
+				</div>
+			</div>
+		</nav>
+	);
+};
 
 export default Navbar;
