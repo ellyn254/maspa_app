@@ -4,6 +4,7 @@ import styles from '../Navbar.module.css';
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Image from '../images/logo.jpg';
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
 	const { cart } = useContext(CartContext);
@@ -11,18 +12,13 @@ const Navbar = () => {
 
 	return (
 		<nav className={styles.nav}>
-			<Link to="/" className={styles.logo}>
+			<Link to="/home" className={styles.logo}>
 				<img src={Image} alt="images" width={150} height={100} />
 			</Link>
 			<div className={styles.hamburger} onClick={() => setIsMobile(!isMobile)}>
 				{isMobile ? <FaTimes /> : <FaBars />}
 			</div>
 			<div className={isMobile ? styles.menuMobile : styles.menu}>
-				<div className={styles.menuItem}>
-					<Link to="/home" className={styles.menuLink}>
-						Home
-					</Link>
-				</div>
 				<div className={styles.menuItem}>
 					<Link to="/products" className={styles.menuLink}>
 						Products
@@ -56,6 +52,18 @@ const Navbar = () => {
 						Contact
 					</Link>
 				</div>
+				<div className={styles.menuItem}>
+					<Link to="/" className={styles.menuLink}>
+						<FaUser/>
+					</Link>
+					<div className={styles.dropdown}>
+						<Link to="/register">Signup</Link>
+						<Link to="/">Signin</Link>
+						<Link to="//user/update/:id">Update</Link>
+						<Link to="/logout">Signout</Link>
+					</div>
+				</div>
+
 				<div className={styles.menuItem}>
 					<Link to="/cart" className={styles.menuLink}>
 						<FaShoppingCart />

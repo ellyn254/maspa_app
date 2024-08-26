@@ -4,46 +4,51 @@ body {
 	margin: 0;
 	padding: 0;
 }
-.navbar {
-	/* backdrop-filter: blur(8px); */
-	background-color: #290a20de;
-	padding: 50px;
+.contact-navbar {
+	background-color: #331029de;
+	padding: 70px;
 	color: white;
-}
-.route {
-	padding: 10px;
+	font-family: 'Times New Roman', Times, serif;
 	font-size: 20px;
-	font-style: italic;
 }
-.route:hover {
-	color: black;
-}
-.phase1 {
-	background-color: #290a20de;
-	margin: 250px auto;
-	padding: 50px;
+.body-container {
 	display: flex;
-	color: white;
-}
-.phase1 p {
-	font-size: 16px;
-	margin: 40px;
-}
-.picus {
-	width: 25%;
-	height: 25%;
+	background-color: white;
+	max-width: 100%;
+	padding: 80px;
+	margin: 0px auto;
 }
 /* Initial style for the form container */
 .form-container {
-	max-width: 500px;
-	margin: 250px auto;
-	padding: 20px;
+	max-width: 400px;
+	margin: auto;
+	padding-right: 30px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	transition: transform 0.3s ease-in-out; /* Smooth scaling */
 }
 
+.bio {
+	margin: auto;
+	padding: 30px;
+	color: black;
+	max-width: 600px;
+}
+.bio h2 {
+	margin: 30px auto;
+	text-align: justify;
+	font-size: 30px;
+}
+.bio p {
+	margin: 20px auto;
+	text-align: justify;
+	
+}
+.bgmeet {
+	width: 75%;
+	height: 50%;
+}
 /* Enlarge the form container on hover */
 .form-container:hover {
 	transform: scale(1.05); /* Slightly increase size on hover */
@@ -80,7 +85,6 @@ body {
 .form-container .btn {
 	background-color: #331029de;
 	color: white;
-	/* border: 1px solid #331029de;; */
 	padding: 10px;
 	margin-top: 20px;
 	cursor: pointer;

@@ -5,30 +5,10 @@
 	display: flex;
 	margin-left: 50px;
 }
-.navbar {
-	background-color: #331029de;
-	color: white;
-	padding: 50px;
-}
-.heading {
-	color: #331029de;
-	font-style: italic;
-}
-.route {
-	color: white;
-	padding: 0px;
-	margin: 0 auto;
-	font-size: 19px;
-	font-style: italic;
-	text-decoration: none;
-}
-.route:hover {
-	color: black;
-}
 .service-container {
-	width: 100%;
-	padding-left: 100px;
-	margin: 50px auto;
+	
+	margin: 100px auto;
+	background-color: #331029de;
 }
 .text-center {
 	/* width: 10px; */

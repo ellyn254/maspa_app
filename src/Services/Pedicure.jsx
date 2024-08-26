@@ -7,7 +7,6 @@ import acrylics from '../images/pedicure/acrylics.jpg';
 import builder from '../images/pedicure/gelbuilder.webp';
 import soft from '../images/pedicure/softgel.webp';
 
-
 const Pedicure = () => {
 	const [selectedService, setSelectedService] = useState(null);
 	const [showModal, setShowModal] = useState(false);
@@ -38,7 +37,7 @@ const Pedicure = () => {
 	};
 	return (
 		<div className={styles.container}>
-            <img src={pedicure} alt="" className={styles.image}/>
+			<img src={pedicure} alt="" className={styles.image} />
 			<h2 className={styles.title}>Pedicure services</h2>
 			<p className={styles.description}>
 				Experience ultimate toenail transformation with gel, builder, tips,
@@ -46,8 +45,8 @@ const Pedicure = () => {
 				beauty and overall cleanliness.
 			</p>
 			<div className={styles.services}>
-            <img src={builder} alt="" className={styles.image}/>
 				<div className={styles.serviceItem}>
+					<img src={builder} alt="" className={styles.image} />
 					<h3 className={styles.serviceTitle}>Pedi builder gel</h3>
 					<p className={styles.serviceDescription}>
 						Builder gels are versatile and can be used for sculpting, tip
@@ -57,7 +56,7 @@ const Pedicure = () => {
 					<span className={styles.price}>$60 / 60 mins</span>
 				</div>
 				<div className={styles.serviceItem}>
-                <img src={acrylics} alt="" className={styles.image}/>
+					<img src={acrylics} alt="" className={styles.image} />
 					<h3 className={styles.serviceTitle}>Acrylics Pedicure</h3>
 					<p className={styles.serviceDescription}>
 						Applying a liquid and powder mixture to nail beds to extend and
@@ -66,7 +65,7 @@ const Pedicure = () => {
 					<span className={styles.price}>$80 / 60 mins</span>
 				</div>
 				<div className={styles.serviceItem}>
-                <img src={soft} alt="" className={styles.image}/>
+					<img src={soft} alt="" className={styles.image} />
 					<h3 className={styles.serviceTitle}>Soft Gel Pedi</h3>
 					<p className={styles.serviceDescription}>
 						Soft gel is ideal for short to mid-length natural nails. While it
