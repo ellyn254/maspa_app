@@ -56,7 +56,7 @@ const User = () => {
                 <td className="buttons">
                   <Link
                     to={`update/${data.id}`}
-                    className="btn btn-primary me-2"
+                    className="btn btn-send me-2"
                   >
                     Update
                   </Link>

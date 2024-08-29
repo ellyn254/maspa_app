@@ -81,7 +81,7 @@ th {
 }
 
 /* Primary button styling */
-.btn-primary {
+.btn-send {
 	background-color: #007bff;
 	width: 50%;
 }
@@ -103,11 +103,11 @@ th {
 		font-size: 0.875rem; /* Slightly smaller font size on smaller screens */
 		padding: 8px 12px; /* Reduced padding on smaller screens */
 	}
-	.btn-primary {
-		width: max-content;
+	.btn-send {
+		width: fit-content;
 	}
 	.btn-danger {
-		width: max-content;
+		width: fit-content;
 	}
 }
 

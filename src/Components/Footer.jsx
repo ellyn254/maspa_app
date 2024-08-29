@@ -40,7 +40,7 @@ const Footer = () => {
 								<a href="/user/update/:id">Update User</a>
 							</li>
 							<li>
-								<a href="/user"> View Users</a>
+								<a href="/user">View Users</a>
 							</li>
 							<li>
 								<a href="/messages">Messages</a>

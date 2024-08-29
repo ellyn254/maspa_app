@@ -1,5 +1,4 @@
 /* about.css */
-
 /* General Styles */
 body {
 	font-family: Arial, sans-serif;
@@ -22,7 +21,6 @@ body {
 	color: white;
 	font-size: 70px;
 	font-weight: bold;
-	
 }
 
 .about-navbar a:hover {
@@ -45,40 +43,6 @@ body {
 .information p {
 	margin-bottom: 1.5rem;
 	font-size: 1rem;
-}
-
-.service-container {
-	max-width: 1400px;
-	margin: 40px auto;
-	justify-content: center;
-}
-
-.card-container {
-	border: none;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.2s;
-}
-
-.card-container:hover {
-	transform: translateY(-5px);
-}
-
-.card-container .image {
-	max-width: fit-content;
-	height: auto;
-	border-radius: 8px;
-	margin: 10px auto;
-}
-
-.card-title {
-	font-size: 1.25rem;
-	margin-bottom: 10px;
-	font-weight: bold;
-}
-
-.card-container .text-center {
-	text-align: center;
-	padding: 15px;
 }
 
 .readme {
@@ -126,22 +90,6 @@ body {
 
 	.information {
 		padding: 15px;
-	}
-
-	.service-container {
-		padding: 15px;
-	}
-
-	.card-container {
-		margin-bottom: 20px;
-	}
-
-	.card-title {
-		font-size: 1.1rem;
-	}
-
-	.booking {
-		font-size: 0.9rem;
 	}
 }
 

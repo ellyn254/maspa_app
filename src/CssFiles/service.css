@@ -1,3 +1,5 @@
+/* service.css */
+
 .image {
 	width: 75%;
 	margin: 50px auto;
@@ -6,8 +8,8 @@
 	margin-left: 50px;
 }
 .service-container {
-	
 	margin: 100px auto;
+	max-width: 1400px;
 	background-color: #331029de;
 }
 .text-center {
@@ -34,7 +36,7 @@ body {
 }
 
 /* Card Styles */
-.card {
+.card-container {
 	transition: transform 0.3s;
 }
 
@@ -49,7 +51,46 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 767px) {
-	.card {
-		margin-bottom: 1rem;
+	.service-container {
+		padding: 15px;
+	}
+
+	.card-container {
+		margin-bottom: 20px;
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+	}
+
+	.booking {
+		font-size: 0.9rem;
+	}
+	@media (min-width: 768px) and (max-width: 991px) {
+		.card-container {
+			margin-bottom: 30px;
+		}
+
+		.card-title {
+			font-size: 1.2rem;
+		}
+
+		.booking {
+			font-size: 1rem;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.card-container {
+			margin-bottom: 40px;
+		}
+
+		.card-title {
+			font-size: 1.25rem;
+		}
+
+		.booking {
+			font-size: 1rem;
+		}
 	}
 }

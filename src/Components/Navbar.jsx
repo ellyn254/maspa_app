@@ -4,7 +4,7 @@ import styles from '../Navbar.module.css';
 import { FaBars, FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Image from '../images/logo.jpg';
-import { FaUser } from "react-icons/fa";
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
 	const { cart } = useContext(CartContext);
@@ -15,7 +15,7 @@ const Navbar = () => {
 			<Link to="/home" className={styles.logo}>
 				<img src={Image} alt="images" width={150} height={100} />
 			</Link>
-			<div className={styles.hamburger} onClick={() => setIsMobile(!isMobile)}>
+			<div className={styles.faicons} onClick={() => setIsMobile(!isMobile)}>
 				{isMobile ? <FaTimes /> : <FaBars />}
 			</div>
 			<div className={isMobile ? styles.menuMobile : styles.menu}>
@@ -54,7 +54,7 @@ const Navbar = () => {
 				</div>
 				<div className={styles.menuItem}>
 					<Link to="/" className={styles.menuLink}>
-						<FaUser/>
+						<FaUser />
 					</Link>
 					<div className={styles.dropdown}>
 						<Link to="/register">Signup</Link>

@@ -2,7 +2,7 @@ import React from 'react';
 import './CssFiles/about.css';
 import './CssFiles/service.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
 import manimage from './assets/manicure.jpg';
 import pedimage from './assets/pedicure.jpg';
@@ -230,9 +230,7 @@ const Home = () => {
 			{/*//////////////////////////////////////// ABOUT PAGE //////////////////////////////////////////////////*/}
 
 			<div className="about-navbar">
-				<Link to="/about" className="route">
-					About US
-				</Link>
+				<a href="/about">About Us</a>
 			</div>
 			<div className="information">
 				<p>
@@ -243,20 +241,14 @@ const Home = () => {
 					been always on the lookout to improvise our creativity through
 					innovation. We offer some of the best of the class designs and layouts
 					for interior designing projects Our creations are often unique just
-					for the client’s taste.
+					for the client’s taste. These three philosophies are some of the
+					fundamental pillars of our success today. We believe that with a great
+					design that has an exceptional quality of experience with a strong
+					service and support is critical.These three are the most important
+					elements of our strong and proven relationship with some of the major
+					brands.
 				</p>
-				<ul>
-					<li>Design blended with architecture.</li>
-					<li>Quality of the overall experience.</li>
-					<li>Excellent service and support.</li>
-				</ul>
-				<p>
-					These three philosophies are some of the fundamental pillars of our
-					success today. We believe that with a great design that has an
-					exceptional quality of experience with a strong service and support is
-					critical.These three are the most important elements of our strong and
-					proven relationship with some of the major brands.
-				</p>
+
 				<h1>Our Specialty</h1>
 				<p>
 					Unlike many in the industry, we have possessed knowledge and skills of
@@ -269,24 +261,29 @@ const Home = () => {
 					completely.
 				</p>
 			</div>
-
 			<div>
 				<h2>Our Services</h2>
 				<Row className="service-container">
 					{services.map(service => (
 						<Col key={service.id} sm={6} md={4} className="mb-4">
-							<Card>
+							<Card className="card-container">
 								<Card.Body className="text-center">
 									<div style={{ fontSize: '2rem' }}>{service.icon}</div>
 									<Card.Title>{service.name}</Card.Title>
-									<Link to="/services/" className="booking">
-										Read more
-									</Link>
+									{service.description}
+									<div className="readme">
+										<a href="/services">Read more ↗️</a>
+									</div>
 								</Card.Body>
 							</Card>
 						</Col>
 					))}
 				</Row>
+			</div>
+			<div className="lowerdiv">
+				<h2>Ready to experience the magic?</h2>
+				<p>Chat with us today!</p>
+				<a href="/contact">Talk to Us</a>
 			</div>
 
 			{/* ///////////////////////////////////////////////////////////CONTACT PAGE ////////////////////////////////////////////*/}
