@@ -21,6 +21,7 @@ import Payment from './Payment';
 import ForgotPassword from './Components/ForgotPassword';
 import Pedicure from './Services/Pedicure';
 import Manicure from './Services/Manicure';
+import Services from './Services';
 
 function App() {
 	// const [cartCount, setCartCount] = useState(0);
@@ -59,7 +60,7 @@ function App() {
 						<Route path="/contact" element={<Contact />} />
 						<Route path="/user/update/:id" element={<Update />} />
 						<Route path="/cart" element={<Cart />} />
-
+						<Route path="/services/:name" element={<Services />}/>
 						<Route
 							path="/logout"
 							element={<Logout onLogout={handleLogout} />}
@@ -70,6 +71,7 @@ function App() {
 						<Route path="/pedicure" element={<Pedicure />} />
 						<Route path="/payment" element={<Payment />} />
 						<Route path="/manicure" element={<Manicure />} />
+						{/* <Route path="/men" element={<Men/>}/> */}
 					</Routes>
 				</div>
 				<Footer />

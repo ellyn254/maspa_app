@@ -1,17 +1,18 @@
-import './CssFiles/about.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Link } from 'react-router-dom';
-import React from 'react';
+import React from 'react'
 import { Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import manimage from './assets/manicure.jpg';
 import pedimage from './assets/pedicure.jpg';
 import massimage from './assets/massage.jpg';
 import facialimage from './assets/facial.jpg';
 import salonimage from './assets/salon.jpg';
 import yogaimage from './assets/yoga.jpg';
+import './CssFiles/services.css';
 
-const About = () => {
-	const services = [
+
+const Services = () => {
+
+    const services = [
 		{
 			id: 1,
 			name: 'Massage',
@@ -55,42 +56,8 @@ const About = () => {
 				'Yoga is a practice that connects the body, breath, and mind. It uses physical postures, breathing exercises, and meditation to improve overall health.',
 		},
 	];
-
-	return (
-		<>
-			<div className="about-navbar">
-				<a href="/about">About Us</a>
-			</div>
-			<div className="information">
-				<p>
-					DM Interior Studio was established with the purpose of delivering of
-					Total interior design services in Sri Lanka.Our portfolio ranges from
-					commercial interior design in Sri Lanka, residential interior design,
-					industrial and recreational spaces alike. Since our launch, we have
-					been always on the lookout to improvise our creativity through
-					innovation. We offer some of the best of the class designs and layouts
-					for interior designing projects Our creations are often unique just
-					for the client’s taste. These three philosophies are some of the
-					fundamental pillars of our success today. We believe that with a great
-					design that has an exceptional quality of experience with a strong
-					service and support is critical.These three are the most important
-					elements of our strong and proven relationship with some of the major
-					brands.
-				</p>
-
-				<h1>Our Specialty</h1>
-				<p>
-					Unlike many in the industry, we have possessed knowledge and skills of
-					architecture in designing our interior designs in Sri Lanka. This
-					provides us the edge to have a broad understanding on how to bring
-					creativity and sophistication together. Our knowledge and skills in
-					quantity surveying, MEP and project management gives our clients
-					additional confidence to rely on us. Thus we can make sure that the
-					client doesn’t have to redo/renovate the interior partly or
-					completely.
-				</p>
-			</div>
-			<div className="service-container">
+  return (
+   <div className="service-container">
 				<Row>
 					<h1>| Insights</h1>
 					{services.map(service => (
@@ -109,13 +76,7 @@ const About = () => {
 					))}
 				</Row>
 			</div>
-			<div className="lowerdiv">
-				<h2>Ready to experience the magic?</h2>
-				<p>Chat with us today!</p>
-				<a href="/contact">Talk to Us</a>
-			</div>
-		</>
-	);
-};
+  )
+}
 
-export default About;
+export default Services

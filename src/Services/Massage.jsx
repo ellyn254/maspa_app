@@ -7,6 +7,7 @@ import hotstone from '../images/massage/hotstone.avif';
 import deeptissue from '../images/massage/deeptissue.jpg';
 import swedish from '../images/massage/swedish.avif';
 
+
 const Massage = () => {
 	const [selectedService, setSelectedService] = useState(null);
 	const [showModal, setShowModal] = useState(false);
@@ -93,6 +94,7 @@ const Massage = () => {
 					<span className={styles.price}>$90 / 60 mins</span>
 				</div>
 			</div>
+
 			<button className={styles.booking} onClick={() => handleBook()}>
 				Book Appointment
 			</button>

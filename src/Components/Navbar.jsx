@@ -30,7 +30,7 @@ const Navbar = () => {
 					</div>
 				</div>
 				<div className={styles.menuItem}>
-					<Link to="/services" className={styles.menuLink}>
+					<Link className={styles.menuLink}>
 						Services
 					</Link>
 					<div className={styles.dropdown}>
@@ -52,17 +52,6 @@ const Navbar = () => {
 						Contact
 					</Link>
 				</div>
-				<div className={styles.menuItem}>
-					<Link to="/" className={styles.menuLink}>
-						<FaUser />
-					</Link>
-					<div className={styles.dropdown}>
-						<Link to="/register">Signup</Link>
-						<Link to="/">Signin</Link>
-						<Link to="//user/update/:id">Update</Link>
-						<Link to="/logout">Signout</Link>
-					</div>
-				</div>
 
 				<div className={styles.menuItem}>
 					<Link to="/cart" className={styles.menuLink}>
@@ -70,7 +59,19 @@ const Navbar = () => {
 						{cart.length}
 					</Link>
 				</div>
-			</div>
+		
+			<div className={styles.menuItem}>
+					<Link to="/" className={styles.menuLink}>
+						<FaUser />
+					</Link>
+					<div className={styles.dropdown}>
+						<Link to="/register">Signup</Link>
+						<Link to="/">Signin</Link>
+						<Link to="/user/update/:id">Update</Link>
+						<Link to="/logout">Signout</Link>
+					</div>
+				</div>
+					</div>
 		</nav>
 	);
 };

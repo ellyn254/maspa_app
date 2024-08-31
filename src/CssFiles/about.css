@@ -4,27 +4,36 @@ body {
 	font-family: Arial, sans-serif;
 	line-height: 1.6;
 }
-
 .about-navbar {
-	background-color: #f8f9fa;
 	text-align: center;
-	padding: 150px;
+	padding: 5% 0; /* Adjusts padding to be more responsive */
 	margin: 0 auto;
 	background-image: url('../images/beuty.webp');
 	border-bottom: 2px solid #ddd;
 	max-width: 100%;
-	background-size: cover;
+	background-size: cover; /* Ensures the image covers the entire container */
+	background-position: center; /* Centers the background image */
+	background-repeat: no-repeat; /* Prevents the image from repeating */
+	min-height: 400px; /* Ensures the container has a minimum height */
 }
 
 .about-navbar a {
 	text-decoration: none;
-	color: white;
+	color: black;
 	font-size: 70px;
-	font-weight: bold;
 }
 
-.about-navbar a:hover {
-	color: black;
+/* Optional: Use media queries for different screen sizes */
+@media (max-width: 768px) {
+	.about-navbar {
+		padding: 10% 0; /* Increase padding for smaller screens */
+	}
+}
+
+@media (max-width: 480px) {
+	.about-navbar {
+		padding: 15% 0; /* Further adjust padding for very small screens */
+	}
 }
 
 .information {
@@ -44,20 +53,127 @@ body {
 	margin-bottom: 1.5rem;
 	font-size: 1rem;
 }
+/************** service.css ****************/
+.image {
+	width: 100%;
+	margin: 0 auto;
+	height: auto;
+	display: flex;
+}
+.service-container {
+	margin: 100px auto;
+	max-width: 75%;
+}
+.service-container h1 {
+	text-decoration: none;
+	color: black;
+	font-size: 25px;
+	margin-left: 0px;
+	padding: 20px;
+}
+
+/* Card Styles */
+.card-container {
+	transition: transform 0.3s;
+	margin: auto;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.text-center {
+	/* width: 10px; */
+	border: none;
+	margin: 0 auto;
+}
 
 .readme {
-	margin-top: 35px;
+	margin-top: 25px;
 	text-align: justify;
 	text-decoration: none;
 }
 .readme a {
 	color: black;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 .readme a:hover {
 	color: #331029de;
 }
+.booking {
+	width: 100%;
+	background-color: #331029de;
+	color: white;
+}
+
+.booking:hover {
+	background-color: #773965de;
+}
+.confirm-booking {
+	color: white;
+	background-color: #331029de;
+}
+/* General Styles */
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* Modal Styles */
+.modal-content {
+	padding: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+	.service-container {
+		padding: 15px;
+	}
+
+	.card-container {
+		margin-bottom: 20px;
+	}
+
+	.card-title {
+		font-size: 1.1rem;
+	}
+
+	.booking {
+		font-size: 0.9rem;
+	}
+	@media (min-width: 768px) and (max-width: 991px) {
+		.card-container {
+			margin-bottom: 30px;
+		}
+
+		.card-title {
+			font-size: 1.2rem;
+		}
+
+		.booking {
+			font-size: 1rem;
+		}
+	}
+
+	@media (min-width: 992px) {
+		.card-container {
+			margin-bottom: 40px;
+		}
+
+		.card-title {
+			font-size: 1.25rem;
+		}
+
+		.booking {
+			font-size: 1rem;
+		}
+	}
+}
+
 
 .lowerdiv {
 	background-color: #331029de;
@@ -65,6 +181,7 @@ body {
 	max-width: 100%;
 	color: white;
 	padding: 70px;
+	margin: 20px auto;
 }
 .lowerdiv a {
 	background-color: #ddd;
