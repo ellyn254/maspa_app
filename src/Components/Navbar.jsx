@@ -13,7 +13,7 @@ const Navbar = () => {
 	return (
 		<nav className={styles.nav}>
 			<Link to="/home" className={styles.logo}>
-				<img src={Image} alt="images" width={150} height={100} />
+				<img src={Image} alt="logo" />
 			</Link>
 			<div className={styles.faicons} onClick={() => setIsMobile(!isMobile)}>
 				{isMobile ? <FaTimes /> : <FaBars />}
@@ -30,7 +30,7 @@ const Navbar = () => {
 					</div>
 				</div>
 				<div className={styles.menuItem}>
-					<Link className={styles.menuLink}>
+					<Link to="/services" className={styles.menuLink}>
 						Services
 					</Link>
 					<div className={styles.dropdown}>
@@ -52,15 +52,13 @@ const Navbar = () => {
 						Contact
 					</Link>
 				</div>
-
 				<div className={styles.menuItem}>
 					<Link to="/cart" className={styles.menuLink}>
 						<FaShoppingCart />
 						{cart.length}
 					</Link>
 				</div>
-		
-			<div className={styles.menuItem}>
+				<div className={styles.menuItem}>
 					<Link to="/" className={styles.menuLink}>
 						<FaUser />
 					</Link>
@@ -71,7 +69,7 @@ const Navbar = () => {
 						<Link to="/logout">Signout</Link>
 					</div>
 				</div>
-					</div>
+			</div>
 		</nav>
 	);
 };

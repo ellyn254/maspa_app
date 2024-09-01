@@ -5,7 +5,7 @@ import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input/input";
 import "react-phone-number-input/style.css";
 // import { useMediaQuery } from "react-responsive";
 import Flag from "react-country-flag";
-import "./CssFiles/signup.css";
+import styles from './CssFiles/Signup.module.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -102,120 +102,121 @@ const Signup = () => {
 
   return (
     <>
-      {/* <div className="signup-container"> */}
-        <div className="form-container">
-          <form onSubmit={handleSubmit}>
-            <h2 className="text-center mb-4">
-              <strong>Sign Up</strong>
-            </h2>
-            <div className="form-group mb-3">
-              <label>
-                <strong>Name:</strong>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                autoComplete="off"
-                className="form-control"
-                onChange={handleChange}
-              />
-              {errors.name && <span className="error">{errors.name}</span>}
-            </div>
-            <div className="form-group mb-3">
-              <label>
-                <strong>Phone:</strong>
-              </label>
-              <div className="phone-input">
-                <Flag countryCode={formData.countryCode} className="me-2" />
-                <PhoneInput
-                  name="phone"
-                  type="phone"
-                  placeholder="Enter phone number"
-                  value={formData.phone}
-                  onChange={handlePhoneChange}
-                  country="KE"
-                  className="form-control"
-                />
-              </div>
-              {errors.phone && <span className="error">{errors.phone}</span>}
-            </div>
-            <div className="form-group mb-3">
-              <label>
-                <strong>Email:</strong>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="example@gmail.com"
-                autoComplete="off"
-                className="form-control"
-                onChange={handleChange}
-              />
-              {errors.email && <span className="error">{errors.email}</span>}
-            </div>
-            <div className="form-group mb-3">
-              <label>
-                <strong>Password:</strong>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter password"
-                className="form-control"
-                onChange={handleChange}
-              />
-              {errors.password && (
-                <span className="error">{errors.password}</span>
-              )}
-            </div>
-            <div className="form-group mb-3">
-              <label>
-                <strong>Confirm Password:</strong>
-              </label>
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Re-enter password"
-                className="form-control"
-                onChange={handleChange}
-              />
-              {errors.confirmPassword && (
-                <span className="error">{errors.confirmPassword}</span>
-              )}
-            </div>
-            <button type="submit" className="register">
-              Register
-            </button>
-            <div>
-            Already have an account? 
-            <span><Link to={`/`} className="secondary">
-              Login
-            </Link></span></div>
-            <div className="form-group form-check mb-3">
-              <input
-                type="checkbox"
-                id="termsCheckbox"
-                className="form-check-input"
-                required
-              />
-              <label htmlFor="termsCheckbox" className="form-check-label">
-                I agree to the
-                <a
-                  href="terms_and_conditions.html"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  terms and conditions
-                </a>
-              </label>
-            </div>
-            <Link to={`/forgotpassword`} className="forgot">
-                Forgot-password?
-              </Link>
-          </form>
+       <div className={styles.formContainer}>
+      <form onSubmit={handleSubmit}>
+        <h2 className={`${styles.textCenter} mb-4`}>
+          <strong>Sign Up</strong>
+        </h2>
+        <div className={`${styles.formGroup} mb-3`}>
+          <label>
+            <strong>Name:</strong>
+          </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            autoComplete="off"
+            className="form-control"
+            onChange={handleChange}
+          />
+          {errors.name && <span className={styles.error}>{errors.name}</span>}
         </div>
-      
+        <div className={`${styles.formGroup} mb-3`}>
+          <label>
+            <strong>Phone:</strong>
+          </label>
+          <div className={styles.phoneInput}>
+            <Flag countryCode={formData.countryCode} className="me-2" />
+            <PhoneInput
+              name="phone"
+              type="phone"
+              placeholder="Enter phone number"
+              value={formData.phone}
+              onChange={handlePhoneChange}
+              country="KE"
+              className="form-control"
+            />
+          </div>
+          {errors.phone && <span className={styles.error}>{errors.phone}</span>}
+        </div>
+        <div className={`${styles.formGroup} mb-3`}>
+          <label>
+            <strong>Email:</strong>
+          </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="example@gmail.com"
+            autoComplete="off"
+            className="form-control"
+            onChange={handleChange}
+          />
+          {errors.email && <span className={styles.error}>{errors.email}</span>}
+        </div>
+        <div className={`${styles.formGroup} mb-3`}>
+          <label>
+            <strong>Password:</strong>
+          </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            className="form-control"
+            onChange={handleChange}
+          />
+          {errors.password && (
+            <span className={styles.error}>{errors.password}</span>
+          )}
+        </div>
+        <div className={`${styles.formGroup} mb-3`}>
+          <label>
+            <strong>Confirm Password:</strong>
+          </label>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Re-enter password"
+            className="form-control"
+            onChange={handleChange}
+          />
+          {errors.confirmPassword && (
+            <span className={styles.error}>{errors.confirmPassword}</span>
+          )}
+        </div>
+        <button type="submit" className={styles.register}>
+          Register
+        </button>
+        <div>
+          Already have an account? 
+          <span>
+            <Link to={`/`} className={styles.secondary}>
+              Login
+            </Link>
+          </span>
+        </div>
+        <div className={`${styles.formGroup} ${styles.formCheck} mb-3`}>
+          <input
+            type="checkbox"
+            id="termsCheckbox"
+            className="form-check-input"
+            required
+          />
+          <label htmlFor="termsCheckbox" className="form-check-label">
+            I agree to the
+            <a
+              href="terms_and_conditions.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              terms and conditions
+            </a>
+          </label>
+        </div>
+        <Link to={`/forgotpassword`} className={styles.forgot}>
+          Forgot password?
+        </Link>
+      </form>
+    </div>
     </>
   );
 };

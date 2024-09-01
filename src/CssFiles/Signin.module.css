@@ -1,0 +1,112 @@
+/* Container for the form */
+.formContainer {
+	max-width: 400px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.textCenter {
+	text-align: center;
+	color: #333;
+}
+
+/* Form group styling */
+.formGroup {
+	margin-bottom: 16px;
+}
+
+.formGroup label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: bold;
+}
+
+.formGroup input[type='email'],
+.formGroup input[type='password'] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/* Error message styling */
+.error {
+	color: red;
+	font-size: 0.875rem;
+	margin-top: 5px;
+}
+
+/* Sign in button styling */
+.btnSignin {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #331029de;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btnSignin:hover {
+	background-color: #331029de;
+}
+
+/* Link styling */
+.account,
+.forgot {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.account:hover,
+.forgot:hover {
+	text-decoration: underline;
+}
+
+/* Checkbox and terms link styling */
+.formCheck {
+	display: flex;
+	align-items: center;
+}
+
+.formCheck input[type='checkbox'] {
+	margin-right: 10px;
+}
+
+.formCheck label {
+	font-size: 0.875rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.formContainer {
+		padding: 15px;
+	}
+
+	.btnSignin {
+		font-size: 0.9rem;
+	}
+
+	.formCheck label {
+		font-size: 0.8rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.formContainer {
+		padding: 10px;
+	}
+
+	.btnSignin {
+		font-size: 0.85rem;
+		padding: 8px;
+	}
+}

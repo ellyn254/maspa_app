@@ -1,0 +1,83 @@
+/* Container for the content */
+.container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+/* Headings */
+.container h3 {
+	color: #333;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+}
+
+/* Danger button for Logout */
+.btnDanger {
+	background-color: #dc3545;
+	color: white;
+  padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+  text-decoration: none;
+  max-width: fit-content;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btnDanger:hover {
+	background-color: #c82333;
+}
+
+/* Primary button for Login */
+.btnPrimary {
+	background-color: #331023de;
+	color: white;
+  padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+  text-decoration: none;
+  max-width: fit-content;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.btnPrimary:hover {
+	background-color: #331023de;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.container {
+		padding: 15px;
+	}
+
+	.container h3 {
+		font-size: 1.25rem;
+	}
+
+	.btn {
+		font-size: 0.95rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 10px;
+	}
+
+	.container h3 {
+		font-size: 1rem;
+	}
+
+	.btn {
+		padding: 8px 16px;
+		font-size: 0.9rem;
+	}
+}

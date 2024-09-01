@@ -21,6 +21,7 @@ body {
 	text-decoration: none;
 	color: black;
 	font-size: 70px;
+	
 }
 
 /* Optional: Use media queries for different screen sizes */
@@ -173,7 +174,6 @@ body {
 		}
 	}
 }
-
 
 .lowerdiv {
 	background-color: #331029de;

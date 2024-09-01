@@ -1,8 +1,6 @@
 import React from 'react';
-import './CssFiles/about.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useState, useEffect } from 'react';
-
 import styles from './CssFiles/home.module.css';
 
 // Dummy data for products (you can replace this with actual API data)
@@ -139,7 +137,6 @@ const Home = () => {
 		setProducts(productsData);
 	}, []);
 
-
 	return (
 		<>
 			{/*/////////////////////////////////////////////////// HOME PAGE //////////////////////////////////////////////*/}
@@ -162,7 +159,6 @@ const Home = () => {
 					))}
 				</div>
 			</div>
-
 		</>
 	);
 };

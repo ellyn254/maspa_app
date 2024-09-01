@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './CssFiles/contact.css';
+import styles from './CssFiles/Contact.module.css';
 import { RiMailFill } from 'react-icons/ri';
 import { FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import call from './images/contact.webp';
@@ -74,46 +74,46 @@ const Contact = () => {
 
 	return (
 		<>
-			<div className="contact-navbar">
+			<div className={styles['contact-navbar']}>
 				<h1>Want to inquire on something?</h1>
 				<p>We are available on our bio below 👇</p>
 			</div>
-			<div className="body-container">
-				<div className="bio">
+			<div className={styles['body-container']}>
+				<div className={styles['bio']}>
 					<h2>Schedule a call with us.</h2>
-					<img src={call} alt="" className="bgmeet" />
+					<img src={call} alt="Schedule a call" className={styles['bgmeet']} />
 					<p>
 						Our social media handles. Have any burning question? Write to us
 						through the form on the side or reach us through the social media
 						handles below.
 					</p>
 					<h2>Our Bio</h2>
-					<div className="social-icons">
+					<div className={styles['social-icons']}>
 						<ul>
-							<p>
+							<li>
 								<RiMailFill /> info@maspaenterprise.com
-							</p>
-							<p>
+							</li>
+							<li>
 								<FaPhoneAlt /> +254 790 834127
-							</p>
-							<p>
+							</li>
+							<li>
 								<FaMapMarkerAlt /> Office 1402, Three Sails Tower
-							</p>
+							</li>
 						</ul>
 					</div>
 				</div>
-				<div className="form-container">
+				<div className={styles['form-container']}>
 					<form onSubmit={handleSubmit}>
 						<h2>
 							<strong>Contact Page</strong>
 						</h2>
-						<div className="mb-3">
+						<div className={styles['mb-3']}>
 							<label>
 								<strong>Email:</strong>
 							</label>
 							<input
 								type="email"
-								className="form-control"
+								className={styles['form-control']}
 								id="email"
 								name="email"
 								placeholder="Enter email registered with us"
@@ -124,12 +124,12 @@ const Contact = () => {
 							/>
 						</div>
 
-						<div className="mb-3">
+						<div className={styles['mb-3']}>
 							<label>
 								<strong>Message:</strong>
 							</label>
 							<textarea
-								className="form-control"
+								className={styles['form-control']}
 								id="message"
 								name="message"
 								placeholder="Compose a message"

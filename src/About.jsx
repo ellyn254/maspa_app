@@ -59,7 +59,7 @@ const About = () => {
 	return (
 		<>
 			<div className="about-navbar">
-				<a href="/about">About Us</a>
+				<a href="/about" className="title">About Us</a>
 			</div>
 			<div className="information">
 				<p>

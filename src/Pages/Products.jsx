@@ -13,11 +13,9 @@ const [products, setProducts]=useState(Data.products);
   return (
     
     <div className={styles.container}>
-        {
-        products.map((p) =>(
-            <Product product={p} key={p.id}/>
-        ))
-    }
+      {products.map((p) => (
+        <Product product={p} key={p.id} />
+      ))}
     </div>
 
   )

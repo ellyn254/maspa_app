@@ -1,0 +1,134 @@
+/* Container for the form */
+.formContainer {
+	max-width: 500px;
+	margin: 50px auto;
+	padding: 25px;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+.textCenter {
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+}
+
+/* Form group styling */
+.formGroup {
+	margin-bottom: 16px;
+}
+
+.formGroup label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: bold;
+}
+
+.formGroup input[type='text'],
+.formGroup input[type='email'],
+.formGroup input[type='password'],
+.formGroup input[type='phone'] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+/* Error message styling */
+.error {
+	color: red;
+	font-size: 0.875rem;
+	margin-top: 5px;
+}
+
+/* Phone input styling */
+.phoneInput {
+	display: flex;
+	align-items: center;
+}
+
+.phoneInput input {
+	flex: 1;
+	padding-left: 40px;
+}
+
+/* Register button styling */
+.register {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	background-color: #331023de;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.register:hover {
+	background-color: #331023de;
+}
+
+/* Link styling */
+.secondary,
+.forgot {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.secondary:hover,
+.forgot:hover {
+	text-decoration: underline;
+}
+
+/* Checkbox and terms link styling */
+.formCheck {
+	display: flex;
+	align-items: center;
+}
+
+.formCheck input[type='checkbox'] {
+	margin-right: 10px;
+}
+
+.formCheck label {
+	font-size: 0.875rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+	.formContainer {
+		padding: 20px;
+	}
+
+	.register {
+		font-size: 0.95rem;
+	}
+
+	.formCheck label {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.formContainer {
+		padding: 15px;
+	}
+
+	.register {
+		font-size: 0.9rem;
+		padding: 10px;
+	}
+
+	.formGroup label {
+		font-size: 0.9rem;
+	}
+
+	.formGroup input {
+		padding: 8px;
+	}
+}

@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./CssFiles/logout.css";
+import styles from './CssFiles/Logout.module.css';
 import { useState } from "react";
 
 
@@ -47,24 +47,24 @@ const Logout = ({ onLogout }) => {
 
   return (
     <>
-      <div className="container">
-        {auth ? (
-          <div>
-            <h3>You are Authorized --- {name}</h3>
-            <button className="btn btn-danger" onClick={handleDelete}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <div>
-            <h3>{message}</h3>
-            <h3>Login Now</h3>
-            <Link to={`/`} className="btn btn-primary">
-              Login
-            </Link>
-          </div>
-        )}
-      </div>
+    <div className={styles.container}>
+      {auth ? (
+        <div>
+          <h3>You are Authorized --- {name}</h3>
+          <button className={styles.btnDanger} onClick={handleDelete}>
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h3>{message}</h3>
+          <h3>Login Now</h3>
+          <Link to={`/`} className={styles.btnPrimary}>
+            Login
+          </Link>
+        </div>
+      )}
+    </div>
     </>
   );
 };

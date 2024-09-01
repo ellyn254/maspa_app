@@ -99,52 +99,107 @@ const Massage = () => {
 				Book Appointment
 			</button>
 
-			<Modal show={showModal} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<Modal.Title className={styles.heading}>
-						Book {selectedService?.name}
-					</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>
-					<Form onSubmit={handleSubmit}>
-						<Form.Group controlId="formEmail">
-							<Form.Label>Email</Form.Label>
-							<Form.Control
-								type="email"
-								placeholder="Enter your email"
-								name="email"
-								value={bookingDetails.email}
-								onChange={handleChange}
-								required
-							/>
-						</Form.Group>
-						<Form.Group controlId="formDate">
-							<Form.Label>Date</Form.Label>
-							<Form.Control
-								type="date"
-								name="date"
-								value={bookingDetails.date}
-								onChange={handleChange}
-								required
-							/>
-						</Form.Group>
-						<Form.Group controlId="formPayment">
-							<Form.Label>Payment</Form.Label>
-							<Form.Control
-								type="text"
-								placeholder="Enter payment details"
-								name="payment"
-								value={bookingDetails.payment}
-								onChange={handleChange}
-								required
-							/>
-						</Form.Group>
-						<button className={styles.confirm} type="submit">
-							Confirm Booking
-						</button>
-					</Form>
-				</Modal.Body>
-			</Modal>
+			<Modal 
+				    show={showModal} 
+				    onHide={handleClose} 
+				    centered 
+				    dialogClassName={styles.modalResponsive}
+				>
+					<Modal.Header closeButton>
+						<Modal.Title className="heading">
+							Book {selectedService?.name}
+						</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<Form onSubmit={handleSubmit}>
+							<Form.Group controlId="formEmail">
+								<Form.Label>Email</Form.Label>
+								<Form.Control
+									type="email"
+									placeholder="Enter your email"
+									name="email"
+									value={bookingDetails.email}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<Form.Group controlId="formDate">
+								<Form.Label>Date</Form.Label>
+								<Form.Control
+									type="date"
+									name="date"
+									value={bookingDetails.date}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<Form.Group controlId="formPayment">
+								<Form.Label>Payment</Form.Label>
+								<Form.Control
+									type="text"
+									placeholder="Enter payment details"
+									name="payment"
+									value={bookingDetails.payment}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<button className="confirm-booking" type="submit">
+								Confirm Booking
+							</button>
+						</Form>
+					</Modal.Body>
+				</Modal><Modal 
+				    show={showModal} 
+				    onHide={handleClose} 
+				    centered 
+				    dialogClassName={styles.modalResponsive}
+				>
+					<Modal.Header closeButton>
+						<Modal.Title className="heading">
+							Book {selectedService?.name}
+						</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<Form onSubmit={handleSubmit}>
+							<Form.Group controlId="formEmail">
+								<Form.Label>Email</Form.Label>
+								<Form.Control
+									type="email"
+									placeholder="Enter your email"
+									name="email"
+									value={bookingDetails.email}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<Form.Group controlId="formDate">
+								<Form.Label>Date</Form.Label>
+								<Form.Control
+									type="date"
+									name="date"
+									value={bookingDetails.date}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<Form.Group controlId="formPayment">
+								<Form.Label>Payment</Form.Label>
+								<Form.Control
+									type="text"
+									placeholder="Enter payment details"
+									name="payment"
+									value={bookingDetails.payment}
+									onChange={handleChange}
+									required
+								/>
+							</Form.Group>
+							<button className="confirm-booking" type="submit">
+								Confirm Booking
+							</button>
+						</Form>
+					</Modal.Body>
+				</Modal>
 		</div>
 	);
 };

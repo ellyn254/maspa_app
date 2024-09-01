@@ -20,7 +20,6 @@ const Manicure = () => {
 		setSelectedService(service);
 		setShowModal(true);
 	};
-	// closes the modal window
 	const handleClose = () => setShowModal(false);
 
 	const handleChange = e => {
@@ -35,13 +34,14 @@ const Manicure = () => {
 		);
 		setShowModal(false);
 	};
+
 	return (
 		<>
 			<div className={styles.topic}>
 				<p>ELLYNBEAUTY MANICURE STORE</p>
 			</div>
 			<div className={styles.container}>
-				<img src={acrylics} alt="" className={styles.image1} />
+				<img src={acrylics} alt="" className={styles.image} />
 				<h2 className={styles.title}>Manicure services</h2>
 				<p className={styles.description}>
 					Experience ultimate toenail transformation with gel, builder, tips,
@@ -61,7 +61,7 @@ const Manicure = () => {
 					</div>
 					<div className={styles.serviceItem}>
 						<img src={manicure} alt="" className={styles.image} />
-						<h3 className={styles.serviceTitle}>Acrylics Pedicure</h3>
+						<h3 className={styles.serviceTitle}>Acrylics manicure</h3>
 						<p className={styles.serviceDescription}>
 							Applying a liquid and powder mixture to nail beds to extend and
 							sculpt artificial nails.
@@ -70,7 +70,7 @@ const Manicure = () => {
 					</div>
 					<div className={styles.serviceItem}>
 						<img src={soft} alt="" className={styles.image} />
-						<h3 className={styles.serviceTitle}>Soft Gel Pedi</h3>
+						<h3 className={styles.serviceTitle}>Soft Gel Manicure</h3>
 						<p className={styles.serviceDescription}>
 							Soft gel is ideal for short to mid-length natural nails. While it
 							adds some strength, it may not support nail extensions.
@@ -82,7 +82,12 @@ const Manicure = () => {
 					</button>
 				</div>
 
-				<Modal show={showModal} onHide={handleClose}>
+				<Modal 
+				    show={showModal} 
+				    onHide={handleClose} 
+				    centered 
+				    dialogClassName={styles.modalResponsive}
+				>
 					<Modal.Header closeButton>
 						<Modal.Title className="heading">
 							Book {selectedService?.name}
